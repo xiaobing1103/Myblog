@@ -268,9 +268,3 @@ main {
 - 组件相关的文件都放到一个文件夹里
 - `css modules` - 用来生成随机局部 class 名字
 - `classnames` - 用来组合多个 class
-
-你学会了吗？如果有问题，欢迎通过下方链接参与讨论。
-
-[>> 在 B 站参与讨论](https://www.bilibili.com/video/av96612743/)
-
-[>> 在 微博 参与讨论](https://weibo.com/2993970500/Iz3U19CVq)

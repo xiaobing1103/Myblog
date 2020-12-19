@@ -16,7 +16,6 @@ import styled from "styled-components";
 
 <!-- truncate -->
 
-2 分钟视频入门版：[2 分钟掌握 CSS Grid 布局](https://www.bilibili.com/video/BV1P7411m7Nu/)
 
 ## 开启 Flexbox 布局
 
@@ -671,9 +670,6 @@ export const NestedFlexBox = ({ minWidth }) => (
 - 通过`flex-wrap`可以设置 flex 子元素折行显示。
 - 嵌套`flex`容器的缩放问题。
 
-你学会了吗？如果有问题，欢迎通过下方链接参与讨论。
-
-[>> 在 B 站参与讨论](https://www.bilibili.com/video/BV1P7411m7Nu/)
 
 export const StyledWrapper = styled.div`
   margin-bottom: 24px;

@@ -2,9 +2,9 @@
 slug: first-blog
 title: 第 N 个第一篇博客
 author: 二姨
-author_title: 前端工程师 
+author_title: 前端工程师 / B站UP主
 author_url: https://github.com/
-author_image_url: https://tvax3.sinaimg.cn/crop.0.0.1080.1080.180/b2745d44ly8g8s4muqeggj20u00u0n0k.jpg?KID=imgbed,tva&Expires=1582389585&ssig=EvXmyu%2FXsX
+author_image_url: https://s3.ax1x.com/2020/12/19/rtW9iR.png
 tags: [杂谈]
 ---
 

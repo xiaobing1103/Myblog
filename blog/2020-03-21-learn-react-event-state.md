@@ -18,11 +18,6 @@ Hello, 今天教你写一个渐变背景生成器。我会用这个例子来解�
 效果演示：
 
 <img alt="" src={useBaseUrl('img/2020-03-21-learn-react-event-state/demo.gif')} />
-
-[源码：Github - React-Examples](https://github.com/zxuqian/react-examples)
-
-[示例和视频](../docs/videos/react/02-gradient-bg-react-state-event/react-state-event-gradient)
-
 ## State 简介
 
 首先看一下什么是 state，[上篇文章](https://zxuqian.cn/learn-react-props-buttons)讲了 props：
@@ -219,9 +214,3 @@ function handleClick() {
 - Props 的值是只读不可变的，改变它的值不会引起组件更新。
 - 需要改变的值要用 state，使用 useState hook 来创建。
 - 事件处理中的 Event 参数是合成的，属性和原生的 event 基本一样。
-
-你学会了吗？如果有问题就到 B 站和微博给我留言吧。
-
-[>> 在 B 站参与讨论](https://www.bilibili.com/video/av97436637/)
-
-[>> 在 微博 参与讨论](https://weibo.com/2993970500/IzwTriHmY)

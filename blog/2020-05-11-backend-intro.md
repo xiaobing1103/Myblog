@@ -15,7 +15,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <!-- truncate -->
 
-[B 站视频 - 点击传送](https://www.bilibili.com/video/BV1XV411d7Cg/)
 
 ## 应用的构成
 
@@ -62,9 +61,4 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 - 爬虫服务
 
 由此也带来了细分的工作岗位，比如数据工程师，算法工程师，爬虫工程师等等。
-
-
-你学会了吗？如果有问题，欢迎通过下方链接参与讨论。
-
-[>> 在 B 站参与讨论](https://www.bilibili.com/video/BV1XV411d7Cg/)
 

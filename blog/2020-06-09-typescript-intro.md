@@ -359,6 +359,3 @@ let tup: [number, string, boolean] = [1, "fh", true];
 
 这样你就能对 TypeScript 有大体的认识了，也能编写简单的 TypeScript 应用并且看懂一部分其他人的代码了。到这里你可能发现 TypeScript 带来的功能特性都是零散的，因为它本身就是给 JS 添砖加瓦，所以它的语法点逐一突破就好了。
 
-你学会了吗？如果有问题，欢迎通过下方链接参与讨论。
-
-[>> 在 B 站参与讨论](https://www.bilibili.com/video/BV1xp4y1D7ux/)
