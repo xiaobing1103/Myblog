@@ -5,9 +5,8 @@
  */
 
 /* You can override the default Infima variables here. */
-
 :root {
-  --ifm-color-primary: #007be2;
+  --ifm-color-primary: #006dfe;
   --ifm-color-primary-dark: #119cc5;
   --ifm-color-primary-darker: #05879d;
   --ifm-color-primary-darkest: #007a87;
@@ -15,13 +14,17 @@
   --ifm-color-primary-lighter: #c6ebfc;
   --ifm-color-primary-lightest: #f2fbff;
   --ifm-code-font-size: 95%;
-  --ifm-font-family-base: "Raleway", "PingFang SC", "Microsoft Yahei", Helvetica, sans-serif;
+  --ifm-font-family-base: "Raleway", "Yuanti SC", "Yuanti SC Regular", "Youyuan",
+    "You Yuan", "幼圆", "PingFang SC", "Microsoft Yahei", sans-serif;
+
   --ifm-navbar-shadow: 0px 4px 28px rgba(0, 0, 0, 0.1);
   --ifm-toc-border-color: #f7f7f7;
+  --text-color: #57616f;
+  --ifm-heading-color: #2f5c85;
 }
 
 html {
-  --post-title-color: #313131;
+  --post-title-color: #2f5c85;
   --post-pub-date-color: #8c8c8c;
   --divider-color: #ebebeb;
 }
@@ -31,6 +34,13 @@ html[data-theme="dark"] {
   --post-pub-date-color: var(--ifm-color-gray-100);
   --divider-color: #353535;
   --ifm-toc-border-color: #313131;
+  --ifm-heading-color: #ffffff;
+}
+
+article > * {
+  line-height: 1.8em;
+  letter-spacing: 0.04em;
+  /* text-align: justify; */
 }
 
 /* h1,
@@ -49,15 +59,10 @@ h6 {
   padding: 0 var(--ifm-pre-padding);
 }
 
-/* bilibili video iframe */
-
-.markdown iframe {
-  width: 100%;
-  height: 300px;
-  margin-top: 2vh;
-}
-
 /* navbar */
+.navbar {
+  box-shadow: none;
+}
 
 .navbar__title {
   margin-left: 20px;
@@ -65,25 +70,28 @@ h6 {
 }
 
 /* hero */
-
 .hero {
   height: calc(100vh - 60px);
   width: 100vw;
-  margin: 0;
-  background-image: linear-gradient( 40deg, rgba(255, 255, 255, 0.8) 62%, rgba(0, 132, 255, 0.1)), url("/img/hero.svg");
   max-width: 100%;
-  background-repeat: no-repeat;
-  background-position: right center;
-  background-size: cover;
+  margin: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 7fr 10fr;
   position: relative;
+  background: url("/img/hero_main.svg") no-repeat right;
+  background-size: 60vw;
+  letter-spacing: 0.04em;
 }
 
 html[data-theme="dark"] .hero {
-  background-image: linear-gradient( 20deg, var(--ifm-background-color) 40%, rgba(18, 55, 105, 0.85)), url("/img/hero.svg");
+  background-image: url("/img/hero_main_dark.svg");
 }
 
+html[data-theme="dark"] .bloghome__intro > p {
+  color: #dfdfdf;
+}
+
+/* 
 .bloghome__image {
   align-self: center;
   justify-self: center;
@@ -94,7 +102,7 @@ html[data-theme="dark"] .hero {
 
 .bloghome__image img {
   width: 100%;
-}
+} */
 
 .intro__name {
   color: var(--ifm-color-primary);
@@ -110,18 +118,36 @@ html[data-theme="dark"] .hero {
   font-size: calc(1.8em + 1.2vw);
 }
 
-.bloghome__intro>p {
+.bloghome__intro > p {
   margin: 26px 0px 24px 0;
+  color: #8c99ab;
+  /* text-shadow: 0 0 #8c99ab; */
+  font-size: 1.125rem;
+  text-align: justify;
+  letter-spacing: -0.04em;
+  line-height: 32px;
+}
+
+.bloghome__intro > p:nth-child(3) {
+  align-self: start;
+  margin-top: 0;
 }
 
 .bloghome__follow {
-  margin: 1em 0;
   display: inline-block;
-  background: linear-gradient( 90deg, var(--ifm-color-primary), var(--ifm-color-primary-dark));
   color: white;
   padding: 0.75em 20px;
-  border-radius: 4px;
+  margin-left: -2px;
   font-weight: 600;
+  background: linear-gradient(
+    90deg,
+    var(--ifm-color-primary) 11.3%,
+    #20b7d9 161.54%
+  );
+  box-shadow: 0px 0px 32px rgba(0, 105, 165, 0.35);
+  border-radius: 7px;
+  font-family: "Yuanti SC", "Youyuan", "You Yuan", "幼圆", "PingFang SC",
+    "Microsoft Yahei", Helvetica, sans-serif;
 }
 
 .bloghome__follow:hover {
@@ -136,7 +162,7 @@ html[data-theme="dark"] .hero {
 }
 
 .blog__section_title {
-  margin: 0 0 3em 0;
+  margin: 1em 0 2.5em 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -172,14 +198,12 @@ html[data-theme="dark"] .hero {
 }
 
 /* 博客列表 */
-
 .bloghome__posts {
   /* display: grid;
   grid-template-columns: 1fr; */
 }
 
 /* 发布日期 */
-
 .post__date {
   background: url("/icons/circle.svg") no-repeat;
   background-size: contain;
@@ -189,6 +213,8 @@ html[data-theme="dark"] .hero {
   align-items: center;
   width: 9.75em;
   height: 9.75em;
+  margin-top: 1.6em;
+  font-family: "Raleway";
 }
 
 .post__day {
@@ -203,10 +229,15 @@ html[data-theme="dark"] .hero {
 }
 
 .post__tags {
-  background: #00b3ff17;
+  background: #3d94fa;
   padding: 6px 10px;
   border-radius: 6px;
-  color: #5d89e2;
+  color: #ffffff;
+}
+
+.post__tags:hover {
+  color: #ffffff;
+  text-decoration: none;
 }
 
 html[data-theme="dark"] .post__tags {
@@ -215,7 +246,6 @@ html[data-theme="dark"] .post__tags {
 }
 
 /* 底部 */
-
 .footer {
   margin-top: 4em;
 }
@@ -223,15 +253,18 @@ html[data-theme="dark"] .post__tags {
 .social__links {
   width: 100%;
   display: flex;
-  max-width: 250px;
+  max-width: 210px;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 4em;
+  padding: 1em 0 2.5em 0;
+  z-index: 100;
+  position: relative;
 }
 
-.social__links>*, .social__links img {
-  color: var(--ifm-navbar-link-color);
-  transform: scale(1.1);
+.social__links > * {
+  width: 24px;
+  height: 24px;
+  color: #4093f6;
 }
 
 .social__links .dropdown {
@@ -247,7 +280,7 @@ html[data-theme="dark"] .post__tags {
 
 .social__links .dropdown__menu {
   max-width: initial;
-  left: -50%;
+  right: 0;
   top: 120%;
 }
 
@@ -259,7 +292,7 @@ html[data-theme="dark"] .post__tags {
 
 .footer__read_count {
   opacity: 0.8;
-  color: #0074d0;
+  color: #006dfe;
   font-size: 1.8em;
 }
 
@@ -271,16 +304,34 @@ html[data-theme="dark"] .footer__read_count {
   border: none;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1105px) {
   .hero {
     grid-template-columns: 1fr;
-    height: auto;
-    background-position: top;
+    align-items: start;
+    height: 95vh;
+    min-height: 900px;
+    background-position: center bottom;
+    background-size: 70vh;
   }
   .bloghome__intro {
     padding: 0em var(--ifm-spacing-horizontal);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+
   .bloghome__image {
     width: 90%;
+  }
+
+  .blog__section_title {
+    padding-top: 3em;
+  }
+}
+
+@media (max-width: 570px) {
+  .hero {
+    height: 90vh;
+    background-size: 55vh;
   }
 }

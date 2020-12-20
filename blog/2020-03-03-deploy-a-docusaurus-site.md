@@ -3,8 +3,8 @@ slug: deploy-a-docusaurus-site
 title: 超简单！使用 Docusaurus 搭建个人博客（一）
 author: 二姨
 author_title: 前端工程师 / B站UP主
-author_url: https://github.com/zxuqian
-author_image_url: https://tvax3.sinaimg.cn/crop.0.0.1080.1080.180/b2745d44ly8g8s4muqeggj20u00u0n0k.jpg?KID=imgbed,tva&Expires=1582389585&ssig=EvXmyu%2FXsX
+author_url: https://github.com/
+author_image_url: https://s3.ax1x.com/2020/12/19/rtW9iR.png
 tags: [前端, 职业]
 ---
 
@@ -15,7 +15,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <!--truncate-->
 
-[B 站视频 - 点击传送](https://www.bilibili.com/video/av93748753/)
 
 ## 博客有啥用？
 
@@ -191,7 +190,3 @@ tags: [facebook, hello, docusaurus]
 这个注释就可以了，它会把它后边的内容隐藏，然后显示一个阅读更多链接。
 
 这样第一个博客就完成了，现在是跑在本地上，后边再讲怎么把它部署到服务器上。
-
-[>> 在 B 站参与讨论](https://www.bilibili.com/video/av93748753/)
-
-[>> 在 微博 参与讨论](https://m.weibo.cn/2993970500/4480662482316067)

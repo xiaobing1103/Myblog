@@ -38,12 +38,17 @@ module.exports = {
             },
           ],
         },
-        {
+        /* {
           label: "视频",
           position: "right",
           to: "docs/videos/videos-intro",
-        },
+        }, */
         {
+          label: "小册",
+          position: "right",
+          to: "docs/xiaoce/xiaoce-intro",
+        },
+        /* {
           label: "课程",
           position: "right",
           items: [
@@ -52,7 +57,7 @@ module.exports = {
               to: "docs/course/react-chat-ui/react-chat-ui",
             },
           ],
-        },
+        }, */
         {
           label: "教程",
           position: "right",
@@ -64,15 +69,25 @@ module.exports = {
           ],
         },
         {
-          href: "https://github.com/xiaobing1103",
-          label: "GitHub",
+          label: "资源导航",
+          position: "right",
+          to: "docs/resources/resources-intro",
+        },
+        {
+          href: "http://42.192.85.86/#/",
+          label: "我的文档",
           position: "right",
         },
         {
           href: "https://github.com/xiaobing1103",
-          label: "社区讨论",
+          label: "GitHub",
           position: "right",
         },
+        // {
+        //   href: "https://github.com/zxuqian/frontend-questions/issues",
+        //   label: "提问",
+        //   position: "right",
+        // },
       ],
     },
     footer: {
@@ -140,11 +155,20 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} 二姨 Built with Docusaurus.<p>京ICP备10086号-3</p>`,
+      copyright: `Copyright © ${new Date().getFullYear()} 二姨  Built with Docusaurus.<p>京ICP备1008686号-3</p>`,
     },
     prism: {
       darkTheme: require("prism-react-renderer/themes/vsDark"),
       defaultLanguage: "javascript",
+    },
+    googleAnalytics: {
+      trackingID: "UA-118572241-1",
+      anonymizeIP: true, // Should IPs be anonymized?
+    },
+    gtag: {
+      trackingID: "G-6PSESJX0BM",
+      // Optional fields.
+      anonymizeIP: true, // Should IPs be anonymized?
     },
   },
   presets: [
@@ -153,15 +177,16 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "#",
+          editUrl: "https://github.com/xiaobing1103",
         },
         blog: {
           path: "./blog",
           routeBasePath: "/",
+          blogSidebarTitle: "近期文章",
           feedOptions: {
             type: "all",
-            title: "二姨前端工程师",
-            copyright: `Copyright © ${new Date().getFullYear()} 二姨 Built with Docusaurus.<p>京ICP备10086号-3</p>`,
+            title: "峰华前端工程师",
+            copyright: `Copyright © ${new Date().getFullYear()} 二姨 (张旭乾) Built with Docusaurus.<p>京ICP备1008686号-3</p>`,
           },
         },
         theme: {

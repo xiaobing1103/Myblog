@@ -3,8 +3,8 @@ slug: harmonyos-js-todo
 title: 鸿蒙 OS：使用 JavaScript 开发 Todo App UI 界面
 author: 二姨
 author_title: 前端工程师 / B站UP主
-author_url: https://github.com/zxuqian
-author_image_url: https://tvax3.sinaimg.cn/crop.0.0.1080.1080.180/b2745d44ly8g8s4muqeggj20u00u0n0k.jpg?KID=imgbed,tva&Expires=1582389585&ssig=EvXmyu%2FXsX
+author_url: https://github.com/xiaobing1103
+author_image_url: https://s3.ax1x.com/2020/12/19/rtW9iR.png
 description: 使用鸿蒙 JS 框架开发 Todo 应用的 TV 版 UI 界面。
 tags: [前端, 鸿蒙, JavaScript]
 ---
@@ -23,8 +23,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ![最终效果](./img/2020-09-20-11-55-58.png)
 
-
-项目 Github 地址：[https://github.com/zxuqian/harmonyos-examples](https://github.com/zxuqian/harmonyos-examples)
 
 这个项目简单的展示了一个 Todo 列表，整体容器背景为淡紫色，todo 列表中有应用的标题，添加 todo 的输入框和按钮，过滤选项，以及 todo 列表。因为鸿蒙貌似不支持改变 checkbox 的背景颜色，未选中状态是白色，跟 todo 列表容器的背景是一样的，所以看不到，选中之后则可以看到是默认的蓝色。因为这个设计稿原本是给手机界面设计的，而鸿蒙 TV 只支持横向滚动条，所以这个界面看起来会有点奇怪，不过不影响我们学习项目开发方法。
 

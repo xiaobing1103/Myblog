@@ -21,6 +21,10 @@ import { MarkdownSection, StyledBlogItem } from "./style";
 import { withTheme } from "styled-components";
 
 import Eye from "@site/static/icons/eye.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTags } from "@fortawesome/free-solid-svg-icons";
+
+import BrowserOnly from "@docusaurus/BrowserOnly";
 
 const MONTHS = [
   "",
@@ -91,9 +95,14 @@ function BlogPostItem(props) {
   const renderTags = () => {
     return (
       (tags.length > 0 || truncated) && (
-        <p className="row margin-top--none margin-bottom--lg">
+        <div className="row margin-top--none margin-bottom--lg">
           {tags.length > 0 && (
             <div className="col">
+              <FontAwesomeIcon
+                icon={faTags}
+                color="#c4d3e0"
+                className="margin-right--md"
+              />
               {tags
                 .slice(0, 4)
                 .map(({ label, permalink: tagPermalink }, index) => (
@@ -103,14 +112,14 @@ function BlogPostItem(props) {
                       index > 0 ? "margin-horiz--sm" : "margin-right--sm"
                     }`}
                     to={tagPermalink}
-                    style={{ fontSize: "0.875em", fontWeight: 500 }}
+                    style={{ fontSize: "0.75em", fontWeight: 500 }}
                   >
                     {label}
                   </Link>
                 ))}
             </div>
           )}
-        </p>
+        </div>
       )
     );
   };
@@ -135,9 +144,9 @@ function BlogPostItem(props) {
         {/* 列表页日期 */}
         {!isBlogPostPage && (
           <div className="col col--2 padding-right--lg margin-bottom--lg">
-            <div class="post__date">
-              <div class="post__day">{day}</div>
-              <div class="post__year_month">
+            <div className="post__date">
+              <div className="post__day">{day}</div>
+              <div className="post__year_month">
                 {year}年{month}月
               </div>
             </div>
@@ -171,7 +180,7 @@ function BlogPostItem(props) {
               <MDXProvider components={MDXComponents}>{children}</MDXProvider>
             </MarkdownSection>
           </article>
-          <footer className="article__footer margin-top--lg">
+          <footer className="article__footer padding-top--md margin-top--lg margin-bottom--lg">
             {truncated && (
               <Link to={metadata.permalink} aria-label={`阅读 ${title} 的全文`}>
                 <strong className={styles.readMore}>阅读原文</strong>
@@ -180,7 +189,7 @@ function BlogPostItem(props) {
             {!isBlogPostPage && (
               <span className="footer__read_count">
                 <Eye
-                  color={isDarkTheme ? "#76baff" : "#1e81e3"}
+                  color={isDarkTheme ? "#76baff" : "#006dfe"}
                   style={{ verticalAlign: "middle" }}
                 />{" "}
                 {views}
@@ -194,20 +203,29 @@ function BlogPostItem(props) {
 }
 
 function Count({ postId, ...post }) {
-  const addViewCount = async () => {
-    await fetch("https://api.zxuqian.cn/post/increase_view", {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ postId }),
-    });
-  };
+  return (
+    <BrowserOnly fallback={<div></div>}>
+      {() => {
+        if (localStorage.getItem(postId)) return null;
 
-  useEffect(() => {
-    addViewCount();
-  }, []);
-  return null;
+        const addViewCount = async () => {
+          await fetch("https://api.zxuqian.cn/post/increase_view", {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ postId }),
+          });
+          localStorage.setItem(postId, true);
+        };
+
+        useEffect(() => {
+          addViewCount();
+        }, []);
+        return null;
+      }}
+    </BrowserOnly>
+  );
 }
 
 export default BlogPostItem;
