@@ -93,7 +93,8 @@ function BlogListPage(props) {
                 href="#"
                 className="bloghome__follow"
               >
-                去B站关注 ({(Math.round(followers) / 10000).toFixed(1)} 万)
+                {/* 去B站关注 ({(Math.round(followers) / 10000).toFixed(1)} 万) */}
+                正在建设中...
               </a>
             </animated.div>
           </div>
