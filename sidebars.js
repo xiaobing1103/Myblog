@@ -19,6 +19,8 @@ module.exports = {
       "xiaoce/algorithm/01-algorithm/01-algorithm",
       "xiaoce/algorithm/02-algorithm/02-algorithm",
       "xiaoce/algorithm/03-algorithm/03-algorithm",
+      "xiaoce/algorithm/04-algorithm/04-algorithm",
+      "xiaoce/algorithm/05-algorithm/05-algorithm",
     ],
   },
   videos: {
