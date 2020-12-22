@@ -48,6 +48,11 @@ module.exports = {
           position: "right",
           to: "docs/xiaoce/xiaoce-intro",
         },
+        {
+          label: "面试",
+          position: "right",
+          to: "docs/fontendInterview/Interview-intro",
+        },
         /* {
           label: "课程",
           position: "right",

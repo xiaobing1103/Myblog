@@ -23,6 +23,13 @@ module.exports = {
       "xiaoce/algorithm/05-algorithm/05-algorithm",
     ],
   },
+  fontendInterview:{
+    简介:["fontendInterview/Interview-intro"],
+    JS基础面试题:[
+      "fontendInterview/Interview/01-Interview/01-Interview",
+      "fontendInterview/Interview/02-Interview/02-Interview",
+    ]
+  },
   videos: {
     简介: ["videos/videos-intro"],
     JavaScript: ["videos/js/01-event-loop/event-loop"],
