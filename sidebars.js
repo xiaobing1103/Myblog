@@ -28,6 +28,7 @@ module.exports = {
     JS基础面试题:[
       "fontendInterview/Interview/01-Interview/01-Interview",
       "fontendInterview/Interview/02-Interview/02-Interview",
+      "fontendInterview/Interview/03-Interview/03-Interview",
     ]
   },
   videos: {
