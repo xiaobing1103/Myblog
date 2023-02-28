@@ -165,4 +165,4 @@ justify-content: end;
 justify-content: space-between;
 ```
 
-好了，这就是今天的 2 分钟掌握 css grid 布局，你学会了吗？有问题请在评论区留言，我是峰华，感谢观看。
+好了，这就是今天的 2 分钟掌握 css grid 布局，你学会了吗？有问题请在评论区留言，我是二姨，感谢观看。

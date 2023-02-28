@@ -67,4 +67,4 @@ sticky 是一个比较新的属性，相当于 relative 和 fixed 的结合体�
 
 
 
-好了，这些就是 CSS 的定位方式，有 static, relative, absolute, fixed, sticky 几种方式，它们都有特定的用途，另外我们也介绍了通过 z-index 来设置元素的层叠顺序。你学会了吗？如果觉得视频有帮助请三连并关注，我是峰华，感谢观看！
+好了，这些就是 CSS 的定位方式，有 static, relative, absolute, fixed, sticky 几种方式，它们都有特定的用途，另外我们也介绍了通过 z-index 来设置元素的层叠顺序。你学会了吗？如果觉得视频有帮助请三连并关注，我是二姨，感谢观看！

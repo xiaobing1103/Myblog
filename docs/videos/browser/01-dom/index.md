@@ -29,4 +29,4 @@ DOM，全称是 Document Object Model，文档对象模型，它是指在浏览�
 - 第二个是 NodeList 类型。代表 DOM 节点的集合。使用 document.querySelectorAll() 等 API 获取的节点集合继承了 NodeList 类型，可以像数组一样访问它里边的元素，每个元素又是 Node 类型，而在 HTML DOM 中，集合还继承了 HTMLCollection 类型，每个元素也还继承了 Element 类型。
 - Element 类型则是所有 HTML 元素都继承的类型，通过 document.getElementById() 或者 querySelector() 等得到的单个 DOM 节点都继承了 Element 类型，它可以让我们改变 Html 元素的属性和内容、或者添加事件。此外，每个 html 元素又有对应的 HTMLElement 类型，例如  button 对应 HTMLButtonElement，它会有自己专属的 api。需要注意的是，一个 HTML 元素可能继承多个类型，会有很多 API，这些可以从 MDN 文档上查看详细介绍。
 
-好了，以上就是 DOM 文档对象模型的介绍，你学会了吗？后期我们还会讲到 BOM、选择器、以及使用 JS 操纵 DOM 的教程。如果有问题请留言，有帮助请三连，想优雅的学前端，请关注峰华前端工程师，感谢观看！
+好了，以上就是 DOM 文档对象模型的介绍，你学会了吗？后期我们还会讲到 BOM、选择器、以及使用 JS 操纵 DOM 的教程。如果有问题请留言，有帮助请三连，想优雅的学前端，请关注二姨前端工程师，感谢观看！

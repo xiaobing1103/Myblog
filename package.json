@@ -20,6 +20,8 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@zxuqian/react-examples": "^0.1.4",
     "classnames": "^2.2.6",
+    "pdf.js": "^0.1.0",
+    "pdfjs-dist": "^2.12.313",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-reveal": "^1.2.2",

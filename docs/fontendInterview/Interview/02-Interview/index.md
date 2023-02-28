@@ -559,3 +559,254 @@ console.log(module.x)
 - 第三个打印结果值是属于硬绑定的规则retrieveX强制将this绑定给了module,这里的retrieveX就是module.getX,然后赋值给了boundGetX,其实就是module.getX调用所以this的指向为module自己本身,打印值为`81`
 - 第四个打印结果是属于new绑定的方式,this的指向为此对象的实例,然后将module.newx赋值给了obj,obj调用其实就是调用了newx,this指向obj,则打印值为`8`
 - 第五个就是成员访问打印值就是`81`
+
+
+
+
+## 5.阅读代码，写出函数执行结果
+
+```js
+Function.prototype.a = function(){
+  console.log(1);
+}
+Object.prototype.b = function() {
+  console.log(2);
+}
+function A() {}
+var a = new A();
+
+a.a();   	// 报错
+a.b();		// 2
+A.a();		// 1
+A.b();		// 2
+
+```
+
+## 6.简述使用new实例化一个对象的时候，new操作符做了什么？
+
+1.	创建一个空对象obj( {} )
+2.	将obj的[__proto__]属性指向构造函数的原型（即obj.[[__protot__]] = constrc.prototype）
+3.	将构造函数内部的this绑定到新建的对象obj，执行构造函数（也就是跟调用普通函数一样，只是此时函数的this为新创建的对象obj而已）
+4.	若构造函数没有返回非原始值（即不是引用类型），则返回该新建的对象obj（默认会添加return this）。否则，返回引用类型。
+- 备注：能理解手写new即能理解上面的的意思
+
+    
+## 7、call()，apply() ，bind() 怎么使用?
+1. 第一个参数都是this的指向（想不传的时候不填或者写undefined）
+2. 前面2个用于指定this指向后函数直接调用函数，不同在于他们参数的传递方式，apply()是通过数组去传递的，call则是一个个传递
+例如：
+
+```js
+function hello(name,age) {
+ console.log(name);
+ console.log(age);
+}	
+hello.call(this,"tsrot",24);
+hello.apply(this,["tsrot",24]);
+```
+
+3.	bind()则不是直接调用，而是做一个硬绑定（通过参数把里面的值写死，不可再改），需要再一次调用
+    例如：
+```js
+  function createPerson(name){
+    console.log( “hello ” + name)
+    }
+  var bindFunc = createPerson.bind(undefined,“LaoWang”)
+  bindFunc()    // “hello LaoWang”
+```
+
+## 8.简述闭包是什么？它有什么作用？ 根据定义写出一个简单的闭包
+
+- 当一个嵌套的内部(子)函数引用了嵌套的外部(父)函数的变量(函数)时, 就产生了闭包
+作用：
+ 1. 使用函数内部的变量在函数执行完后, 仍然存活在内存中(延长了局部变量的生命周期)
+ 2.	让函数外部可以操作(读写)到函数内部的数据(变量/函数)
+
+
+- 简单的闭包例子：
+```js
+function outerFunc(){
+var count = 0;
+  function innerFunc(){
+       count++;
+       console.log(count)
+    }
+        return innerFunc
+    }
+var f = outerFunc()
+f()
+f()
+```
+
+## 9.简述立即执行函数是什么？它的作用是什么？
+- 创建一个匿名函数，然后立即自调用
+- 作用：
+  - 不污染外部命名空间（创建一个独立的作用域）
+
+## 10.写出下面DOM相关方法和属性
+获取类名为“box”的DOM元素
+   `getElementByClassName(“box”)`    `querySelector(“.box”)`
+
+创建元素
+`createElement()`
+
+添加节点
+`appendChild()`
+
+删除节点
+`removeChild()`
+
+替换节点
+`replaceChild()`
+
+克隆节点
+`cloneNode()`
+
+修改 ele (某个dom元素）的样式的属性
+`ele.style.xxx`
+
+修改ele（某个dom元素）的css类 的属性
+`ele.className` `ele.classList`
+
+## 11.写出标准的事件流模型
+- 事件流：
+  - 捕获阶段-目标阶段-冒泡阶段
+
+## 12.简述事件委托是什么，以及它的使用场景，优点
+
+- 事件委托（delegate） 也称为事件托管或者事件代理，就是把目标节点的事件绑定到祖先的节点上
+    - 使用场景：
+     一个父元素下有多个附带事件的子元素，可以将子元素的事件委托到父元素
+    - 优点：
+    可以大量节省内存占用，减少事件注册
+    可以实现当新增子对象时无需再次对其绑定（动态绑定事件）
+
+
+## 13.说明clientHeight，offsetHeight，scrollTop是什么 ？
+-  clientHeight：元素高度，包含width和padding，不包含滚动条和border
+-  如图：
+<img src="https://z3.ax1x.com/2021/06/14/2H9K1K.png" alt="2H9K1K.png" border="0" />
+
+-  offsetHeight：元素高度，包含滚动条和border
+- 如图：
+<img src="https://z3.ax1x.com/2021/06/14/2H9zHH.png" alt="2H9zHH.png" border="0" />
+
+- scrollTop：
+- 如图：
+<img src="https://z3.ax1x.com/2021/06/14/2HCiCt.png" alt="2HCiCt.png" border="0" />
+
+## 14.说明clientHeight，offsetHeight，scrollTop是什么 ？
+- clientHeight：元素高度，包含width和padding，不包含滚动条和border
+- 如图：
+<img src="https://z3.ax1x.com/2021/06/14/2HCZDg.png" alt="2HCZDg.png" border="0" />
+
+- offsetHeight：元素高度，包含滚动条和border
+- 如图：
+<img src="https://z3.ax1x.com/2021/06/14/2HCl80.png" alt="2HCl80.png" border="0" />
+
+- scrollTop：
+- 如图：
+<img src="https://z3.ax1x.com/2021/06/14/2HCNVJ.png" alt="2HCNVJ.png" border="0" />
+
+## 15.说明clientX,offsetX,screenX,pageX是什么 ？
+
+- 在鼠标事件对象中：
+  -  clientX：点击位置距离当前body可视区域(视口)的x坐标
+  -  offsetX：相对于父盒子的x，y坐标
+  -  screenX：点击位置距离当前电脑屏幕的x，y坐标
+  -  pageX：对于整个页面来说，包括了被卷去的body部分的长度
+- 如图：
+<img src="https://z3.ax1x.com/2021/06/14/2HPFo9.png" alt="2HPFo9.png" border="0" />
+
+## 16.手写一个数组去重函数
+- 方法1：
+```js
+	function unique(arr){  
+	  for( var i=0; i<arr.length; i++ ){  
+	    for( var j=i+1; j<arr.length; j++){  
+	      if( arr[i]==arr[j] ){  
+	        Arr.splice(j,1);  
+	        j--;  
+	      }  
+	    }  
+	  }  
+	  return arr  
+	} 
+```
+
+- 方法2：
+```js
+	function unique(arr){  
+	  var array = [];  
+	  for( var i=0; i<arr.length; i++){  
+	    if(array.indexOf(arr[i]) === -1){  
+	      array.push(arr[i])  
+	    }  
+	  }  
+	  return array  
+	}  
+```
+
+## 17.请为 Array 对象添加一个求平均值的函数，使得如下代码可以正常工作
+- 题
+```js
+var arr = [1, 2, 3, 4, 5];
+var avg = arr.average();
+console.log(avg);
+```
+- 解：
+```js
+	Array.prototype.average = function(){  
+	    var sum = 0;  
+	    var result;  
+	    this.forEach(function(item){  
+	      sum += item  
+	    })  
+	    return result = sum / arr.length  
+	}  
+```
+
+## 18.写出函数实现下面需求，要求分别用迭代和递归的方式实现
+- 求斐波拉切数列第n个数的值是多少？ 
+- 数列：1,1,2,3,5,8,13,21...... <br/>
+
+迭代实现 方法1：
+```js
+	// i代表第三项，res代表第i项的时候的值，通过前面2项相加去实现，n项的时候跳出循环，输出res  
+	function fbnq(n) {  
+	  var a,b,res;  
+	  a = b =1;  
+	  for(var i=3;i<=n;i++){  
+	    res = a + b;  
+	    a = b;  
+	    b = res;  
+	  }  
+	  return res  
+	}  
+```
+迭代实现 方法2：
+```js
+	// 数组方法实现  
+	// 思路：创建数组的前两项，然后按照斐波拉契数列的规则，添加这个数列的项的数组中。注意for循环里面的初始和判断条件。  
+	function fbnq(n){  
+	  var res = [1,1];  
+	  if(n == 1 || n==2){  
+	    return 1;  
+	  }  
+	  for(var i=2;i<n;i++){  
+	    res[i] = res[i-1] + res[i-2]  
+	  }  
+	  return res[n-1]  
+	}  
+```
+递归实现
+```js
+	// 递归实现  
+	// 思路：抓住规律，第一项和第二项是1，后一项是前面两项之和。所以第n项是前面两项之和。那两项又是前面两项之和。可以递归。直到最后变成第一项和第二项，return 1, 结束递归，累加得到最后的N的值。  
+	function fbnq(n) {  
+	  if(n==1 || n==2){  
+	    return 1;  
+	  }  
+	  return fbnq( n-1 ) + fbnq( n-2 )  
+	}  
+```

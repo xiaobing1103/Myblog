@@ -209,16 +209,20 @@ function Count({ postId, ...post }) {
         if (localStorage.getItem(postId)) return null;
 
         const addViewCount = async () => {
-          await fetch("https://api.zxuqian.cn/post/increase_view", {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ postId }),
-          });
+          if(postId){
+            await fetch("https://api.zxuqian.cn/post/increase_view", {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ postId }),
+            });
+          }else{
+            return false
+          }
+         
           localStorage.setItem(postId, true);
         };
-
         useEffect(() => {
           addViewCount();
         }, []);

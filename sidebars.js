@@ -29,6 +29,10 @@ module.exports = {
       "fontendInterview/Interview/01-Interview/01-Interview",
       "fontendInterview/Interview/02-Interview/02-Interview",
       "fontendInterview/Interview/03-Interview/03-Interview",
+    ],
+    每日一题:[
+      'fontendInterview/tolove/01-NInterview/01-NInterview',
+      'fontendInterview/tolove/02-NInterview/02-NInterview',
     ]
   },
   videos: {
@@ -62,7 +66,19 @@ module.exports = {
   },
   resources: {
     简介: ["resources/resources-intro"],
-    前端开发: [],
+    前端开发pdf: [
+      "resources/frontend-pdf/01frontend-pdf/01frontend-pdf",
+      "resources/frontend-pdf/02frontend-pdf/02frontend-pdf",
+      "resources/frontend-pdf/03frontend-pdf/03frontend-pdf",
+      "resources/frontend-pdf/04frontend-pdf/04frontend-pdf",
+      "resources/frontend-pdf/05frontend-pdf/05frontend-pdf",
+      "resources/frontend-pdf/06frontend-pdf/06frontend-pdf",
+      "resources/frontend-pdf/07frontend-pdf/07frontend-pdf",
+      "resources/frontend-pdf/08frontend-pdf/08frontend-pdf",
+      "resources/frontend-pdf/09frontend-pdf/09frontend-pdf",
+      "resources/frontend-pdf/10frontend-pdf/10frontend-pdf",
+      "resources/frontend-pdf/11frontend-pdf/11frontend-pdf",
+    ],
     软件工具: [],
     "UI 设计": [],
   },

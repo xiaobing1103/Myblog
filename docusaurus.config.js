@@ -74,15 +74,15 @@ module.exports = {
           ],
         },
         {
-          label: "资源导航",
+          label: "pdf合集",
           position: "right",
           to: "docs/resources/resources-intro",
         },
-        {
-          href: "http://42.192.85.86/#/",
-          label: "我的文档",
-          position: "right",
-        },
+        // {
+        //   href: "http://42.192.85.86/#/",
+        //   label: "我的文档",
+        //   position: "right",
+        // },
         {
           href: "https://github.com/xiaobing1103",
           label: "GitHub",
@@ -135,19 +135,19 @@ module.exports = {
               label: "GitHub",
               href: "https://github.com/xiaobing1103",
             },
-            {
-              label: "Bilibili 哔哩哔哩",
-              href: "#",
-            },
-            {
-              label: "网易云课堂",
-              href:
-                "#",
-            },
-            {
-              label: "腾讯课堂",
-              href: "#",
-            },
+            // {
+            //   label: "Bilibili 哔哩哔哩",
+            //   href: "#",
+            // },
+            // {
+            //   label: "网易云课堂",
+            //   href:
+            //     "#",
+            // },
+            // {
+            //   label: "腾讯课堂",
+            //   href: "#",
+            // },
           ],
         },
         {
@@ -155,12 +155,12 @@ module.exports = {
           items: [
             {
               label: "二姨的文档",
-              to: "http://42.192.85.86/#/",
+              to: "http://120.79.146.165/",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} 二姨  Built with Docusaurus.<p>京ICP备1008686号-3</p>`,
+      copyright: `Copyright © ${new Date().getFullYear()} 二姨 Built with Docusaurus.<p>京ICP备1008686号-3</p>`,
     },
     prism: {
       darkTheme: require("prism-react-renderer/themes/vsDark"),
@@ -190,8 +190,8 @@ module.exports = {
           blogSidebarTitle: "近期文章",
           feedOptions: {
             type: "all",
-            title: "峰华前端工程师",
-            copyright: `Copyright © ${new Date().getFullYear()} 二姨 (张旭乾) Built with Docusaurus.<p>京ICP备1008686号-3</p>`,
+            title: "二姨前端工程师",
+            copyright: `Copyright © ${new Date().getFullYear()} 二姨  Built with Docusaurus.<p>京ICP备1008686号-3</p>`,
           },
         },
         theme: {
@@ -212,3 +212,7 @@ module.exports = {
     // path.resolve(__dirname, "./src/plugin/plugin-google-adsense"),
   ],
 };
+
+// theme :[
+//   "@docusaurus/theme-live-codeblock"
+// ],

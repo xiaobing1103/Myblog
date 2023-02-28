@@ -22,8 +22,8 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 // import bilibiliIcon from "@site/static/icons/bilibili.svg";
 
 import useThemeContext from "@theme/hooks/useThemeContext";
-import useFollowers from "./useFollowers";
-import useViews from "./useViews";
+// import useFollowers from "./useFollowers";
+// import useViews from "./useViews";
 import { useTrail, animated, useSpring } from "react-spring";
 import Fade from "react-reveal/Fade";
 
@@ -42,9 +42,11 @@ function BlogListPage(props) {
   const description = `不仅仅是前端工程师，分享React.js, HTML, CSS, JavaScript, Node.js 技术以及个人发展、自我提升相关的心得`;
 
   // Get all post views
-  const views = useViews(items);
+  // const views = useViews(items);
+  const views = [];
   // Get followers
-  const followers = useFollowers();
+  // const followers = useFollowers();
+  const followers = 0;
   // animation
   const animatedTexts = useTrail(5, {
     from: { opacity: 0, transform: "translateY(3em)" },

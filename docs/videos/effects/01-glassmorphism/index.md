@@ -32,4 +32,4 @@ import BVideo from "@site/src/components/BVideo";
 
 最后这个属性在最新版的 chrome、Edge、safari 都已经支持了，Firefox 则需要在设置中开启 backdrop-filter 的支持，IE11 不支持这个属性。
 
-好了，这个就是两行代码实现毛玻璃特效，你学会了吗？有帮助请三连，想优雅的学前端，请关注峰华前端工程师，感谢观看！
+好了，这个就是两行代码实现毛玻璃特效，你学会了吗？有帮助请三连，想优雅的学前端，请关注二姨前端工程师，感谢观看！
