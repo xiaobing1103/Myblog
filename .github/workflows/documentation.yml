@@ -7,6 +7,10 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+        node-version: "14.15.0"
       - name: Checkout
         uses: actions/checkout@master
         with:
