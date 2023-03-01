@@ -6,11 +6,13 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: "14"
+          node-version: '14'
       - name: Checkout
         uses: actions/checkout@master
         with:
