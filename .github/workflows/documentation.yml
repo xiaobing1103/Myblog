@@ -25,6 +25,7 @@ jobs:
         with:
           persist-credentials: false
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          deploy_key: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
           FOLDER: build
           BUILD_SCRIPT: npm install && npm run build
