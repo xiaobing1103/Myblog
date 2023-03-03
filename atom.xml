@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://xiaobing1103.github.io/Myblog/</id>
+    <id>https://xiaobing1103.github.io/</id>
     <title>二姨前端工程师</title>
     <updated>2022-12-13T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://xiaobing1103.github.io/Myblog/"/>
+    <link rel="alternate" href="https://xiaobing1103.github.io/"/>
     <subtitle>二姨的博客 Blog</subtitle>
-    <icon>https://xiaobing1103.github.io/Myblog/img/favicon.ico</icon>
+    <icon>https://xiaobing1103.github.io/img/favicon.ico</icon>
     <rights>Copyright © 2023 二姨  Built with Docusaurus.&lt;p&gt;京ICP备1008686号-3&lt;/p&gt;</rights>
     <entry>
         <title type="html"><![CDATA[整理了5个JavaScript怪异行为及其原因]]></title>
