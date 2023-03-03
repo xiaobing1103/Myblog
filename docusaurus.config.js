@@ -4,11 +4,11 @@ module.exports = {
   title: "二姨的博客",
   tagline: "帮助你提升前端开发技能",
   titleDelimiter: "-",
-  url: "http://42.192.85.86/",
-  baseUrl: "/",
+  url: "https://xiaobing1103.github.io/Myblog/",
+  baseUrl: "/Myblog",
   favicon: "img/favicon.ico",
   organizationName: "xiaobing1103", // Usually your GitHub org/user name.
-  projectName: "http://42.192.85.86/", // Usually your repo name.
+  projectName: "https://xiaobing1103.github.io/Myblog/", // Usually your repo name.
   stylesheets: ["https://fonts.font.im/css?family=Raleway:500,700"],
   themeConfig: {
     navbar: {
@@ -79,7 +79,7 @@ module.exports = {
           to: "docs/resources/resources-intro",
         },
         // {
-        //   href: "http://42.192.85.86/#/",
+        //   href: "https://xiaobing1103.github.io/Myblog/#/",
         //   label: "我的文档",
         //   position: "right",
         // },
