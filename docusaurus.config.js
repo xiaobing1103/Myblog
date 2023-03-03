@@ -5,7 +5,7 @@ module.exports = {
   tagline: "帮助你提升前端开发技能",
   titleDelimiter: "-",
   url: "https://xiaobing1103.github.io/Myblog/",
-  baseUrl: "/Myblog",
+  baseUrl: "/Myblog/",
   favicon: "img/favicon.ico",
   organizationName: "xiaobing1103", // Usually your GitHub org/user name.
   projectName: "https://xiaobing1103.github.io/Myblog/", // Usually your repo name.
