@@ -2,6 +2,7 @@
   "name": "eryi",
   "version": "0.0.1",
   "private": true,
+  "homepage": "https://xiaobing1103.github.io/Myblog/",
   "scripts": {
     "start": "docusaurus start",
     "clear": "docusaurus clear",
