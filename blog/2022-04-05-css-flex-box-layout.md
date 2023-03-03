@@ -1,6 +1,6 @@
 ---
 slug: css-flex-box-layout
-title: CSS Flexbox 布局教程 2020 最新版
+title: CSS Flexbox 布局教程 2022 最新版
 author: 二姨
 author_title: 前端工程师 / B站UP主
 author_url: https://github.com/zxuqian
