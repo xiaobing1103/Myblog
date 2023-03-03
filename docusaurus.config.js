@@ -79,7 +79,7 @@ module.exports = {
           to: 'docs/resources/resources-intro',
         },
         {
-          href: 'https://xiaobing1103.github.io/Myblog/#/',
+          href: 'https://xiaobing1103.github.io/Mydocs/',
           label: '我的文档',
           position: 'right',
         },
