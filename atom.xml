@@ -1,143 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://42.192.85.86/</id>
+    <id>https://xiaobing1103.github.io/Myblog/</id>
     <title>二姨前端工程师</title>
     <updated>2022-12-13T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://42.192.85.86/"/>
+    <link rel="alternate" href="https://xiaobing1103.github.io/Myblog/"/>
     <subtitle>二姨的博客 Blog</subtitle>
-    <icon>http://42.192.85.86/img/favicon.ico</icon>
+    <icon>https://xiaobing1103.github.io/Myblog/img/favicon.ico</icon>
     <rights>Copyright © 2023 二姨  Built with Docusaurus.&lt;p&gt;京ICP备1008686号-3&lt;/p&gt;</rights>
     <entry>
         <title type="html"><![CDATA[整理了5个JavaScript怪异行为及其原因]]></title>
         <id>5-javascript-tricky-problems</id>
-        <link href="http://42.192.85.86/5-javascript-tricky-problems"/>
+        <link href="https://xiaobing1103.github.io/Myblog/Myblog/5-javascript-tricky-problems"/>
         <updated>2022-12-13T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[JavaScript 早期的规范不统一，也没有严格的标准，再加上它的语法灵活多样，有些看起来就不正确的代码却能正常执行，一些看起来符合逻辑的代码，运行结果却相差十万八千里。这些问题在日常开发中经常会导致 BUG，更重要的是，很多面试官会把它们拿出来当考验咱们 JS 工程师的能力。]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[1024：程序员，你的身体还好吗？]]></title>
         <id>1024-developer-health</id>
-        <link href="http://42.192.85.86/1024-developer-health"/>
+        <link href="https://xiaobing1103.github.io/Myblog/Myblog/1024-developer-health"/>
         <updated>2022-10-24T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[从几何时，程序员成了加班、996 的代名词，从以前业务做不完偶尔加班变成了现在的常态，不得不说一句俗话：这是时代的进步还是倒退？]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[鸿蒙 OS：使用 JavaScript 开发 Todo App UI 界面]]></title>
         <id>harmonyos-js-todo</id>
-        <link href="http://42.192.85.86/harmonyos-js-todo"/>
+        <link href="https://xiaobing1103.github.io/Myblog/Myblog/harmonyos-js-todo"/>
         <updated>2022-09-20T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[使用鸿蒙 JS 框架开发 Todo 应用的 TV 版 UI 界面。]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[职业规划：程序员的 T 字形发展攻略]]></title>
         <id>programmer-t-type-career</id>
-        <link href="http://42.192.85.86/programmer-t-type-career"/>
+        <link href="https://xiaobing1103.github.io/Myblog/Myblog/programmer-t-type-career"/>
         <updated>2022-09-14T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[你是不是在面对市面上众多的技术的时候，不知道选择哪个才能对自己的职业和未来发展有所帮助？有这样的想法是正常的，因为随着科学的发展，现在的编程技术已经到了百花齐放的地步了。]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[前端工程师到底要学到什么程序才能去找工作？成功面试的必备要素与回答技巧]]></title>
         <id>frontend-looking-for-jobs</id>
-        <link href="http://42.192.85.86/frontend-looking-for-jobs"/>
+        <link href="https://xiaobing1103.github.io/Myblog/Myblog/frontend-looking-for-jobs"/>
         <updated>2022-08-16T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[好多人都想知道，前端工程师到底要需要掌握什么技能、到什么程度，才能去找工作？最简单的答案：]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[噢！原来这就是 TypeScript]]></title>
         <id>typescript-intro</id>
-        <link href="http://42.192.85.86/typescript-intro"/>
+        <link href="https://xiaobing1103.github.io/Myblog/Myblog/typescript-intro"/>
         <updated>2022-06-09T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[TypeScript 是 JavaScript 的，带有类型的超集，并且可以编译为 JavaScript 脚本，这篇幅文章将带你认识一下 TypeScript]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[给前端工程师看的后端科普]]></title>
         <id>backend-intro</id>
-        <link href="http://42.192.85.86/backend-intro"/>
+        <link href="https://xiaobing1103.github.io/Myblog/Myblog/backend-intro"/>
         <updated>2022-05-11T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[前端工程师了解后端的功能和作用之后，能更好的和后端工程师进行沟通，减少沟通成本，另外也有助于向全栈工程师方向发展。]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[前后端通信之 HTTP 协议]]></title>
         <id>http-protocol</id>
-        <link href="http://42.192.85.86/http-protocol"/>
+        <link href="https://xiaobing1103.github.io/Myblog/Myblog/http-protocol"/>
         <updated>2022-05-10T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[HTTP 协议包括客户端和服务端两个实体，客户端发送请求给服务端，服务端返回响应给客户端。在 HTTP 中，数据称为资源，可以是 html 文档、图片、也可以是普通文本。资源是通过 URL 进行定位的。]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[5个技巧助你成为 CSS 大神]]></title>
         <id>5-tips-to-master-css</id>
-        <link href="http://42.192.85.86/5-tips-to-master-css"/>
+        <link href="https://xiaobing1103.github.io/Myblog/Myblog/5-tips-to-master-css"/>
         <updated>2022-04-29T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[都说 CSS 很难掌握，最愁给页面编写样式，其实都是因为还没有形成一个对 CSS 宏观的了解，只要有了正确的学习方法、设计思维，再通过不断的积累，就能轻松的掌握它。接下来我会把掌握 CSS 的 5 个技巧整理一下，让你在以后编写 CSS 的时候不再发愁。]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[CSS Flexbox 布局教程 2020 最新版]]></title>
         <id>css-flex-box-layout</id>
-        <link href="http://42.192.85.86/css-flex-box-layout"/>
+        <link href="https://xiaobing1103.github.io/Myblog/Myblog/css-flex-box-layout"/>
         <updated>2022-04-05T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[CSS flexbox 布局十分强大，它可以对元素进行水平和垂直方向上的对齐，也支持自由缩放，方便响应式布局的开发。这个文章就教你认识 flex-box 布局，看完之后你也能熟练的运用它！]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[CSS 选择器优先级（特异性、权重）详解]]></title>
         <id>css-selector-specificity</id>
-        <link href="http://42.192.85.86/css-selector-specificity"/>
+        <link href="https://xiaobing1103.github.io/Myblog/Myblog/css-selector-specificity"/>
         <updated>2022-04-04T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[在写 CSS 的时候你一定遇到过有些样式明明写对了，也选择了正确的 html 元素去应用这些样式，可是就是不生效，这是为什么呢？因为在选择同一个 HTML 元素的时候，不同的选择器有不同的优先级，优先级低的选择器的样式会被优先级高的覆盖。]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[制作渐变背景生成器 - React State和Event教程]]></title>
         <id>learn-react-event-and-state</id>
-        <link href="http://42.192.85.86/learn-react-event-and-state"/>
+        <link href="https://xiaobing1103.github.io/Myblog/Myblog/learn-react-event-and-state"/>
         <updated>2022-03-21T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Hello! 今天来带你走进 React 的大门！我第一次听说 React 是我在美国读研的时候，室友选了 web programming 这节课，然后遇到了关于 react 的好多问题...]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[一组美丽的按钮 - React Props 教程]]></title>
         <id>learn-react-props-buttons</id>
-        <link href="http://42.192.85.86/learn-react-props-buttons"/>
+        <link href="https://xiaobing1103.github.io/Myblog/Myblog/learn-react-props-buttons"/>
         <updated>2022-03-15T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Rect Props 是编写可复用组件的核心，可以利用 Prop 让组件接收不同的参数，然后根据这些参数作出不同的表现，如形状、颜色等。]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[带你走进React的大门 - 你为什么应该学React？]]></title>
         <id>React-intro</id>
-        <link href="http://42.192.85.86/React-intro"/>
+        <link href="https://xiaobing1103.github.io/Myblog/Myblog/React-intro"/>
         <updated>2022-03-12T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Hello! 今天来带你走进 React 的大门！我第一次听说 React 是我在美国读研的时候，室友选了 web programming 这节课，然后遇到了关于 react 的好多问题...]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[11个前端工程师必备的网站]]></title>
         <id>frontend-devs-must-know-websites</id>
-        <link href="http://42.192.85.86/frontend-devs-must-know-websites"/>
+        <link href="https://xiaobing1103.github.io/Myblog/Myblog/frontend-devs-must-know-websites"/>
         <updated>2022-03-01T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[好多小伙伴有疑问，就是说有哪些值得去关注的前端网站，我知道大家可能都苦于找不到一些有价值的,还有值得信赖的网站去学一些比较货真价实的前端技术。生怕有哪些水文或者是一些乱七八糟的网站，把咱们的这个知识给误导了。这里呢我准备了几个我经常关注的一些网站，一部分是国外的，然后有一部分是国内的，因为国内的好多的都是质量参差不齐，但国外的话普遍的质量比较高（事实如此）。不过呢，咱们国内的也有一些比较好的平台，我在这里给咱们一共准备了 11 个可以关注的网站。]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[第一篇博客]]></title>
         <id>first-blog</id>
-        <link href="http://42.192.85.86/first-blog"/>
+        <link href="https://xiaobing1103.github.io/Myblog/Myblog/first-blog"/>
         <updated>2022-02-21T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[写的东西不是很多，这篇仅仅是为了测试]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[超简单！使用 Docusaurus 搭建个人博客（二）]]></title>
         <id>deploy-a-docusaurus-site-part2</id>
-        <link href="http://42.192.85.86/deploy-a-docusaurus-site-part2"/>
+        <link href="https://xiaobing1103.github.io/Myblog/Myblog/deploy-a-docusaurus-site-part2"/>
         <updated>2020-03-08T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[如果你看了上期视频的话，那么你应该学会了怎么在本地搭建一个 docusaurus 博客，但是你不能只在本地来看这个博客吧，得让全世界来欣赏你的杰作，所以说咱们得把这个博客部署到服务器上。部署有两种方式：]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[超简单！使用 Docusaurus 搭建个人博客（一）]]></title>
         <id>deploy-a-docusaurus-site</id>
-        <link href="http://42.192.85.86/deploy-a-docusaurus-site"/>
+        <link href="https://xiaobing1103.github.io/Myblog/Myblog/deploy-a-docusaurus-site"/>
         <updated>2020-03-03T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[我以前总也找不到一个满意的博客系统，wordpress 这个程序又大，然后配置也不方便。占用的服务器的资源也多。我就想有没有一个又简单又快速的博客平台，后来发现了一些静态的网站生成器，像 hexo 这种，但是发现上面的主题又不好看，又懒得自己去写。后来就有一阵子我就直接把博客就发布在了其他的第三方的博客平台上。现在发现了这个 docusaurus, 它的主题跟我之前看到的一个大佬 Dan Abramov，它的 overreacted.io 博客，风格是一模一样的，因为他是 react 的作者之一，估计这个他们这个样式都是互相借鉴，它这个主题可以切换暗黑和白天模式，比较好看。安装和部署也特别简单，我的博客也是用它这个搭建的。]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[2020年最新前端学习路线]]></title>
         <id>front-end-learning-path</id>
-        <link href="http://42.192.85.86/front-end-learning-path"/>
+        <link href="https://xiaobing1103.github.io/Myblog/Myblog/front-end-learning-path"/>
         <updated>2020-02-26T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[俗话说知己知彼百战不殆，要成为一名前端大神，首先知道它是做什么的。单纯从工作角度看，无非就是写写前端样式，连接下后台 api，解析解析数据，然后显示给用户，核心逻辑是这样没错，只是这中间掺杂着无数个边边角角的问题，比如框架选择、性能优化、兼容性调整、工程化等等。不过呢，这些并不需要一次性掌握，随着一次一次完成工作任务，解决 bug，这些自然而然就学会了~]]></summary>
     </entry>
