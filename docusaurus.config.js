@@ -4,8 +4,8 @@ module.exports = {
   title: '二姨的博客',
   tagline: '帮助你提升前端开发技能',
   titleDelimiter: '-',
-  url: 'https://xiaobing1103.github.io/Myblog/',
-  baseUrl: '/',
+  url: 'https://xiaobing1103.github.io/',
+  baseUrl: '/Myblog/',
   favicon: 'img/favicon.ico',
   organizationName: 'xiaobing1103', // Usually your GitHub org/user name.
   projectName: 'Myblog', // Usually your repo name.
