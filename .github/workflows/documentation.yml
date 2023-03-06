@@ -23,6 +23,6 @@ jobs:
         with:
           ACCESS_TOKEN: ${{ secrets.MYBLOG_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: build
+          FOLDER: dist
           BUILD_SCRIPT: npm install && npm run build
           CLEAN: true # Automatically remove deleted files from the deploy branch
