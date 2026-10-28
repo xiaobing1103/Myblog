@@ -1,0 +1,38 @@
+---
+id: streams
+title: 05 · Lambda 与 Stream
+description: 从 JavaScript 数组操作迁移到 Stream，练习筛选、映射与订单聚合。
+---
+
+import JavaPractice from '@site/src/components/JavaPractice';
+
+## 用熟悉的操作建立联系
+
+`stream().filter(...).map(...).toList()` 看起来像前端数组链式调用，但 Stream 的中间操作通常是惰性的。只有遇到 `toList`、`sum`、`count` 等终止操作时，流水线才开始处理数据。一个 Stream 只能消费一次。
+
+```java
+var names = List.of("Java", "SQL").stream()
+    .filter(name -> name.length() > 3)
+    .map(String::toUpperCase)
+    .toList();
+```
+
+`->` 是 Lambda 语法，`::` 是方法引用。先用最直白的 Lambda 写清楚含义，再按需要改为方法引用，不必追求最短表达式。
+
+<JavaPractice id="filter" />
+
+## 用数据结构描述业务
+
+练习里的 `record Order(int cents, boolean paid)` 声明一个数据载体，并生成 `cents()`、`paid()` 等访问方法。record 的组件字段是 final，但字段引用的对象仍可能可变，不能据此认为所有内容都深度不可变。
+
+先筛选“已支付”，再提取金额并求和，可以直接读出业务含义。金额很大时考虑 `long` 与溢出，不能因为链式写法简洁就忽略数值边界。
+
+<JavaPractice id="total" />
+
+### 自查
+
+- 移除 `toList()` 后，前面的 `map` 是否一定会运行？
+- `Stream.toList()` 返回不可修改的列表；如果要增删，应如何复制？
+- 为什么不应该为了“更快”直接把所有 Stream 改为 `parallelStream()`？
+
+官方阅读：[Dev.java 集合与 Stream](https://dev.java/learn/api/collections-and-streams/)。

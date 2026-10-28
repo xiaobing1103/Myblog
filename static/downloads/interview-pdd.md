@@ -1,0 +1,70 @@
+---
+title: "拼多多、商汤前端面经｜PDF 原文对照"
+sidebar_label: "拼多多、商汤前端面经 · 原文"
+description: 完整逐页转录，保留原题号与原答案；请配合校订解析阅读。
+pagination_prev: null
+pagination_next: null
+---
+
+**[阅读校订题解](https://xiaobing1103.github.io/Myblog/docs/interview/pdd/)** · [回到面试题库](https://xiaobing1103.github.io/Myblog/docs/interview/)
+
+:::warning 原文含有错误和过时答案
+这里保留 PDF 可提取的全部逐页文本，方便检索、复制和核对，原答案不代表本站结论。请优先阅读上方校订题解。
+自动提取可能保留断行、逐字空格，复杂公式、代码缩进及图片以原 PDF 为准；不要直接执行未经校订的原代码。
+:::
+
+来源：本站既有文件《拼多多、商汤前端面经.pdf》，共 **2 页**。原作者与版权信息仍以原文件为准；不将这些资料宣称为开源授权教材。
+
+[下载原 PDF](https://xiaobing1103.github.io/Myblog/pdf/2022-2-16-pdd/拼多多、商汤前端面经.pdf) · [下载本篇 Markdown](https://xiaobing1103.github.io/Myblog/downloads/interview-pdd.md)
+
+原 PDF SHA-256：`8f79f97840edbef3e2456511ccf3011cd1152ab4c9a3722d9c4889c6e2a07496`。
+
+## 原 PDF 第 1 页 {#page-1}
+
+拼 多 多  
+一 面  
+1. 有 没 有 做 过 比 较 复 杂 的 页 面 ？ 携 程 的 R e a c t - i m v c 做 了 什 么 ？  
+2. 使 用 R e d u x 的 好 处 ， 以 及 和 M o b x 的 区 别  
+3. 对 R e a c t 最 新 特 性 有 了 解 吗 ？ c l a s s 组 件 和 函 数 组 件 的 区 别 ？  
+4. u s e S t a t e 为 什 么 不 能 放 到 条 件 语 句 里 面 ？  
+5. 实 现 一 个 P r o m i s e . a l l  
+6. R e a c t S S R 是 怎 么 实 现 的 ？  
+7. 有 用 过 代 码 规 范 相 关 的 吗 ？ E s l i n t 和 P r e t t i e r 冲 突 怎 么 解 决 ？  
+8. 实 现 一 个 数 组 转 树 形 结 构 的 函 数  
+二 面  
+1. 说 几 个 你 觉 得 足 够 复 杂 的 项 目 ？  
+2. 你 是 怎 么 去 做 R e a c t S S R 的 ？  
+3. 有 没 有 做 过 性 能 优 化 相 关 的 ？  
+4. 实 现 一 个 深 拷 贝  
+5. 实 现 一 个 二 叉 搜 索 树 转 链 表 的 方 法 拒 了 ， 不 想 去 卖 命  
+商 汤  
+一 面  
+1. 在 工 作 中 ， 主 要 是 做 什 么 内 容 ？  
+2. 有 用 过 l e r n a 吗 ？ 多 个 项 目 之 间 共 用 的 东 西 怎 么 共 享 ？  
+3. 讲 一 讲 微 前 端 是 怎 么 做 的 ？ 怎 么 独 立 部 署 ？ 子 应 用 通 信 怎 么 做 ？  
+
+## 原 PDF 第 2 页 {#page-2}
+
+4. w e b p a c k 构 建 流 程 是 怎 样 的 ？  
+5. w e b p a c k l o a d e r 和 p l u g i n 的 原 理 和 区 别 ？  
+6. w e b p a c k 热 更 新 原 理 ？  
+7. w e b p a c k 怎 么 做 分 包 ？  
+8. 做 过 w e b p a c k 性 能 优 化 吗 ？ 有 用 过 r o l l u p 吗 ？  
+9. r e a c t - i m v c 是 什 么 ？ 它 做 了 什 么 ？  
+10. r e a c t 和 r e a c t - d o m 的 区 别 是 什 么 ？  
+11. r e d u x 和 m o b x 的 区 别 和 优 劣 ？ 用 过 r e d u x - s a g a 吗 ？  
+12. r e a c t d i f f 的 复 杂 度 ， 以 及 r e a c t d i f f 的 原 理  
+13. r e a c t c l a s s 组 件 和 h o o k s 的 区 别 ？  
+14. 什 么 是 T S 泛 型 ？  
+15. 从 输 入 u r l 到 页 面 展 示 经 过 了 哪 些 步 骤 ？  
+16. 讲 一 下 重 绘 和 回 流  
+17. 知 道 B F C 吗 ？ 使 用 场 景 有 哪 些 ？  
+18. 怎 么 判 断 是 否 为 数 组 ？  
+19. 页 面 卡 顿 怎 么 去 定 位 ？  
+20. 数 组 有 1 0 万 个 数 据 ， 取 第 一 个 和 取 第 1 0 万 个 的 耗 时 多 久 ？  
+21. 有 用 过 c a n v a s 相 关 的 吗 ？  
+22. J S 垃 圾 回 收 机 制 ？ 怎 么 定 位 N o d e 内 存 泄 露 问 题 ？  
+23. 你 是 怎 么 理 解 前 端 的 ？  
+24. 工 作 中 遇 到 过 最 难 的 问 题 ？ 有 没 有 什 么 让 你 自 豪 的 项 目 ？  
+25. 周 末 你 都 在 做 什 么 ？ 学 习 前 端 的 途 径 是 什 么 ？  
+其 他 公 司 面 的 差 不 多 了 ， 这 个 后 续 面 试 就 都 拒 了  

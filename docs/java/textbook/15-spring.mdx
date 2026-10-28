@@ -1,0 +1,83 @@
+---
+title: 第 15 课：一步一步读懂 Spring Boot
+sidebar_label: 15 Spring Boot 请求链
+description: 从启动类沿请求链阅读待办 API，理解构造器注入、Controller、Service、请求校验与状态映射。
+---
+
+## 本课目标
+
+前置：第 13 课 Maven、第 14 课 HTTP。准备[完整待办项目](../spring-boot.mdx)，本课所有片段都来自项目文件，不是可单独运行的 Main.java。
+
+完成后你应该能从 POST 请求一直追踪到 INSERT，并说明谁负责解析 JSON、谁组织业务、谁访问数据库。
+
+## 第一步：先启动，再从最小请求开始
+
+在包含 pom.xml 的目录执行 `mvn test`，确认示例在当前环境可用，再运行 `mvn spring-boot:run`。看到启动成功后，在浏览器打开 `http://127.0.0.1:8080/api/tasks`。
+
+服务第一次启动返回空数组；如果你已做过练习，文件数据库可能保留之前的数据，不应因此认为初始化失败。端口占用时查看现有进程，或明确配置其他端口。
+
+## 第二步：找到对象是怎样创建的
+
+打开 `src/main/java/blog/learning/TodoApplication.java`。`@SpringBootApplication` 提供配置、自动配置与组件扫描的常用入口。扫描以启动类所在包为起点，所以本项目其他类都放在 blog.learning 下。
+
+再看 TaskController 的构造器：
+
+```java
+private final TaskService service;
+public TaskController(TaskService service) {
+    this.service = service;
+}
+```
+
+第 8 课由 main 手动 new 并传入通知器；这里 Spring 管理对象，创建 Controller 时传入 Service。`@Service`、`@Repository` 等让相应类进入组件管理。构造器的依赖关系可以直接阅读和测试，不需要字段注入才能工作。
+
+自动配置是根据依赖与配置提供合理默认值，不是任意代码都会自动生效。缺少依赖、类不在扫描范围、同类型候选不明确，都可能导致启动失败，必须读具体原因。
+
+## 第三步：发一次创建请求
+
+在 PowerShell 新开一个终端，保持服务终端运行：
+
+```powershell
+$task = Invoke-RestMethod http://127.0.0.1:8080/api/tasks -Method Post -ContentType 'application/json' -Body '{"title":"Learn Java"}'
+$task
+Invoke-RestMethod "http://127.0.0.1:8080/api/tasks/$($task.id)"
+```
+
+预期是一个带 id、title、done 的任务，done 为 false。id 由数据库生成，可能不是 1。若要观察响应头和 201 状态，可用 Invoke-WebRequest 或 API 调试工具查看完整响应。
+
+## 第四步：沿调用链逐个对照
+
+1. `@RequestMapping("/api/tasks")` 与 `@PostMapping` 共同匹配入口。
+2. `@RequestBody` 把 JSON 转为 CreateTask 请求 record。
+3. `@Valid` 触发 `@NotBlank` 与 `@Size(max = 80)`，失败返回 400。
+4. Controller 调用 `service.create(request.title())`，由 Service 清理并保存标题。
+5. Repository 执行参数绑定的 INSERT，取数据库生成的主键。
+6. Controller 返回 `ResponseEntity.created(...).body(task)`，表达 201、Location 与响应体。
+
+可以在 Controller、Service、Repository 各放一个断点，从浏览器或终端发请求，观察参数如何变化。请求由服务器工作线程处理，断点所在的方法调用线程未必是启动时的 main 线程。
+
+## 第五步：有意验证失败路径
+
+分别提交 `{}`、纯空格标题、81 个字符、损坏的 JSON，观察 400。注意当前标题长度校验针对原始请求文本，Service 随后 strip；如果想改成“去空白后计算长度”，需要统一请求校验与业务规则。
+
+更新接口使用 `record UpdateTask(@NotNull Boolean done)`。Boolean 能区分 null 和 false；如果使用基本类型 boolean，缺少值可能被当成 false，无法表达“字段必传”的规则。
+
+404 由 Service 中的 ResponseStatusException 表达。不应捕获所有异常都返回 200 加 `success:false`，那样会破坏状态码对调用方、监控与测试的作用。
+
+## 动手任务
+
+1. 用 PATCH 把刚创建的任务设为完成，再 GET 检查；传 `{}`，观察与 `{"done":false}` 的区别。
+2. 画出创建请求的六步调用链，并指出前端校验为什么不能代替服务器校验。
+
+<details>
+<summary>参考命令与解释</summary>
+
+```powershell
+Invoke-RestMethod "http://127.0.0.1:8080/api/tasks/$($task.id)" -Method Patch -ContentType 'application/json' -Body '{"done":true}'
+```
+
+缺少 done 违反 NotNull，false 是合法更新。前端页面可以被绕开，任何有访问权限的调用者都能直接发送请求，因此服务器需要独立校验输入。合法但与业务状态冲突的输入还需要 Service 规则，字段注解不能代替全部业务逻辑。
+
+</details>
+
+下一课：[SQL、持久化与事务](./16-database.mdx)。官方补充：[REST 服务入门](https://spring.io/guides/gs/rest-service)。

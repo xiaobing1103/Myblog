@@ -1,0 +1,43 @@
+---
+id: objects
+title: 03 · 类、对象与接口
+description: 用钱包和通知器学习封装与接口，理解后端服务为什么依赖契约。
+---
+
+import JavaPractice from '@site/src/components/JavaPractice';
+
+## 把状态与规则放在一起
+
+前端常用对象保存数据，用函数修改数据。Java 中可以用类把字段和相关方法组织在一起。构造器负责创建对象时的初始状态，`private` 字段限制外部直接修改。
+
+```java
+class User {
+    private final String name;
+    User(String name) { this.name = name; }
+    String name() { return name; }
+}
+```
+
+封装的价值是守住规则。钱包余额如果可以随意赋值，那么“不能存入负数”就只能靠每个调用者自觉遵守。把检查放在 `deposit` 内部，所有调用都走同一个入口。
+
+<JavaPractice id="wallet" />
+
+## 接口定义调用方式
+
+TypeScript 的接口主要参与类型检查，编译成 JavaScript 后会被移除。Java 的接口会形成字节码层面的类型契约，实现类使用 `implements` 声明遵守它。
+
+```java
+Notifier notifier = new ConsoleNotifier();
+```
+
+变量的类型是接口，实现可以替换。后续 Spring 中的依赖注入会沿用这个思路：调用者描述需要的能力，框架帮助组装依赖。接口并不意味着每个类都必须抽一个接口，先有真实的替换或分层需求。
+
+<JavaPractice id="interface" />
+
+### 自查
+
+- 为什么接口实现方法不能降低访问级别？
+- `static` 嵌套类在练习里用来把示例放进一个文件；真实项目如何分成不同文件？
+- 构造器与普通方法的名字和返回值有什么区别？
+
+官方阅读：[Dev.java 类与对象](https://dev.java/learn/classes-objects/)、[接口](https://dev.java/learn/interfaces/)。

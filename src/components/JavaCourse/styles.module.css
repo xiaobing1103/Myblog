@@ -1,0 +1,12 @@
+.course {margin: 1.5rem 0 2rem;}
+.progress {display: grid; gap: .7rem; padding: 1.2rem; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); margin-bottom: 1rem;}
+.progress > span, .progress small {color: var(--muted); font-size: .85rem;}
+.progress progress {width: 100%; height: .6rem; accent-color: var(--ifm-color-primary);}
+.grid {display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem;}
+.card {display: flex; flex-direction: column; gap: .55rem; padding: 1.2rem; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; color: var(--ifm-font-color-base);}
+.card:hover {text-decoration: none; border-color: var(--ifm-color-primary);}
+.card > span:not(.number), .card small {color: var(--muted); font-size: .85rem;}
+.number {color: var(--ifm-color-primary); font-size: .8rem; font-weight: 700;}
+.selectLabel {display: block; font-weight: 600; margin: 1rem 0 .5rem;}
+.select {width: 100%; padding: .7rem; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ifm-font-color-base); font: inherit; margin-bottom: 1rem;}
+@media (max-width: 600px) {.grid {grid-template-columns: 1fr;}}

@@ -1,14 +1,10 @@
 ---
 slug: learn-react-event-and-state
 title: 制作渐变背景生成器 - React State和Event教程
-author: 二姨
-author_title: 前端工程师 / B站UP主
-author_url: https://github.com/zxuqian
-author_image_url: https://tvax3.sinaimg.cn/crop.0.0.1080.1080.180/b2745d44ly8g8s4muqeggj20u00u0n0k.jpg?KID=imgbed,tva&Expires=1582389585&ssig=EvXmyu%2FXsX
 description: Hello! 今天来带你走进 React 的大门！我第一次听说 React 是我在美国读研的时候，室友选了 web programming 这节课，然后遇到了关于 react 的好多问题...
 tags: [前端, React]
+authors: [eryi]
 ---
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Hello, 今天教你写一个渐变背景生成器。我会用这个例子来解释 react 的 state，状态管理，还有事件处理。这个小工具提供了两个颜色选择器，分别可以选择渐变的两个颜色，渐变的角度是 75 度，线性渐变。另外还有一个重置按钮可以把渐变恢复成初始值。
@@ -17,7 +13,7 @@ Hello, 今天教你写一个渐变背景生成器。我会用这个例子来解�
 
 效果演示：
 
-<img alt="" src={useBaseUrl('img/2020-03-21-learn-react-event-state/demo.gif')} />
+![React State 与事件交互效果演示](/img/2020-03-21-learn-react-event-state/demo.webp)
 ## State 简介
 
 首先看一下什么是 state，[上篇文章](https://zxuqian.cn/learn-react-props-buttons)讲了 props：

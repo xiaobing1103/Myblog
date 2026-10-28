@@ -1,0 +1,88 @@
+---
+title: 第 11 课：Lambda、Stream 与 Optional
+sidebar_label: 11 Lambda 与 Stream
+description: 从 JavaScript map/filter 迁移到 Java 数据流水线，理解惰性、终止操作和空结果。
+---
+
+import JavaPractice from '@site/src/components/JavaPractice';
+
+## 本课目标
+
+前置：泛型、集合、接口。能将一段业务统计写成流水线，解释 Stream 与集合的区别，并处理查询无结果的情况。
+
+## 第一步：Lambda 仍然有类型契约
+
+JS 中的箭头函数是函数值；Java 的 Lambda 需要目标函数式接口。函数式接口只有一个抽象方法，编译器据此检查参数与返回类型。`value -> value > 0` 可以对应一个接收整数、返回 boolean 的 Predicate。
+
+`Task::title` 是方法引用，可理解为 `task -> task.title()`。先能读懂显式 Lambda，再使用简写。Lambda 捕获的局部变量必须是 final 或事实上未被重新赋值，不能随意在外面改一个计数器。
+
+## 第二步：把订单报表写成数据变换
+
+```java title="Main.java"
+import java.util.List;
+import java.util.Optional;
+
+public class Main {
+    record Order(long id, int cents, boolean paid) {}
+
+    public static void main(String[] args) {
+        List<Order> orders = List.of(
+            new Order(1, 300, true),
+            new Order(2, 999, false),
+            new Order(3, 400, true)
+        );
+        List<Long> paidIds = orders.stream()
+            .filter(Order::paid)
+            .map(Order::id)
+            .toList();
+        int total = orders.stream()
+            .filter(Order::paid)
+            .mapToInt(Order::cents)
+            .sum();
+        Optional<Order> missing = orders.stream()
+            .filter(order -> order.id() == 99)
+            .findFirst();
+        System.out.println(paidIds);
+        System.out.println(total);
+        System.out.println(missing.map(order -> "Order " + order.id()).orElse("Not found"));
+    }
+}
+```
+
+```text title="运行输出"
+[1, 3]
+700
+Not found
+```
+
+filter 保留符合条件的元素；map 转换形状；mapToInt 得到数值流；sum 完成聚合。读代码时先说“筛已支付 → 取金额 → 求和”，再看方法名。
+
+## 第三步：Stream 不是另一个存储容器
+
+集合保存元素，Stream 描述一段处理过程。filter、map 是中间操作，通常惰性执行；toList、sum、findFirst 是终止操作。只写 map 而不调用终止操作，不能指望其中的逻辑已经逐个执行。
+
+同一个 Stream 使用完后不能再复用，应从集合重新创建。示例两次调用 orders.stream，而不是把一个 stream 分别交给 toList 和 sum。
+
+`toList()` 的结果不可修改。需要增删时明确复制成 ArrayList。不要在流里对共享列表 add，也不要为了更快直接改 parallelStream：线程协调、任务粒度和共享状态都会影响结果与性能。
+
+## 第四步：Optional 表达缺失，不是取消所有判断
+
+findFirst 可能无结果，因此返回 Optional。map 对存在的值变换，orElse 给出缺省值。如果缺失应当报错，可以使用 orElseThrow。
+
+orElse 的参数会先求值；缺省值生成成本高或带副作用时，使用 `orElseGet(() -> createDefault())`。Optional 本身也不应该是 null；把 Optional 当作所有实体字段的通用替代，会增加序列化与框架使用上的复杂度。
+
+<JavaPractice id="total" />
+
+## 动手任务
+
+1. 删除所有已支付订单，再运行统计。空流的 sum 是多少？findFirst 如何处理？
+2. 筛选已支付且不少于 350 分的订单，只输出 id。分别用循环和 Stream 实现。
+
+<details>
+<summary>参考解法与检查点</summary>
+
+空流 sum 为 0，findFirst 得到空 Optional，不会凭空抛错。第二题增加条件 `order.paid() && order.cents() >= 350`，映射 id 得 `[3]`。循环版同样正确，判断选择哪种写法应看可读性；流程有复杂状态或提前退出时，循环可能更清楚。
+
+</details>
+
+下一课：[文件、日期与精确金额](./12-files-values.mdx)。查阅：[集合与 Stream 官方教程](https://dev.java/learn/api/collections-and-streams/)。

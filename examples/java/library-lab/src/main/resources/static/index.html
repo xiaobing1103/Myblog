@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>小型图书借阅管理台 · Library Lab</title>
+  <link rel="stylesheet" href="/style.css"><script type="module" src="/app.js"></script>
+</head>
+<body>
+  <main>
+    <header class="hero"><div><p class="eyebrow">JAVA 全栈实战 · LIBRARY LAB</p><h1>小型图书借阅管理台</h1><p>录入一本书，完成一次借阅，再用归还验证库存变化。</p></div><span class="local">本机教学项目</span></header>
+    <p id="notice" class="notice" role="status" aria-live="polite">正在连接图书服务…</p>
+
+    <section class="panel" aria-labelledby="create-title">
+      <div class="section-head"><div><p class="eyebrow">01 · 建立书目</p><h2 id="create-title">录入图书</h2></div><p>标题、作者和总册数由服务器再次校验。</p></div>
+      <form id="book-form" class="book-form">
+        <label>图书标题<input name="title" required maxlength="80" placeholder="例如：Java 编程入门" autocomplete="off"></label>
+        <label>作者<input name="author" required maxlength="60" placeholder="作者姓名" autocomplete="off"></label>
+        <label>总册数<input name="totalCopies" type="number" min="1" max="100" value="1" required></label>
+        <button type="submit">新增图书</button>
+      </form>
+    </section>
+
+    <section class="panel" aria-labelledby="books-title">
+      <div class="section-head"><div><p class="eyebrow">02 · 搜索与借阅</p><h2 id="books-title">馆藏图书</h2></div><p id="book-summary" aria-live="polite">正在加载…</p></div>
+      <div class="toolbar"><form id="search-form" class="search-form"><label>查找图书<input id="query" name="q" maxlength="80" placeholder="按标题或作者搜索" autocomplete="off"></label><button type="submit" class="secondary">搜索</button></form><label>本次借阅人<input id="borrower" maxlength="60" required placeholder="点击借阅前填写姓名" autocomplete="off"></label></div>
+      <div class="table-wrap"><table><thead><tr><th scope="col">图书 / 作者</th><th scope="col">可借 / 总册</th><th scope="col">操作</th></tr></thead><tbody id="books"></tbody></table></div>
+      <nav class="pager" aria-label="图书分页"><button id="previous-page" class="secondary" type="button">上一页</button><span id="page-label">第 1 页</span><button id="next-page" class="secondary" type="button">下一页</button></nav>
+    </section>
+
+    <section class="panel" aria-labelledby="loans-title">
+      <div class="section-head"><div><p class="eyebrow">03 · 归还与核对</p><h2 id="loans-title">借阅记录</h2></div><label>显示范围<select id="loan-filter"><option value="true">尚未归还</option><option value="false">已经归还</option><option value="">全部记录</option></select></label></div>
+      <p class="hint">显示符合条件的最近 100 条。归还只会恢复一次库存，有借阅历史的图书保留记录，不可删除。</p>
+      <div class="table-wrap"><table><thead><tr><th scope="col">图书 / 借阅人</th><th scope="col">借出时间</th><th scope="col">状态与操作</th></tr></thead><tbody id="loans"></tbody></table></div>
+    </section>
+    <footer>Java 21 · Spring Boot · JDBC · H2 · 原生 JavaScript<br>数据保存在当前服务工作目录的 data 文件夹。首次运行没有预置书目。</footer>
+  </main>
+</body>
+</html>

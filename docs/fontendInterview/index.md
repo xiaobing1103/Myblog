@@ -1,20 +1,22 @@
 ---
+slug: /fontendInterview/Interview-intro
 id: Interview-intro
-title: 前端精华面试题
-# hide_title: false
-# hide_table_of_contents: false
-# sidebar_label: Markdown :)
-# custom_edit_url: https://github.com/facebook/docusaurus/edit/master/docs/api-doc-markdown.md
-description: 欢迎访问二姨的博客！这个页面是由本人整理的一些前端面试题,能够给大家在面试的时候带来一些帮助。
-keywords:
-  - JavaScript
-  - frontend
-  - 视频教程
-  - 前端
-# image: https://i.imgur.com/mErPwqL.png
+title: 前端面试专题
+description: 原面试专题入口，现已与 PDF 转换题库统一。
 ---
 
+## 统一题库入口
 
-欢迎访问二姨的博客！这个页面是由本人整理的一些前端面试题,能够给大家在面试的时候带来一些帮助。
+**[进入前端面试题库 →](../interview/index.mdx)**
 
-左侧的导航（移动端为右下角悬浮按钮）按类别将小册进行分类，可以点击相应的小册展开所有内容。目前文本还在持续更新中，非常感谢！
+六份 PDF 已转换为完整 Markdown，并按 HTML、CSS、JavaScript、算法、框架与工程提供校订解析。先独立答题，再对照原文件。
+
+## 原有专题
+
+- [基础面试题 1](./Interview/01-Interview/index.md)
+- [基础面试题 2](./Interview/02-Interview/index.md)
+- [HTML / CSS 44 题](./Interview/03-Interview/index.md)
+- [原型、类与继承](./tolove/01-NInterview/01-NInterview.md)
+- [HTTP 报文与缓存](./tolove/02-NInterview/02-NInterview.md)
+
+[学习中心](../learning/index.mdx) · [资料与下载](../resources/intro.md)

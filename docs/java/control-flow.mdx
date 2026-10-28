@@ -1,0 +1,46 @@
+---
+id: control-flow
+title: 02 · 条件、循环与方法
+description: 从前端函数迁移到 Java 方法，练习循环累加与金额边界判断。
+---
+
+import JavaPractice from '@site/src/components/JavaPractice';
+
+## 先看熟悉的部分
+
+`if`、`for`、`while` 的外形与 JavaScript 很接近。新的要求是：条件必须是 `boolean`，不会自动把 `0`、空字符串或对象当成真假值。
+
+```java
+int stock = 5;
+if (stock > 0) {
+    System.out.println("available");
+}
+```
+
+方法要说明参数和返回值的类型。没有返回值时写 `void`。这些练习使用 `static` 方法，让 `main` 可以直接调用；它不是声明“不可修改”的关键字。
+
+```java
+static int add(int left, int right) {
+    return left + right;
+}
+```
+
+## 从输入、过程、输出拆问题
+
+先说清 `sumTo(5)` 应该返回什么，再编写循环。循环结束时，方法应返回结果，而不是只在内部打印。这样调用方才能继续使用结果。
+
+<JavaPractice id="sum" />
+
+## 真正容易出错的是边界
+
+写业务条件前先列一张输入表：满 9900 分免运费，意味着 9899 与 9900 的结果不同。给变量起带单位的名字，并把金额和运费分开，能减少理解上的混淆。
+
+<JavaPractice id="shipping" />
+
+### 自查
+
+- 什么情况下应使用返回值，而不是在方法里输出？
+- 为什么 `if (stock)` 不能通过 Java 编译？
+- 本题没有定义负数订单金额；真实接口应当接受它，还是拒绝它？
+
+官方阅读：[Dev.java 方法](https://dev.java/learn/classes-objects/defining-methods/)。

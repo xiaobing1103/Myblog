@@ -1,0 +1,88 @@
+---
+title: 第 03 课：运算、比较与金额
+sidebar_label: 03 运算与金额
+description: 通过订单金额理解整数除法、数值提升、溢出、短路与显式舍入。
+---
+
+import JavaPractice from '@site/src/components/JavaPractice';
+
+## 本课目标
+
+前置：第 2 课的类型知识。能在运算前预测类型，避免先发生溢出再转换，以及整数除法提前截断导致的误算。
+
+## 第一步：运算结果取决于参与运算的类型
+
+`5 / 2` 是两个 int 相除，结果为 2；`5 / 2.0` 含 double，结果为 2.5。`double value = 5 / 2` 仍然先得到整数 2，再转换成 2.0，左边类型不会让右边重新运算。
+
+金额用“分”表示时可以使用 long，但仍需明确折扣结果不足一分时怎样舍入。这里的整数例子选择能整除的输入；不能把它当作适合所有支付规则的通用公式。
+
+```java title="Main.java"
+public class Main {
+    public static void main(String[] args) {
+        long unitPrice = 12900L;
+        int quantity = 2;
+        int discountPercent = 80;
+        long discounted = unitPrice * discountPercent / 100;
+        long total = discounted * quantity;
+        String coupon = null;
+        boolean validCoupon = coupon != null && !coupon.isBlank();
+        System.out.println(5 / 2);
+        System.out.println(5 / 2.0);
+        System.out.println(total);
+        System.out.println(total >= 20000 && quantity > 0);
+        System.out.println(validCoupon);
+    }
+}
+```
+
+```text title="运行输出"
+2
+2.5
+20640
+true
+false
+```
+
+先算单价乘折扣百分比，再除 100。如果先做 `80 / 100`，整数结果是 0，后面所有乘法都无法补救。
+
+## 第二步：理解溢出发生在赋值之前
+
+`long value = 2_000_000_000 * 2` 的右边仍按 int 计算，先溢出，再把错误结果放进 long。改成 `2_000_000_000L * 2` 才会以 long 运算。数字中的下划线仅方便阅读。
+
+普通整数运算溢出不会自动抛异常。对必须拒绝溢出的数量和金额，可了解 `Math.multiplyExact`、`Math.addExact`。即使使用 long，也仍然存在边界。
+
+## 第三步：比较与短路不是小细节
+
+`&&` 左边为 false 时不会执行右边，因此可以先做 null 检查。`||` 左边为 true 时也会停止。不要为了写短代码把会改变状态的方法随意放进布尔表达式，否则执行与否会依赖条件。
+
+| 写法 | 含义 |
+| --- | --- |
+| `count == 0` | 比较，不是赋值 |
+| `count != 0` | 不相等 |
+| `count % 2 == 0` | 判断能否被 2 整除 |
+| `a && b` | 两条件都满足，短路 |
+| `a || b` | 至少一个满足，短路 |
+
+字符串内容用 equals；String 的 `==` 比较引用。后面会专门用两个不同对象验证，避免被字符串常量池的结果误导。
+
+## 第四步：把规则写成可检查的例子
+
+先用纸算出原价 129 元，八折后 103.2 元，两件 206.4 元，即 20640 分；再对照程序。计算程序的测试预期应独立推导，不能只把程序输出复制为正确答案。
+
+<JavaPractice id="price" />
+
+## 动手任务
+
+1. 商品改为 199 分、八五折，分别计算“每件折后向下取整再乘 3”和“先算 3 件总额再打折向下取整”。结果相同吗？
+2. 使用 `Math.multiplyExact` 计算 `Long.MAX_VALUE * 2`，观察错误，再说明为什么不能静默保存该结果。
+
+<details>
+<summary>参考解法与检查点</summary>
+
+第一种 `199L * 85 / 100 * 3` 得 507；第二种 `199L * 3 * 85 / 100` 得 507，但不能据此断言所有输入都相同。再换成 101 分：前者 255，后者 257，差别来自截断位置。实际需求必须指定按单件还是整单舍入。
+
+第二题抛 ArithmeticException，表示运算超出 long 范围。业务可以拒绝该输入或改用适合范围的表示，不能把溢出后的负数当作合法订单金额。
+
+</details>
+
+下一课：[分支与循环](./04-control-flow.mdx)。金额的十进制表示见第 12 课。

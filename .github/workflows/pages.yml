@@ -1,0 +1,72 @@
+name: 构建与发布博客
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+          cache-dependency-path: |
+            examples/java/todo-api/pom.xml
+            examples/java/library-lab/pom.xml
+            third_party/spring-guides/gs-rest-service/complete/pom.xml
+      - run: npm run verify:java
+      - run: mvn -B -ntp test
+        working-directory: examples/java/todo-api
+      - run: mvn -B -ntp test
+        working-directory: examples/java/library-lab
+      - run: mvn -B -ntp test
+        working-directory: third_party/spring-guides/gs-rest-service/complete
+      - run: npm run build
+      - run: npm run check
+      - run: npm run report
+      - run: npx playwright install --with-deps chromium
+      - run: npm run smoke:library
+      - run: npm test
+      - run: npm run profile
+      - uses: actions/upload-artifact@v4
+        with:
+          name: verification-reports
+          path: |
+            reports/current.json
+            reports/network-current.json
+            reports/browser-tests.json
+            reports/home-*.png
+            reports/pdf-*.png
+            reports/java-*.png
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 发布 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

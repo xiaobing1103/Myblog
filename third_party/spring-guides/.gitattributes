@@ -1,0 +1,2 @@
+# Preserve the imported upstream snapshot byte-for-byte across platforms.
+gs-rest-service/** -text

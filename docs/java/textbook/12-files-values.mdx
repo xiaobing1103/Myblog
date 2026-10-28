@@ -1,0 +1,84 @@
+---
+title: 第 12 课：文件、日期与精确金额
+sidebar_label: 12 文件、日期与金额
+description: 保存并读取 UTF-8 文本，用 BigDecimal 规定金额舍入，区分日期、时间点和时区。
+---
+
+## 本课目标
+
+前置：异常、字符串与集合。能够保存一份小报表，处理资源生命周期，并选择不会混淆业务含义的金额与时间类型。
+
+## 第一步：明确路径相对于哪里
+
+相对路径从**进程工作目录**解析，不一定是源码文件所在位置。在 IDE、终端和服务器启动同一程序，工作目录可能不同。出现找不到文件时，先打印 `Path.of(".").toAbsolutePath()`，再检查权限和路径。
+
+小文本可使用 Files.readString/writeString；大文件不能默认整个读进内存，应按流或分块处理。编码显式使用 UTF-8，避免跨系统乱码。
+
+## 第二步：写入、读取并清理一个小报表
+
+```java title="Main.java"
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.time.LocalDate;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        BigDecimal price = new BigDecimal("19.90");
+        BigDecimal discounted = price.multiply(new BigDecimal("0.85"))
+            .setScale(2, RoundingMode.HALF_UP);
+        LocalDate date = LocalDate.of(2026, 10, 28);
+        String report = date + " | " + discounted.toPlainString();
+        Path file = Files.createTempFile("java-report-", ".txt");
+        try {
+            Files.writeString(file, report, StandardCharsets.UTF_8);
+            String restored = Files.readString(file, StandardCharsets.UTF_8);
+            System.out.println(restored);
+            System.out.println(date.plusDays(1));
+            System.out.println(new BigDecimal("1.0").compareTo(new BigDecimal("1.00")) == 0);
+        } finally {
+            Files.deleteIfExists(file);
+        }
+    }
+}
+```
+
+```text title="运行输出"
+2026-10-28 | 16.92
+2026-10-29
+true
+```
+
+此处用固定日期让输出可重复，并使用临时文件避免覆盖自己的真实文件。throws Exception 为单文件示例简化声明；正式业务应按可恢复性处理 IOException 等具体失败。
+
+## 第三步：金额不是“换个类型就万事大吉”
+
+BigDecimal 从字符串构造，避免先经过 double 的近似值。乘法得到 16.915，setScale 明确保留两位并按 HALF_UP 舍入，因此是 16.92。税率、退款和分摊可能采用不同规则，要先确认业务。
+
+BigDecimal 的 equals 同时考虑数值和 scale，1.0 与 1.00 不 equals；只判断数值大小可使用 compareTo。它不可变，setScale 返回新对象，必须使用返回值。
+
+## 第四步：日期、时间点与时区各有职责
+
+LocalDate 表示“哪一天”，如生日，没有时区。Instant 表示时间线上的瞬间，适合事件发生时间。LocalDateTime 是不带时区的本地日期时间，不能独立表示全球唯一瞬间。
+
+显示时间时把 Instant 按明确 ZoneId 转换；不要把服务器默认时区当用户时区。测试当前时间相关规则时，优先传入 Clock，让测试能固定时间，而不是等待午夜触发。
+
+## 第五步：资源什么时候需要关闭
+
+Files.readString 内部管理资源。如果自己打开 `Files.newBufferedReader` 或 `Files.lines`，要用 try-with-resources，在成功和失败路径都关闭。finally 中删除临时文件与关闭文件流不是同一件事。
+
+## 动手任务
+
+1. 把日期改成 2028-02-28，连续 plusDays 两次，解释闰年结果。
+2. 把报表写到自己创建目录下的 `report.txt` 并保留；再用 try-with-resources 逐行读出来。不要用真实重要文件做覆盖实验。
+
+<details>
+<summary>参考解法与检查点</summary>
+
+第一题后两天为 2028-02-29、2028-03-01，日期 API 处理日历规则。第二题先 `Files.createDirectories(dir)`，再 `dir.resolve("report.txt")`；使用 `try (var reader = Files.newBufferedReader(file, StandardCharsets.UTF_8))`，循环 readLine 直到 null。默认 writeString 会覆盖旧文本，需要追加时应明确使用 APPEND，并处理首次创建。
+
+</details>
+
+下一课：[Maven 与工程结构](./13-maven.mdx)。API 查询：[Java 21 标准库](https://docs.oracle.com/en/java/javase/21/docs/api/index.html)。

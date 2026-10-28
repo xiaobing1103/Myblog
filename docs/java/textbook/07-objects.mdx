@@ -1,0 +1,93 @@
+---
+title: 第 07 课：类、对象与封装
+sidebar_label: 07 类、对象与封装
+description: 用任务对象理解构造器、字段、访问控制与状态变化，区分 static 和实例成员。
+---
+
+import JavaPractice from '@site/src/components/JavaPractice';
+
+## 本课目标
+
+前置：方法、引用与参数传递。能设计一个创建时合法、修改时仍守住规则的任务对象，区分类、实例和引用。
+
+## 第一步：从数据对象走向业务对象
+
+JS 可以随时给对象加字段；Java 类预先定义字段和方法。**类**是描述，**对象**是运行时创建出的实例，**变量**保存找到对象的引用。创建两个任务，就有两份独立的实例状态。
+
+如果允许外部直接写 `task.title = ""`，标题非空规则就容易被绕过。封装把字段藏在 private 后面，所有修改经过方法检查。
+
+## 第二步：实现有约束的 Task
+
+```java title="Main.java"
+public class Main {
+    static final class Task {
+        private final long id;
+        private String title;
+        private boolean done;
+
+        Task(long id, String title) {
+            if (id <= 0) throw new IllegalArgumentException("id must be positive");
+            this.id = id;
+            rename(title);
+        }
+
+        void rename(String title) {
+            if (title == null || title.isBlank()) {
+                throw new IllegalArgumentException("title must not be blank");
+            }
+            this.title = title.strip();
+        }
+
+        void complete() { this.done = true; }
+        String summary() { return id + ": " + title + " / " + done; }
+    }
+
+    public static void main(String[] args) {
+        Task task = new Task(1, " Learn Java ");
+        Task alias = task;
+        task.complete();
+        alias.rename("Build an API");
+        System.out.println(task.summary());
+        System.out.println(task == alias);
+    }
+}
+```
+
+```text title="运行输出"
+1: Build an API / true
+true
+```
+
+构造器名与类名相同，没有返回类型；它负责建立初始状态。`this.id = id` 左边是当前对象字段，右边是参数。`rename` 在保存前先校验，构造和后续改名共享规则。
+
+这里 Task 标为 final，不能被继承，因此在构造器里调用 rename 不会分派到子类覆盖的方法。一般设计中不要让构造器调用可被子类覆盖的业务方法。
+
+## 第三步：static 不是“全都加上就能调用”
+
+实例方法需要具体对象，例如 `task.complete()`；static 成员属于类层面的成员，不自动获得某个 Task 的 this。
+
+为了把完整示例放进单文件，这里用了 static 嵌套类。真实项目通常把 Task 放到 `Task.java`，用包组织代码；不要因此把所有业务状态改成 static。共享可变静态列表会影响测试隔离和并发请求。
+
+alias 与 task 指向同一个对象，因此通过 alias 改名后，task 看到的状态也变了。`final Task task` 只能阻止变量重新指向另一个对象，不能阻止调用 complete。
+
+## 第四步：什么时候使用 record
+
+后端示例的 `record Task(long id, String title, boolean done)` 适合传递一份数据快照，自动生成访问方法、equals、hashCode、toString。record 的组件引用不可重新赋值，但如果组件里放了可变 List，仍然可能间接改变内容。
+
+有持续状态变化的业务对象可以用普通类；只表达数据形状的请求、响应经常适合 record。不要把“record”误读成“所有嵌套数据都会自动深度不可变”。
+
+<JavaPractice id="wallet" />
+
+## 动手任务
+
+1. 增加 `reopen()`，把 done 设为 false。创建两个不同 Task，只完成第一个，验证互不影响。
+2. 增加标题长度上限 80，校验应放在哪？测试纯空格和 81 个字符。
+
+<details>
+<summary>参考解法与检查点</summary>
+
+第一题 `void reopen() { this.done = false; }`。第二题放在 rename 统一入口中；先判 null，再根据明确规则决定是否 strip 后计算长度。本示例可规定存储标题去空白后最多 80，用局部变量 cleaned 保存清理结果再验证，验证通过后才赋字段，避免失败修改留下半成品状态。
+
+</details>
+
+下一课：[接口与多态](./08-interfaces.mdx)。官方补充：[类与对象](https://dev.java/learn/classes-objects/)。

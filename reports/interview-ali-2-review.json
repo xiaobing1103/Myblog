@@ -1,0 +1,2493 @@
+{
+  "title": "阿里前端面试题第二期逐题复核",
+  "source": "static/pdf/2022-2-16-aliqianduan02/阿里前端面试题-第二期.pdf",
+  "sourcePages": 144,
+  "sourceReadRange": [
+    1,
+    144
+  ],
+  "sourceMarkdown": "docs/interview/sources/ali-2.md",
+  "totalNumberedItems": 199,
+  "uniqueNumberedItemsBeforeRepeatedFinalChapter": 176,
+  "coveredCount": 199,
+  "coveredIds": [
+    "H1",
+    "H2",
+    "H3",
+    "H4",
+    "H5",
+    "H6",
+    "H7",
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6",
+    "C7",
+    "C8",
+    "C9",
+    "C10",
+    "C11",
+    "C12",
+    "C13",
+    "J1",
+    "J2",
+    "J3",
+    "J4",
+    "J5",
+    "J6",
+    "J7",
+    "J8",
+    "J9",
+    "J10",
+    "J11",
+    "J12",
+    "J13",
+    "J14",
+    "J15",
+    "J16",
+    "J17",
+    "J18",
+    "J19",
+    "J20",
+    "J21",
+    "J22",
+    "J23",
+    "J24",
+    "J25",
+    "J26",
+    "J27",
+    "J28",
+    "J29",
+    "J30",
+    "J31",
+    "J32",
+    "J33",
+    "J34",
+    "J35",
+    "J36",
+    "J37",
+    "J38",
+    "J39",
+    "J40",
+    "J41",
+    "J42",
+    "J43",
+    "J44",
+    "J45",
+    "J46",
+    "J47",
+    "J48",
+    "J49",
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5",
+    "S7",
+    "S8",
+    "S9",
+    "S10",
+    "N1",
+    "N2",
+    "N3",
+    "N4",
+    "N5",
+    "N6",
+    "N7",
+    "N8",
+    "N9",
+    "N10",
+    "N11",
+    "D1",
+    "D2",
+    "D3",
+    "D4",
+    "D5",
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6",
+    "A7",
+    "A8",
+    "A9",
+    "A10",
+    "A11",
+    "A12",
+    "A13",
+    "A14",
+    "A15",
+    "A16",
+    "A17",
+    "A18",
+    "A19",
+    "A20",
+    "A21",
+    "A22",
+    "A23",
+    "A24",
+    "A25",
+    "A26",
+    "A27",
+    "A28",
+    "A29",
+    "A30",
+    "A31",
+    "A32",
+    "A33",
+    "A34",
+    "A35",
+    "A36",
+    "A37",
+    "A38",
+    "A39",
+    "A40",
+    "A41",
+    "A42",
+    "A43",
+    "A44",
+    "A45",
+    "A46",
+    "A47",
+    "A48",
+    "A49",
+    "A50",
+    "A51",
+    "SQL1",
+    "SQL2",
+    "B1",
+    "B2",
+    "B3",
+    "B4",
+    "B5",
+    "B6",
+    "B7",
+    "B8",
+    "B9",
+    "B10",
+    "B11",
+    "B12",
+    "B13",
+    "B14",
+    "B15",
+    "B16",
+    "B17",
+    "B18",
+    "B19",
+    "M1",
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5",
+    "F6",
+    "F7",
+    "F8",
+    "F9",
+    "F10",
+    "F11",
+    "F12",
+    "F13",
+    "F14",
+    "F15",
+    "F16",
+    "F17",
+    "F18",
+    "F19",
+    "F20",
+    "F21",
+    "F22",
+    "F23"
+  ],
+  "chapterCounts": {
+    "HTML": 7,
+    "CSS": 13,
+    "JavaScript": 49,
+    "executionResults": 9,
+    "sourceCode": 9,
+    "network": 11,
+    "designPatterns": 5,
+    "algorithms": 51,
+    "SQL": 2,
+    "Node": 19,
+    "messageQueue": 1,
+    "repeatedCompanyQuestions": 23
+  },
+  "numberingNotes": [
+    "CSS第2题在第16—19页重复排版，算一个编号项。",
+    "源码篇原编号缺6，不虚构该题。",
+    "原书有两个八章：算法与SQL。",
+    "第142页是E2残留答案，第143—144页无新可提取题目。"
+  ],
+  "correctedOrVersionedIds": [
+    "H1",
+    "H2",
+    "H3",
+    "H6",
+    "C1",
+    "C3",
+    "C5",
+    "C6",
+    "C7",
+    "C8",
+    "C9",
+    "C12",
+    "C13",
+    "D1",
+    "D3",
+    "D4",
+    "D5",
+    "J1",
+    "J2",
+    "J4",
+    "J5",
+    "J6",
+    "J7",
+    "J8",
+    "J9",
+    "J10",
+    "J11",
+    "J12",
+    "J14",
+    "J17",
+    "J18",
+    "J19",
+    "J20",
+    "J22",
+    "J23",
+    "J24",
+    "J25",
+    "J27",
+    "J29",
+    "J30",
+    "J31",
+    "J32",
+    "J34",
+    "J37",
+    "J38",
+    "J39",
+    "J40",
+    "J43",
+    "J44",
+    "J46",
+    "J47",
+    "J48",
+    "J49",
+    "E4",
+    "E5",
+    "E6",
+    "E7",
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5",
+    "S8",
+    "S10",
+    "A2",
+    "A3",
+    "A4",
+    "A6",
+    "A7",
+    "A8",
+    "A9",
+    "A10",
+    "A12",
+    "A32",
+    "A36",
+    "A45",
+    "A48",
+    "A49",
+    "N1",
+    "N2",
+    "N3",
+    "N4",
+    "N5",
+    "N6",
+    "N8",
+    "N9",
+    "N10",
+    "B1",
+    "B2",
+    "B3",
+    "B4",
+    "B5",
+    "B6",
+    "B7",
+    "B8",
+    "B9",
+    "B12",
+    "B13",
+    "B14",
+    "B15",
+    "B17",
+    "B18",
+    "B19",
+    "M1"
+  ],
+  "answerAddedIds": [
+    "J21",
+    "E8",
+    "E9",
+    "A5",
+    "A13",
+    "A14",
+    "A15",
+    "A16",
+    "A17",
+    "A18",
+    "A19",
+    "A20",
+    "A21",
+    "A22",
+    "A23",
+    "A24",
+    "A25",
+    "A26",
+    "A27",
+    "A28",
+    "A29",
+    "A30",
+    "A31",
+    "A32",
+    "A33",
+    "A34",
+    "A35",
+    "A36",
+    "A37",
+    "A38",
+    "A39",
+    "A40",
+    "A41",
+    "A42",
+    "A43",
+    "A44",
+    "A45",
+    "A46",
+    "A47",
+    "A48",
+    "A49",
+    "A50",
+    "A51",
+    "SQL1",
+    "SQL2"
+  ],
+  "duplicateMappings": [
+    {
+      "id": "F1",
+      "target": "A11"
+    },
+    {
+      "id": "F2",
+      "target": "A4"
+    },
+    {
+      "id": "F3",
+      "target": "A3"
+    },
+    {
+      "id": "F4",
+      "target": "N2"
+    },
+    {
+      "id": "F5",
+      "target": "J4"
+    },
+    {
+      "id": "F6",
+      "target": "J8"
+    },
+    {
+      "id": "F7",
+      "target": "J10"
+    },
+    {
+      "id": "F8",
+      "target": "S3"
+    },
+    {
+      "id": "F9",
+      "target": "J13"
+    },
+    {
+      "id": "F10",
+      "target": "J19"
+    },
+    {
+      "id": "F11",
+      "target": "J2"
+    },
+    {
+      "id": "F12",
+      "target": "J34"
+    },
+    {
+      "id": "F13",
+      "target": "J39"
+    },
+    {
+      "id": "F14",
+      "target": "H6"
+    },
+    {
+      "id": "F15",
+      "target": "A12"
+    },
+    {
+      "id": "F16",
+      "target": "J42"
+    },
+    {
+      "id": "F17",
+      "target": "J43"
+    },
+    {
+      "id": "F18",
+      "target": "J44"
+    },
+    {
+      "id": "F19",
+      "target": "J45"
+    },
+    {
+      "id": "F20",
+      "target": "J46"
+    },
+    {
+      "id": "F21",
+      "target": "J47"
+    },
+    {
+      "id": "F22",
+      "target": "J49"
+    },
+    {
+      "id": "F23",
+      "target": "J28"
+    }
+  ],
+  "sourceIncompleteItems": [
+    {
+      "id": "J26",
+      "page": 41,
+      "reason": "原PDF本身两个标签未显示；已渲染核对，并按答案上下文提供Link与a的比较，明确推断边界。",
+      "visualEvidence": "docs/interview/ali-2/source-page-41.png",
+      "reviewStatus": "checked-source-incomplete"
+    }
+  ],
+  "validation": {
+    "jsCodeBlocksSyntax": 65,
+    "algorithmAssertions": 77,
+    "javascriptAndPromiseAssertions": 37,
+    "reactBrowserAssertions": 4,
+    "reactRuntime": "18.3.1",
+    "reactLegacyRoot": {
+      "logs": [
+        0,
+        0,
+        2,
+        3
+      ],
+      "finalState": 3
+    },
+    "reactCreateRoot": {
+      "logs": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "finalState": 2
+    },
+    "sqlAssertions": 3,
+    "sqlRuntime": "Python sqlite3 in-memory; portable SQL only",
+    "unsafeUnfencedMdxCharacters": 0,
+    "totalBehaviorAssertions": 121,
+    "result": "passed"
+  },
+  "limitations": [
+    "J26原题标签不可恢复，未把推断冒充精确题面。",
+    "StudyPromise/bind/new为注明边界的教学实现，不宣称完整polyfill。",
+    "A36全量输出有指数规模，明确仅小n适合数组，大n需改变输出契约。"
+  ],
+  "sources": [
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/@import",
+    "https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel",
+    "https://developer.mozilla.org/en-US/docs/Web/API/Window/storage_event",
+    "https://web.dev/articles/vitals",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Display/Block_formatting_context",
+    "https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/min-width",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "https://nodejs.org/api/events.html#class-eventemitter",
+    "https://vuejs.org/guide/extras/reactivity-in-depth.html",
+    "https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key",
+    "https://vuejs.org/guide/essentials/list.html#maintaining-state-with-key",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator/next",
+    "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching",
+    "https://vuejs.org/guide/components/props.html",
+    "https://vuex.vuejs.org/guide/forms.html",
+    "https://redux.js.org/usage/structuring-reducers/prerequisite-concepts",
+    "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon",
+    "https://reactrouter.com/api/components/Link",
+    "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof",
+    "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP",
+    "https://developer.mozilla.org/en-US/docs/Web/Security/Attacks/CSRF",
+    "https://developer.mozilla.org/en-US/docs/Web/API/Cache",
+    "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action",
+    "https://git-scm.com/docs/git-rebase",
+    "https://webpack.js.org/concepts/loaders/",
+    "https://webpack.js.org/concepts/plugins/",
+    "https://react.dev/blog/2022/03/08/react-18-upgrade-guide#automatic-batching",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/apply",
+    "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch",
+    "https://tc39.es/ecma262/multipage/control-abstraction-objects.html#sec-promise-objects",
+    "https://redux.js.org/tutorials/fundamentals/part-6-async-logic",
+    "https://webpack.js.org/concepts/hot-module-replacement/",
+    "https://react.dev/learn/render-and-commit",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort",
+    "https://dev.mysql.com/doc/refman/8.4/en/group-by-handling.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt",
+    "https://httpwg.org/specs/rfc9112.html",
+    "https://www.rfc-editor.org/rfc/rfc7519.html",
+    "https://datatracker.ietf.org/doc/html/rfc8446",
+    "https://httpwg.org/specs/rfc9113.html",
+    "https://nodejs.org/en/learn/diagnostics/memory/understanding-and-tuning-memory",
+    "https://nodejs.org/api/modules.html#cycles",
+    "https://nodejs.org/api/worker_threads.html",
+    "https://v8.dev/blog/trash-talk",
+    "https://nodejs.org/en/learn/asynchronous-work/dont-block-the-event-loop",
+    "https://nodejs.org/api/process.html#a-note-on-process-io",
+    "https://nodejs.org/api/child_process.html#optionsdetached",
+    "https://nodejs.org/api/buffer.html",
+    "https://nodejs.org/api/stream.html",
+    "https://www.rfc-editor.org/rfc/rfc9293.html",
+    "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie",
+    "https://www.rabbitmq.com/docs/reliability"
+  ],
+  "reviewedItems": [
+    {
+      "id": "H1",
+      "title": "link 与 @import（第 11 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/index.md",
+      "pages": [
+        11,
+        11
+      ]
+    },
+    {
+      "id": "H2",
+      "title": "常见浏览器内核（第 11—12 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/index.md",
+      "pages": [
+        11,
+        12
+      ]
+    },
+    {
+      "id": "H3",
+      "title": "浏览器渲染过程（第 12—13 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/index.md",
+      "pages": [
+        12,
+        13
+      ]
+    },
+    {
+      "id": "H4",
+      "title": "autocomplete（第 13 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/index.md",
+      "pages": [
+        13,
+        13
+      ]
+    },
+    {
+      "id": "H5",
+      "title": "多标签通信（第 13—14 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/index.md",
+      "pages": [
+        13,
+        14
+      ]
+    },
+    {
+      "id": "H6",
+      "title": "前端性能优化（第 14 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/index.md",
+      "pages": [
+        14,
+        14
+      ]
+    },
+    {
+      "id": "H7",
+      "title": "WebP（第 14—15 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/index.md",
+      "pages": [
+        14,
+        15
+      ]
+    },
+    {
+      "id": "C1",
+      "title": "BFC（第 15—16 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/index.md",
+      "pages": [
+        15,
+        16
+      ]
+    },
+    {
+      "id": "C2",
+      "title": "水平垂直居中（第 16—19 页，原文重复）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/index.md",
+      "pages": [
+        16,
+        19
+      ]
+    },
+    {
+      "id": "C3",
+      "title": "回流、重绘与优化（第 19—21 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/index.md",
+      "pages": [
+        19,
+        21
+      ]
+    },
+    {
+      "id": "C4",
+      "title": "三种隐藏方式（第 22 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/index.md",
+      "pages": [
+        22,
+        22
+      ]
+    },
+    {
+      "id": "C5",
+      "title": "盒模型（第 22 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/index.md",
+      "pages": [
+        22,
+        22
+      ]
+    },
+    {
+      "id": "C6",
+      "title": "rem 与 px（第 22—23 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/index.md",
+      "pages": [
+        22,
+        23
+      ]
+    },
+    {
+      "id": "C7",
+      "title": "移动端 viewport（第 23 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/index.md",
+      "pages": [
+        23,
+        23
+      ]
+    },
+    {
+      "id": "C8",
+      "title": "伪类与伪元素（第 23 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/index.md",
+      "pages": [
+        23,
+        23
+      ]
+    },
+    {
+      "id": "C9",
+      "title": "行内元素的 margin、padding（第 24 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/index.md",
+      "pages": [
+        24,
+        24
+      ]
+    },
+    {
+      "id": "C10",
+      "title": "继承（第 24—25 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/index.md",
+      "pages": [
+        24,
+        25
+      ]
+    },
+    {
+      "id": "C11",
+      "title": "结构与状态伪类（第 25 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/index.md",
+      "pages": [
+        25,
+        25
+      ]
+    },
+    {
+      "id": "C12",
+      "title": "CSS 三角形（第 25 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/index.md",
+      "pages": [
+        25,
+        25
+      ]
+    },
+    {
+      "id": "C13",
+      "title": "min/max 与 width/height（第 26 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/index.md",
+      "pages": [
+        26,
+        26
+      ]
+    },
+    {
+      "id": "D1",
+      "title": "设计模式解决什么问题（第 75 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/index.md",
+      "pages": [
+        75,
+        75
+      ]
+    },
+    {
+      "id": "D2",
+      "title": "白箱与黑箱复用（第 75 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/index.md",
+      "pages": [
+        75,
+        75
+      ]
+    },
+    {
+      "id": "D3",
+      "title": "观察者与发布订阅（第 75—76 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/index.md",
+      "pages": [
+        75,
+        76
+      ]
+    },
+    {
+      "id": "D4",
+      "title": "SOLID 等原则（第 76—77 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/index.md",
+      "pages": [
+        76,
+        77
+      ]
+    },
+    {
+      "id": "D5",
+      "title": "模式与应用（第 77—80 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/index.md",
+      "pages": [
+        77,
+        80
+      ]
+    },
+    {
+      "id": "J1",
+      "title": "defineProperty 与 Proxy（第 26 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        26,
+        26
+      ]
+    },
+    {
+      "id": "J2",
+      "title": "列表 key（第 27 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        27,
+        27
+      ]
+    },
+    {
+      "id": "J3",
+      "title": "map(parseInt)（第 27 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        27,
+        27
+      ]
+    },
+    {
+      "id": "J4",
+      "title": "防抖与节流（第 28—29 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        28,
+        29
+      ]
+    },
+    {
+      "id": "J5",
+      "title": "Set、Map 与弱集合（第 29—30 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        29,
+        30
+      ]
+    },
+    {
+      "id": "J6",
+      "title": "ES5 原型继承与 class（第 30 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        30,
+        30
+      ]
+    },
+    {
+      "id": "J7",
+      "title": "timer、Promise、async/await（第 31 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        31,
+        31
+      ]
+    },
+    {
+      "id": "J8",
+      "title": "async/await 原理（第 31 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        31,
+        31
+      ]
+    },
+    {
+      "id": "J9",
+      "title": "Generator（第 31—33 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        31,
+        33
+      ]
+    },
+    {
+      "id": "J10",
+      "title": "异步方案（第 33—34 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "J11",
+      "title": "浏览器缓存（第 34—35 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        34,
+        35
+      ]
+    },
+    {
+      "id": "J12",
+      "title": "mutation/reducer 为什么同步（第 35 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        35,
+        35
+      ]
+    },
+    {
+      "id": "J13",
+      "title": "a 连续等于 1、2、3（第 35—36 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        35,
+        36
+      ]
+    },
+    {
+      "id": "J14",
+      "title": "props 不能直接改（第 36 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        36,
+        36
+      ]
+    },
+    {
+      "id": "J15",
+      "title": "sleep（第 36—37 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        36,
+        37
+      ]
+    },
+    {
+      "id": "J16",
+      "title": "v-model 与 Vuex（第 37 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        37,
+        37
+      ]
+    },
+    {
+      "id": "J17",
+      "title": "call 与 apply（第 37—38 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        37,
+        38
+      ]
+    },
+    {
+      "id": "J18",
+      "title": "像素埋点（第 38 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        38,
+        38
+      ]
+    },
+    {
+      "id": "J19",
+      "title": "数字链式运算（第 38 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        38,
+        38
+      ]
+    },
+    {
+      "id": "J20",
+      "title": "补齐 12 个月销售额（第 38—39 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        38,
+        39
+      ]
+    },
+    {
+      "id": "J21",
+      "title": "LazyMan（第 39 页，原答案文件缺失）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        39,
+        39
+      ]
+    },
+    {
+      "id": "J22",
+      "title": "箭头与普通函数（第 39—40 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        39,
+        40
+      ]
+    },
+    {
+      "id": "J23",
+      "title": "Redux reducer 为何纯（第 40 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        40,
+        40
+      ]
+    },
+    {
+      "id": "J24",
+      "title": "Babel 转换（第 40—41 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        40,
+        41
+      ]
+    },
+    {
+      "id": "J25",
+      "title": "Vue 父子生命周期（第 41 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        41,
+        41
+      ]
+    },
+    {
+      "id": "J26",
+      "title": "React Router Link 与 a（第 41 页，原文标签缺失）",
+      "status": "source-incomplete-contextual-answer",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        41,
+        41
+      ]
+    },
+    {
+      "id": "J27",
+      "title": "v-for 事件代理（第 41 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        41,
+        41
+      ]
+    },
+    {
+      "id": "J28",
+      "title": "MVC、MVP、MVVM（第 41—43 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        41,
+        43
+      ]
+    },
+    {
+      "id": "J29",
+      "title": "内存泄漏（第 43 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        43,
+        43
+      ]
+    },
+    {
+      "id": "J30",
+      "title": "跨源（第 44 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        44,
+        44
+      ]
+    },
+    {
+      "id": "J31",
+      "title": "instanceof（第 44 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        44,
+        44
+      ]
+    },
+    {
+      "id": "J32",
+      "title": "React 生命周期（第 44—45 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        44,
+        45
+      ]
+    },
+    {
+      "id": "J33",
+      "title": "Flux（第 45—46 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        45,
+        46
+      ]
+    },
+    {
+      "id": "J34",
+      "title": "执行上下文与栈（第 46 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        46,
+        46
+      ]
+    },
+    {
+      "id": "J35",
+      "title": "CSP（第 47 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        47,
+        47
+      ]
+    },
+    {
+      "id": "J36",
+      "title": "CSRF（第 47 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        47,
+        47
+      ]
+    },
+    {
+      "id": "J37",
+      "title": "函数式编程（第 47—48 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        47,
+        48
+      ]
+    },
+    {
+      "id": "J38",
+      "title": "尾调用（第 48 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        48,
+        48
+      ]
+    },
+    {
+      "id": "J39",
+      "title": "Vue 通信（第 48 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        48,
+        48
+      ]
+    },
+    {
+      "id": "J40",
+      "title": "computed 与 watch（第 48—49 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        48,
+        49
+      ]
+    },
+    {
+      "id": "J41",
+      "title": "PWA（第 49 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        49,
+        49
+      ]
+    },
+    {
+      "id": "J42",
+      "title": "CacheStorage（第 49—50 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        49,
+        50
+      ]
+    },
+    {
+      "id": "J43",
+      "title": "Vue 双向绑定（第 50—51 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        50,
+        51
+      ]
+    },
+    {
+      "id": "J44",
+      "title": "可用时间与性能指标（第 51 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        51,
+        51
+      ]
+    },
+    {
+      "id": "J45",
+      "title": "WebAssembly（第 51 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        51,
+        51
+      ]
+    },
+    {
+      "id": "J46",
+      "title": "移动端点击（第 51—52 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        51,
+        52
+      ]
+    },
+    {
+      "id": "J47",
+      "title": "Git rebase（第 52 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        52,
+        52
+      ]
+    },
+    {
+      "id": "J48",
+      "title": "懒加载（第 52—53 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        52,
+        53
+      ]
+    },
+    {
+      "id": "J49",
+      "title": "loader 与 plugin（第 53 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        53,
+        53
+      ]
+    },
+    {
+      "id": "E1",
+      "title": "静态方法与实例方法（第 53—54 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        53,
+        54
+      ]
+    },
+    {
+      "id": "E2",
+      "title": "参数是值传递（第 54 页）",
+      "status": "answer-assembled-from-separated-source",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        54,
+        54
+      ]
+    },
+    {
+      "id": "E3",
+      "title": "事件循环（第 54—55 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        54,
+        55
+      ]
+    },
+    {
+      "id": "E4",
+      "title": "React setState（第 55—56 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        55,
+        56
+      ]
+    },
+    {
+      "id": "E5",
+      "title": "命名函数表达式（第 57 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        57,
+        57
+      ]
+    },
+    {
+      "id": "E6",
+      "title": "var 提升（第 57 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        57,
+        57
+      ]
+    },
+    {
+      "id": "E7",
+      "title": "类数组 push（第 58 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        58,
+        58
+      ]
+    },
+    {
+      "id": "E8",
+      "title": "链式赋值（第 58 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        58,
+        58
+      ]
+    },
+    {
+      "id": "E9",
+      "title": "对象键（第 58—59 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        58,
+        59
+      ]
+    },
+    {
+      "id": "S1",
+      "title": "柯里化（第 59—60 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        59,
+        60
+      ]
+    },
+    {
+      "id": "S2",
+      "title": "bind、call、apply（第 60—61 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        60,
+        61
+      ]
+    },
+    {
+      "id": "S3",
+      "title": "模拟 new（第 61 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        61,
+        61
+      ]
+    },
+    {
+      "id": "S4",
+      "title": "Proxy + Fetch（第 61—62 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        61,
+        62
+      ]
+    },
+    {
+      "id": "S5",
+      "title": "手写 Promise（第 62—64 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        62,
+        64
+      ]
+    },
+    {
+      "id": "S7",
+      "title": "redux-thunk（第 65 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        65,
+        65
+      ]
+    },
+    {
+      "id": "S8",
+      "title": "new Vue（第 65—66 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        65,
+        66
+      ]
+    },
+    {
+      "id": "S9",
+      "title": "Webpack HMR（第 66 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        66,
+        66
+      ]
+    },
+    {
+      "id": "S10",
+      "title": "React 实现（第 66—67 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/javascript.md",
+      "pages": [
+        66,
+        67
+      ]
+    },
+    {
+      "id": "A1",
+      "title": "选择排序（第 80 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        80,
+        80
+      ]
+    },
+    {
+      "id": "A2",
+      "title": "迭代 flatten（第 80—81 页，纠错）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        80,
+        81
+      ]
+    },
+    {
+      "id": "A3",
+      "title": "DFS 与 BFS（第 81—82 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        81,
+        82
+      ]
+    },
+    {
+      "id": "A4",
+      "title": "扁平化、去重、升序（第 82—83 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        82,
+        83
+      ]
+    },
+    {
+      "id": "A5",
+      "title": "含重复次数的交集（第 83 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        83,
+        83
+      ]
+    },
+    {
+      "id": "A6",
+      "title": "十位分组（第 83—84 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        83,
+        84
+      ]
+    },
+    {
+      "id": "A7",
+      "title": "大小写取反（第 84 页，纠错）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        84,
+        84
+      ]
+    },
+    {
+      "id": "A8",
+      "title": "字符串匹配（第 84—85 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        84,
+        85
+      ]
+    },
+    {
+      "id": "A9",
+      "title": "右旋数组（第 85 页，纠错）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        85,
+        85
+      ]
+    },
+    {
+      "id": "A10",
+      "title": "两数之和（第 85—86 页，纠错）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        85,
+        86
+      ]
+    },
+    {
+      "id": "A11",
+      "title": "递归反转整数为字符串（第 86 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        86,
+        86
+      ]
+    },
+    {
+      "id": "A12",
+      "title": "随机洗牌（第 86—87 页，纠错）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        86,
+        87
+      ]
+    },
+    {
+      "id": "A13",
+      "title": "数字变 0（第 87—88 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        87,
+        88
+      ]
+    },
+    {
+      "id": "A14",
+      "title": "Trie（第 88—89 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        88,
+        89
+      ]
+    },
+    {
+      "id": "A15",
+      "title": "朋友圈/连通分量（第 89—90 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        89,
+        90
+      ]
+    },
+    {
+      "id": "A16",
+      "title": "解压缩编码列表（第 90—91 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        90,
+        91
+      ]
+    },
+    {
+      "id": "A17",
+      "title": "各位积减各位和（第 91—92 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        91,
+        92
+      ]
+    },
+    {
+      "id": "A18",
+      "title": "猜数字（第 92—93 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        92,
+        93
+      ]
+    },
+    {
+      "id": "A19",
+      "title": "偶数位数的数字（第 93 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        93,
+        93
+      ]
+    },
+    {
+      "id": "A20",
+      "title": "无临时变量交换（第 93—94 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        93,
+        94
+      ]
+    },
+    {
+      "id": "A21",
+      "title": "只给非尾节点，删除它（第 94—95 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        94,
+        95
+      ]
+    },
+    {
+      "id": "A22",
+      "title": "子集（第 95 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        95,
+        95
+      ]
+    },
+    {
+      "id": "A23",
+      "title": "螺旋矩阵 II（第 95—96 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        95,
+        96
+      ]
+    },
+    {
+      "id": "A24",
+      "title": "IPv4 地址无效化（第 96 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "A25",
+      "title": "二进制链表转整数（第 96—98 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        96,
+        98
+      ]
+    },
+    {
+      "id": "A26",
+      "title": "反转链表（第 98 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        98,
+        98
+      ]
+    },
+    {
+      "id": "A27",
+      "title": "删除元音（第 98—99 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        98,
+        99
+      ]
+    },
+    {
+      "id": "A28",
+      "title": "变位映射（第 99—100 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        99,
+        100
+      ]
+    },
+    {
+      "id": "A29",
+      "title": "TinyURL（第 100 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        100,
+        100
+      ]
+    },
+    {
+      "id": "A30",
+      "title": "访问所有点的最短时间（第 100—101 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        100,
+        101
+      ]
+    },
+    {
+      "id": "A31",
+      "title": "不重复字符的全排列（第 101—102 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        101,
+        102
+      ]
+    },
+    {
+      "id": "A32",
+      "title": "有序矩阵负数计数（第 102—104 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        102,
+        104
+      ]
+    },
+    {
+      "id": "A33",
+      "title": "倒数第 k 个节点（第 103 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        103,
+        103
+      ]
+    },
+    {
+      "id": "A34",
+      "title": "单行键盘（第 104—105 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        104,
+        105
+      ]
+    },
+    {
+      "id": "A35",
+      "title": "二叉树深度（第 105 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        105,
+        105
+      ]
+    },
+    {
+      "id": "A36",
+      "title": "1 到最大的 n 位数（第 105—106 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        105,
+        106
+      ]
+    },
+    {
+      "id": "A37",
+      "title": "其他数字出现三次（第 106—107 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        106,
+        107
+      ]
+    },
+    {
+      "id": "A38",
+      "title": "单词频率（第 107 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        107,
+        107
+      ]
+    },
+    {
+      "id": "A39",
+      "title": "替换空格（第 107—108 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        107,
+        108
+      ]
+    },
+    {
+      "id": "A40",
+      "title": "分割平衡字符串（第 108—109 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        108,
+        109
+      ]
+    },
+    {
+      "id": "A41",
+      "title": "删除中间节点（第 109 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        109,
+        109
+      ]
+    },
+    {
+      "id": "A42",
+      "title": "从尾到头打印链表（第 109 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        109,
+        109
+      ]
+    },
+    {
+      "id": "A43",
+      "title": "反转链表（第 109—110 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        109,
+        110
+      ]
+    },
+    {
+      "id": "A44",
+      "title": "6 与 9 的最大数（第 110—111 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        110,
+        111
+      ]
+    },
+    {
+      "id": "A45",
+      "title": "最小元素数位和奇偶（第 111—112 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        111,
+        112
+      ]
+    },
+    {
+      "id": "A46",
+      "title": "合并二叉树（第 112—113 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        112,
+        113
+      ]
+    },
+    {
+      "id": "A47",
+      "title": "汉明距离（第 113 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        113,
+        113
+      ]
+    },
+    {
+      "id": "A48",
+      "title": "唯一摩尔斯密码词（第 113—114 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        113,
+        114
+      ]
+    },
+    {
+      "id": "A49",
+      "title": "自除数（第 114—115 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        114,
+        115
+      ]
+    },
+    {
+      "id": "A50",
+      "title": "二叉树最大深度（第 115 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        115,
+        115
+      ]
+    },
+    {
+      "id": "A51",
+      "title": "斐波那契（第 115—116 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        115,
+        116
+      ]
+    },
+    {
+      "id": "SQL1",
+      "title": "重复电子邮箱（第 116—117 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        116,
+        117
+      ]
+    },
+    {
+      "id": "SQL2",
+      "title": "大的国家（第 117—118 页，补答）",
+      "status": "answer-added",
+      "file": "docs/interview/ali-2/algorithms.md",
+      "pages": [
+        117,
+        118
+      ]
+    },
+    {
+      "id": "N1",
+      "title": "HTTP/1.0 与 HTTP/1.1（第 67—69 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        67,
+        69
+      ]
+    },
+    {
+      "id": "N2",
+      "title": "HTTP/2 多路复用（第 69 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        69,
+        69
+      ]
+    },
+    {
+      "id": "N3",
+      "title": "HTTPS 握手（第 69 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        69,
+        69
+      ]
+    },
+    {
+      "id": "N4",
+      "title": "证书验证（第 70 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        70,
+        70
+      ]
+    },
+    {
+      "id": "N5",
+      "title": "token“加密”（第 70 页，纠错）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        70,
+        70
+      ]
+    },
+    {
+      "id": "N6",
+      "title": "HTTPS 中间人（第 70—71 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        70,
+        71
+      ]
+    },
+    {
+      "id": "N7",
+      "title": "状态码（第 71—72 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        71,
+        72
+      ]
+    },
+    {
+      "id": "N8",
+      "title": "URL 到页面（第 72 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        72,
+        72
+      ]
+    },
+    {
+      "id": "N9",
+      "title": "HTTP/2 改进（第 73 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        73,
+        73
+      ]
+    },
+    {
+      "id": "N10",
+      "title": "会话恢复（第 73—74 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        73,
+        74
+      ]
+    },
+    {
+      "id": "N11",
+      "title": "CDN（第 74—75 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        74,
+        75
+      ]
+    },
+    {
+      "id": "B1",
+      "title": "模块是什么（第 118 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        118,
+        118
+      ]
+    },
+    {
+      "id": "B2",
+      "title": "require 加载（第 118—119 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        118,
+        119
+      ]
+    },
+    {
+      "id": "B3",
+      "title": "内存泄漏（第 119 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        119,
+        119
+      ]
+    },
+    {
+      "id": "B4",
+      "title": "循环引用（第 119—120 页，纠错）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        119,
+        120
+      ]
+    },
+    {
+      "id": "B5",
+      "title": "热更新（第 120 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        120,
+        120
+      ]
+    },
+    {
+      "id": "B6",
+      "title": "文件作用域（第 120—121 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        120,
+        121
+      ]
+    },
+    {
+      "id": "B7",
+      "title": "I/O 与 CPU 任务（第 121 页，纠错）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        121,
+        121
+      ]
+    },
+    {
+      "id": "B8",
+      "title": "垃圾回收（第 121 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        121,
+        121
+      ]
+    },
+    {
+      "id": "B9",
+      "title": "异步 I/O（第 122—123 页，纠错）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        122,
+        123
+      ]
+    },
+    {
+      "id": "B10",
+      "title": "cwd（第 123 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        123,
+        123
+      ]
+    },
+    {
+      "id": "B11",
+      "title": "console.log 同步吗（第 123—124 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        123,
+        124
+      ]
+    },
+    {
+      "id": "B12",
+      "title": "父子进程死亡（第 124 页，纠错）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        124,
+        124
+      ]
+    },
+    {
+      "id": "B13",
+      "title": "IPC（第 124 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        124,
+        124
+      ]
+    },
+    {
+      "id": "B14",
+      "title": "守护与后台进程（第 124—125 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        124,
+        125
+      ]
+    },
+    {
+      "id": "B15",
+      "title": "Buffer（第 125 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        125,
+        125
+      ]
+    },
+    {
+      "id": "B16",
+      "title": "Stream（第 125 页）",
+      "status": "reviewed-and-clarified",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        125,
+        125
+      ]
+    },
+    {
+      "id": "B17",
+      "title": "TCP“粘包”（第 125 页，纠错）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        125,
+        125
+      ]
+    },
+    {
+      "id": "B18",
+      "title": "Cookie 与 Session（第 126 页，纠错）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        126,
+        126
+      ]
+    },
+    {
+      "id": "B19",
+      "title": "hosts（第 126 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        126,
+        126
+      ]
+    },
+    {
+      "id": "M1",
+      "title": "应用场景（第 126—127 页）",
+      "status": "corrected-or-versioned",
+      "file": "docs/interview/ali-2/network-node.md",
+      "pages": [
+        126,
+        127
+      ]
+    },
+    {
+      "id": "F1",
+      "status": "duplicate-resolved",
+      "target": "A11",
+      "file": "docs/interview/ali-2/network-node.md"
+    },
+    {
+      "id": "F2",
+      "status": "duplicate-resolved",
+      "target": "A4",
+      "file": "docs/interview/ali-2/network-node.md"
+    },
+    {
+      "id": "F3",
+      "status": "duplicate-resolved",
+      "target": "A3",
+      "file": "docs/interview/ali-2/network-node.md"
+    },
+    {
+      "id": "F4",
+      "status": "duplicate-resolved",
+      "target": "N2",
+      "file": "docs/interview/ali-2/network-node.md"
+    },
+    {
+      "id": "F5",
+      "status": "duplicate-resolved",
+      "target": "J4",
+      "file": "docs/interview/ali-2/network-node.md"
+    },
+    {
+      "id": "F6",
+      "status": "duplicate-resolved",
+      "target": "J8",
+      "file": "docs/interview/ali-2/network-node.md"
+    },
+    {
+      "id": "F7",
+      "status": "duplicate-resolved",
+      "target": "J10",
+      "file": "docs/interview/ali-2/network-node.md"
+    },
+    {
+      "id": "F8",
+      "status": "duplicate-resolved",
+      "target": "S3",
+      "file": "docs/interview/ali-2/network-node.md"
+    },
+    {
+      "id": "F9",
+      "status": "duplicate-resolved",
+      "target": "J13",
+      "file": "docs/interview/ali-2/network-node.md"
+    },
+    {
+      "id": "F10",
+      "status": "duplicate-resolved",
+      "target": "J19",
+      "file": "docs/interview/ali-2/network-node.md"
+    },
+    {
+      "id": "F11",
+      "status": "duplicate-resolved",
+      "target": "J2",
+      "file": "docs/interview/ali-2/network-node.md"
+    },
+    {
+      "id": "F12",
+      "status": "duplicate-resolved",
+      "target": "J34",
+      "file": "docs/interview/ali-2/network-node.md"
+    },
+    {
+      "id": "F13",
+      "status": "duplicate-resolved",
+      "target": "J39",
+      "file": "docs/interview/ali-2/network-node.md"
+    },
+    {
+      "id": "F14",
+      "status": "duplicate-resolved",
+      "target": "H6",
+      "file": "docs/interview/ali-2/network-node.md"
+    },
+    {
+      "id": "F15",
+      "status": "duplicate-resolved",
+      "target": "A12",
+      "file": "docs/interview/ali-2/network-node.md"
+    },
+    {
+      "id": "F16",
+      "status": "duplicate-resolved",
+      "target": "J42",
+      "file": "docs/interview/ali-2/network-node.md"
+    },
+    {
+      "id": "F17",
+      "status": "duplicate-resolved",
+      "target": "J43",
+      "file": "docs/interview/ali-2/network-node.md"
+    },
+    {
+      "id": "F18",
+      "status": "duplicate-resolved",
+      "target": "J44",
+      "file": "docs/interview/ali-2/network-node.md"
+    },
+    {
+      "id": "F19",
+      "status": "duplicate-resolved",
+      "target": "J45",
+      "file": "docs/interview/ali-2/network-node.md"
+    },
+    {
+      "id": "F20",
+      "status": "duplicate-resolved",
+      "target": "J46",
+      "file": "docs/interview/ali-2/network-node.md"
+    },
+    {
+      "id": "F21",
+      "status": "duplicate-resolved",
+      "target": "J47",
+      "file": "docs/interview/ali-2/network-node.md"
+    },
+    {
+      "id": "F22",
+      "status": "duplicate-resolved",
+      "target": "J49",
+      "file": "docs/interview/ali-2/network-node.md"
+    },
+    {
+      "id": "F23",
+      "status": "duplicate-resolved",
+      "target": "J28",
+      "file": "docs/interview/ali-2/network-node.md"
+    }
+  ],
+  "answerAddedCount": 45,
+  "correctedOrVersionedCount": 104
+}

@@ -1,13 +1,9 @@
 ---
 slug: front-end-learning-path
 title: 2020年最新前端学习路线
-author: 二姨
-author_title: 前端工程师 / B站UP主
-author_url: https://github.com/
-author_image_url: https://s3.ax1x.com/2020/12/19/rtW9iR.png
 tags: [前端, 职业]
+authors: [eryi]
 ---
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 俗话说知己知彼百战不殆，要成为一名前端大神，首先知道它是做什么的。单纯从工作角度看，无非就是写写前端样式，连接下后台 api，解析解析数据，然后显示给用户，核心逻辑是这样没错，只是这中间掺杂着无数个边边角角的问题，比如框架选择、性能优化、兼容性调整、工程化等等。不过呢，这些并不需要一次性掌握，随着一次一次完成工作任务，解决 bug，这些自然而然就学会了~
@@ -20,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 先来看 github 上一大神制作的路线图：
 
-<img alt="前端学习路线图" src={useBaseUrl('img/2020-02-26-frontend-learning-path/frontend.png')} />
+<img alt="前端学习路线图" src={useBaseUrl('img/2020-02-26-frontend-learning-path/frontend.webp')} />
 
 [https://roadmap.sh/frontend](https://roadmap.sh/frontend)
 

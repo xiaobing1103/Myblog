@@ -1,0 +1,89 @@
+---
+title: 第 17 课：用测试安全地修改功能
+sidebar_label: 17 自动化测试
+description: 逐步阅读真实 HTTP 集成测试，理解安排、执行、断言、数据隔离与失败后修复。
+---
+
+## 本课目标
+
+前置：请求链、数据库与参数校验。能根据接口契约写断言，解释测试为什么不能依赖固定 id 或某个执行顺序。
+
+## 第一步：先选择你想证明什么
+
+单元测试适合独立业务函数，例如运费边界；集成测试验证路由、序列化、校验、事务与数据库协作；浏览器测试验证用户交互。不要用一个层级替代所有层级。
+
+本项目 TaskApiTest 使用 `@SpringBootTest` 启动随机端口真实服务，Java HttpClient 发 HTTP 请求。数据库替换为 H2 内存库，避免测试写进学习时的 data 文件夹。
+
+## 第二步：按安排、执行、断言阅读一条测试
+
+打开 `src/test/java/blog/learning/TaskApiTest.java`，找到 crudThroughRealHttp。核心步骤为：
+
+```java
+var created = request("POST", "/api/tasks", "{\"title\":\"Learn Java\"}");
+assertEquals(201, created.statusCode());
+String location = created.headers().firstValue("Location").orElseThrow();
+assertTrue(created.body().contains("Learn Java"));
+assertEquals(200, request("GET", location, "").statusCode());
+```
+
+这些是项目测试方法内的片段。POST 安排一条真实记录；GET 执行查询；断言检查约定。Location 来自响应，不假定 id 为 1，因此数据库曾分配过多少 id 不会影响这个流程。
+
+后续 PATCH 检查 done 为 true，DELETE 检查 204，再 GET 检查 404。只断言“没有抛异常”不能证明完成状态真的变化。
+
+## 第三步：设计能戳破错误实现的输入
+
+| 场景 | 预期 | 能发现什么错误 |
+| --- | --- | --- |
+| 标题合法 | 201 | 创建链未接通 |
+| 缺标题、纯空格 | 400 | 忘记 @Valid / NotBlank |
+| 80 / 81 字符 | 201 / 400 | 长度边界写错 |
+| 更新缺少 done | 400 | 把缺字段当 false |
+| 删除后再查 | 404 | 删除未真正落库 |
+| 标题包含 SQL 字符 | 原样保存 | 字符串拼接查询风险 |
+
+已有测试覆盖其中多种情况；80 字符的成功边界留作本课任务。根据契约独立推导预期，不要为了让测试变绿，把期望值改成当前错误输出。
+
+## 第四步：走一遍红、绿、整理
+
+1. 写一条正确的新要求，例如合法 80 字符应创建成功。
+2. 临时把 Controller 的长度上限改成 79，运行测试，确认断言失败能指出问题。
+3. 恢复上限 80，再运行，确认通过。
+4. 整理重复请求准备代码，但不要把关键断言藏得难以阅读。
+
+这一步故意制造缺陷，是为了验证测试真的能发现它。完成后必须恢复业务代码，不要留下临时错误。
+
+## 第五步：理解隔离与断言的限制
+
+同一个测试类的应用上下文可能共享内存库。当前流程测试会清理自己创建的任务，不依赖测试先后顺序。新增测试也应保存自己创建的 id 并清理，不应随意清空别的测试的数据。
+
+HTTP 请求在服务器线程处理，不能想当然认为给测试方法加事务注解就能回滚另一线程的写入。涉及外部副作用的测试还需要专门隔离策略。
+
+当前简单 JSON 断言部分使用 contains，便于入门，但无法精确证明每个字段。扩展时应使用项目版本对应的 JSON 解析工具按字段断言。H2 也不能完全代表 MySQL/PostgreSQL，真实生产数据库需要相应集成验证。
+
+## 动手任务
+
+1. 给 TaskApiTest 添加 80 字符标题成功、81 字符失败的成对边界测试。
+2. 用变量保存创建响应的 Location，删除后再次 DELETE，明确检查 404。
+
+<details>
+<summary>参考实现与检查点</summary>
+
+放在原测试类内，复用 request 辅助方法：
+
+```java
+@Test void titleLengthBoundary() throws Exception {
+    var accepted = request("POST", "/api/tasks", "{\"title\":\"" + "x".repeat(80) + "\"}");
+    assertEquals(201, accepted.statusCode());
+    String location = accepted.headers().firstValue("Location").orElseThrow();
+    assertEquals(400, request("POST", "/api/tasks",
+        "{\"title\":\"" + "x".repeat(81) + "\"}").statusCode());
+    assertEquals(204, request("DELETE", location, "").statusCode());
+    assertEquals(404, request("DELETE", location, "").statusCode());
+}
+```
+
+保持输入除长度外都相同，才能把失败原因定位到边界。测试请求如果失败，应先看响应状态与响应体，再看服务日志。
+
+</details>
+
+下一课：[毕业项目与前后端联调](./18-project.mdx)。官方补充：[测试 Web 层](https://spring.io/guides/gs/testing-web/)。

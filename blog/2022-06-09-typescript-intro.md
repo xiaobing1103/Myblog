@@ -1,14 +1,10 @@
 ---
 slug: typescript-intro
 title: 噢！原来这就是 TypeScript
-author: 二姨
-author_title: 前端工程师 / B站UP主
-author_url: https://github.com/zxuqian
-author_image_url: https://s3.ax1x.com/2020/12/19/rtW9iR.png
 description: TypeScript 是 JavaScript 的，带有类型的超集，并且可以编译为 JavaScript 脚本，这篇幅文章将带你认识一下 TypeScript
 tags: [前端, TypeScript]
+authors: [eryi]
 ---
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 我第一次使用 TypeScript 是 16 年的时候，学校的算法课是使用 TypeScript 实现的。当时只知道 TypeScript 是 Angular 开发的必备语言，没想到还能这么通用。后来在写作业的时候，发现 TypeScript 也并不是特别难，只不过是给 JavaScript 加上了类型信息，让代码不那么容易出错，并且支持高级的面向对象编程范式，让 JavaScript 变得跟 Java/c# 差不多。接下来，这篇文章就给你揭开 TypeScript 的面纱，对它来一个宏观上的认识，然后介绍一下如何编写并运行 TypeScript 程序，如何定义类型，另外假设你有 JavaScript 基础。

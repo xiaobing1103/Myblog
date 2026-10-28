@@ -1,16 +1,55 @@
 ---
 slug: css-flex-box-layout
 title: CSS Flexbox 布局教程 2022 最新版
-author: 二姨
-author_title: 前端工程师 / B站UP主
-author_url: https://github.com/zxuqian
-author_image_url: https://tvax3.sinaimg.cn/crop.0.0.1080.1080.180/b2745d44ly8g8s4muqeggj20u00u0n0k.jpg?KID=imgbed,tva&Expires=1582389585&ssig=EvXmyu%2FXsX
 description: CSS flexbox 布局十分强大，它可以对元素进行水平和垂直方向上的对齐，也支持自由缩放，方便响应式布局的开发。这个文章就教你认识 flex-box 布局，看完之后你也能熟练的运用它！
 tags: [前端, React]
+authors: [eryi]
 ---
-
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import styled from "styled-components";
+
+export const StyledWrapper = styled.div`
+  margin-bottom: 24px;
+  background: #f1f2f6;
+  .flex > \* {
+    background: #5cf17c;
+    color: #2f3542;
+  }
+  .flex {
+    height: 100px;
+    ${({ css }) => css}
+  }
+  .flex2 {
+    background: #5bd7ea;
+  }
+  .flex3 {
+    background: #f7dc7c;
+  }
+  .flex4 {
+    background: #cf9aff;
+  }
+  .flex5 {
+    background: #ffa4a4;
+  }
+`;
+
+export const Wrapper = ({ css, children, ...rest }) => (
+  <StyledWrapper css={css} {...rest}>
+    {children}
+  </StyledWrapper>
+);
+
+export const FlexBox = ({ css, children, ...rest }) => (
+  <Wrapper css={css} {...rest}>
+    <div class="flex">
+      <div class="flex1">Flex 1</div>
+      <div class="flex2">Flex 2</div>
+      <div class="flex3">Flex 3</div>
+      {children}
+    </div>
+  </Wrapper>
+);
+
 
 在 CSS flexbox 布局出现以前，如果要控制 HTML 元素的布局，要用到很多种奇葩的方式。在水平方向上得用`float`控制左右对齐，稍一不注意，就会有浮动的元素飞来飞去~。在垂直方向上就更是百家争鸣了：要么手动计算高度然后算出中心点，要么用 `line-height` 和 `height` 的结合，要么用十之八九不生效的 `vertical-align` 属性等等等等。自从 flex-box 出现以后，一切似乎就豁然开朗了，水平垂直各种花式对齐，空间分配由你做主。当然，要用好它，用对它也不是一件容易的事，今天就给你说说 flex-box 布局，看完之后你也能熟练的运用它！（博客中的示例都是真实的 HTML 代码，可以使用 chrome 开发者工具查看属性。(此文为了演示某些 flex 示例，在小屏幕下会有横向滚动条)
 
@@ -669,46 +708,3 @@ export const NestedFlexBox = ({ minWidth }) => (
 - 子元素可以通过`flex`简写形式，或者`flex-grow`，`flex-shrink`，`flex-basis` 来调整元素的空间占比和缩放。
 - 通过`flex-wrap`可以设置 flex 子元素折行显示。
 - 嵌套`flex`容器的缩放问题。
-
-
-export const StyledWrapper = styled.div`
-  margin-bottom: 24px;
-  background: #f1f2f6;
-  .flex > \* {
-    background: #5cf17c;
-    color: #2f3542;
-  }
-  .flex {
-    height: 100px;
-    ${({ css }) => css}
-  }
-  .flex2 {
-    background: #5bd7ea;
-  }
-  .flex3 {
-    background: #f7dc7c;
-  }
-  .flex4 {
-    background: #cf9aff;
-  }
-  .flex5 {
-    background: #ffa4a4;
-  }
-`;
-
-export const Wrapper = ({ css, children, ...rest }) => (
-  <StyledWrapper css={css} {...rest}>
-    {children}
-  </StyledWrapper>
-);
-
-export const FlexBox = ({ css, children, ...rest }) => (
-  <Wrapper css={css} {...rest}>
-    <div class="flex">
-      <div class="flex1">Flex 1</div>
-      <div class="flex2">Flex 2</div>
-      <div class="flex3">Flex 3</div>
-      {children}
-    </div>
-  </Wrapper>
-);

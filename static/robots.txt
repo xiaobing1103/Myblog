@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://xiaobing1103.github.io/Myblog/sitemap.xml

@@ -1,0 +1,27 @@
+{
+  "verifiedOn": "2026-10-28",
+  "repository": "https://github.com/spring-guides/gs-rest-service",
+  "commit": "3f4cef01152596c19bc4d37939409358812b1421",
+  "sourceFilesVerified": 59,
+  "sourceHashMismatches": [],
+  "upstreamPom": {"springBoot": "4.0.8", "javaRelease": "17"},
+  "localEnvironment": {"java": "21.0.2", "maven": "3.9.16"},
+  "mavenTest": {
+    "command": "mvn -B -ntp -f complete/pom.xml test",
+    "tests": 2,
+    "failures": 0,
+    "errors": 0,
+    "note": "Upstream tests use SpringBootTest default context plus RestTestClient; they do not start a real listening server."
+  },
+  "realHttpSmoke": {
+    "runFrom": ".cache/spring-rest-service/complete",
+    "mainClass": "com.example.restservice.RestServiceApplication",
+    "command": "mvn -B -ntp spring-boot:run -Dspring-boot.run.arguments=\"--server.port=8091 --server.address=127.0.0.1\"",
+    "observations": [
+      {"path": "/greeting", "status": 200, "body": {"id": 1, "content": "Hello, World!"}},
+      {"path": "/greeting?name=Java", "status": 200, "body": {"id": 2, "content": "Hello, Java!"}}
+    ]
+  },
+  "vendorBuildArtifacts": false,
+  "documentation": "README.adoc is an unchanged upstream source attachment with unresolved external include macros; the original rendered guide is available at https://spring.io/guides/gs/rest-service/"
+}

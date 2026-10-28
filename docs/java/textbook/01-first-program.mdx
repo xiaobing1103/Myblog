@@ -1,0 +1,95 @@
+---
+title: 第 01 课：环境与第一个程序
+sidebar_label: 01 环境与程序入口
+description: 分清 JDK、JVM、编译与运行，用两种方式执行 Java 程序，并学会读第一条错误。
+---
+
+## 本课目标
+
+前置知识：能打开终端、创建文本文件。学完应当能解释 `java` 和 `javac` 各自做什么，能在没有 IDE 帮忙的情况下启动程序。
+
+## 第一步：理解代码经过哪里
+
+你熟悉的 JavaScript 通常由浏览器或 Node.js 执行。Java 常见流程是：`.java` 源码 → `javac` 编译 → `.class` 字节码 → JVM 执行。字节码不是 Windows 的 `.exe`，运行时仍然需要 JVM。
+
+- **JDK**：开发工具包，包含编译器、运行程序所需的环境及其他工具。
+- **JVM**：执行字节码的虚拟机。运行时还可能把热点代码即时编译成机器码。
+- **标准库**：JDK 提供的字符串、集合、文件等现成能力。后面先使用它们，再引入第三方依赖。
+
+先安装 JDK 21。可从 [Microsoft Build of OpenJDK](https://learn.microsoft.com/java/openjdk/download) 或 [Oracle JDK](https://www.oracle.com/java/technologies/downloads/) 获取适合系统的安装包，安装后重新打开终端：
+
+```sh
+java --version
+javac --version
+```
+
+两条命令都应显示 21 开头的主版本。如果一个是 21、另一个是旧版本，先检查 PATH 中工具的来源。Windows 用 `where.exe java`、`where.exe javac`，macOS/Linux 用 `command -v java`、`command -v javac`。
+
+## 第二步：写一个可观察的程序
+
+创建单独目录 `java-study/lesson-01/`，保存文件 `Main.java`。注意不要存成隐藏了扩展名的 `Main.java.txt`。
+
+```java title="Main.java"
+public class Main {
+    public static void main(String[] args) {
+        String learner = "Frontend developer";
+        int lesson = 1;
+        System.out.println("Hello, " + learner);
+        System.out.println("Lesson " + lesson);
+    }
+}
+```
+
+```text title="运行输出"
+Hello, Frontend developer
+Lesson 1
+```
+
+进入文件所在目录，先执行 `java Main.java`。这是单文件源码启动，适合本教材前面的实验。
+
+再试传统两步方式：
+
+```sh
+javac -encoding UTF-8 Main.java
+java Main
+```
+
+第二条传入的是**类名**，不写 `Main.class`。这次 JVM 启动的是已生成的字节码；修改源码后需要重新编译，否则可能还在运行旧代码。
+
+## 第三步：逐句理解，不先背所有关键字
+
+`public class Main` 声明一个叫 Main 的公开类，文件名要与它一致。大括号表示作用范围，分号表示一条语句结束。
+
+`public static void main(String[] args)` 是这里使用的标准程序入口。`void` 表示不返回值；`args` 是命令行字符串参数。`static` 的深入含义留到第 7 课，现在知道 JVM 可以从这里开始执行即可。
+
+`String learner` 声明字符串变量，`int lesson` 声明整数变量。`System.out.println` 输出内容并换行，`+` 遇到字符串会做拼接。Java 大小写敏感，`String` 不能写成 `string`。
+
+## 第四步：故意制造一次错误
+
+删掉 `int lesson = 1;` 末尾的分号再编译。读错误中的文件名、行号和提示；报错位置可能在问题后面一行，因为编译器在那里才确认语法无法继续。
+
+| 现象 | 优先检查 |
+| --- | --- |
+| java 不是可识别命令 | 安装与 PATH；重开终端 |
+| 找不到文件 Main.java | 当前目录、真实扩展名 |
+| public class 应在其他文件 | 类名与文件名是否相同 |
+| 找不到主类 Main | 是否已编译、当前目录与类路径 |
+| UnsupportedClassVersionError | 编译 JDK 比运行 JDK 新 |
+
+每次先解决第一条有意义的错误，再重新编译。后面的十条提示可能都是第一处语法错误引起的。
+
+## 动手任务
+
+1. 把输出改成自己的英文昵称和 `Lesson 2`，分别用两种运行方式确认一致。
+2. 在入口里输出参数数量，执行 `java Main.java Alice Java`，预测会输出多少。
+
+<details>
+<summary>参考解法与检查点</summary>
+
+第一题修改 `learner` 与 `lesson`，两步方式修改后要重新执行 javac。第二题加入 `System.out.println(args.length);`，两个参数应输出 `2`；不传参数应输出 `0`。参数之间的空格分隔由终端处理，带空格的一个参数需要引号。
+
+</details>
+
+过关标准：能说出源码、字节码、JVM 三者的关系；能根据路径和行号定位自己制造的错误。
+
+下一课：[类型、变量与空值](./02-types.mdx)。官方补充：[Dev.java 学习入口](https://dev.java/learn/)。

@@ -1,0 +1,85 @@
+---
+title: 07 · 第一个 Spring Boot API
+sidebar_label: 07 · Spring Boot API
+description: 从前端请求理解 Java Controller、Service、参数校验与 HTTP 状态，运行自己的待办后端。
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+## 先把一条请求跑通
+
+前端的 `fetch('/api/tasks')` 需要一个真正监听 HTTP 的进程。Spring Boot 帮你启动服务器，并把请求分发给 Java 方法；它不会替你写业务规则。
+
+<p><a className="button button--primary" href={useBaseUrl('/downloads/java-todo-api.zip')} download>下载完整待办 API 项目</a></p>
+
+解压并进入 `todo-api` 目录，确认 `java --version` 为 21、`mvn --version` 正常，然后运行：
+
+```sh
+mvn test
+mvn spring-boot:run
+```
+
+打开 `http://127.0.0.1:8080/api/tasks`，首次应返回空数组。首次启动需要下载依赖，请等待日志出现启动成功信息。博客中的在线编译器用于单文件 Java 练习；此处的服务需要在本机运行。
+
+## 用前端经验理解分层
+
+| 层 | 工作 | 前端类比 |
+| --- | --- | --- |
+| Controller | 解析路径和 JSON，选择状态码 | 路由入口与表单提交处理 |
+| Service | 执行业务规则、组织事务 | 独立于界面的业务函数 |
+| Repository | 查询和写入数据库 | 访问数据源的模块 |
+| record / 请求对象 | 描述数据形状 | TypeScript interface，但 Java 类型运行在 JVM |
+
+请求走向：浏览器 → Controller → Service → Repository → H2，再沿调用链返回 JSON。
+
+## 读懂一个创建接口
+
+项目的 `TaskController.java` 包含：
+
+```java
+public record CreateTask(@NotBlank @Size(max = 80) String title) {}
+
+@PostMapping
+public ResponseEntity<Task> create(@Valid @RequestBody CreateTask request) {
+    Task task = service.create(request.title());
+    return ResponseEntity.created(URI.create("/api/tasks/" + task.id())).body(task);
+}
+```
+
+- `@RequestBody`：把 JSON 转成请求对象，类似读取请求体后反序列化。
+- `@Valid`：触发字段校验，空白标题、超过 80 字符返回 400。
+- `201 Created`：资源已创建；`Location` 告诉调用方新资源的地址。
+- 构造器接收 Service，由 Spring 创建并注入依赖；不需要 Controller 自己 `new` 数据库对象。
+
+前端校验用于及时提示用户，服务器校验用于保证所有调用者遵守规则。直接发送 HTTP 请求同样可以绕过页面表单。
+
+## 动手做一轮增删改查
+
+在 PowerShell 运行：
+
+```powershell
+$task = Invoke-RestMethod http://127.0.0.1:8080/api/tasks -Method Post -ContentType 'application/json' -Body '{"title":"Learn Java"}'
+Invoke-RestMethod "http://127.0.0.1:8080/api/tasks/$($task.id)" -Method Patch -ContentType 'application/json' -Body '{"done":true}'
+Invoke-RestMethod http://127.0.0.1:8080/api/tasks
+Invoke-RestMethod "http://127.0.0.1:8080/api/tasks/$($task.id)" -Method Delete
+```
+
+| 方法与路径 | 成功 | 失败练习 |
+| --- | --- | --- |
+| GET /api/tasks | 200，任务数组 | 新数据库应返回空数组 |
+| GET /api/tasks/id | 200，单条任务 | 不存在的 id 返回 404 |
+| POST /api/tasks | 201，任务及 Location | 空白或超长标题返回 400 |
+| PATCH /api/tasks/id | 200，更新后的任务 | 缺少 done 返回 400 |
+| DELETE /api/tasks/id | 204，无响应体 | 再次删除返回 404 |
+
+`PATCH` 请求中的 `done` 使用 `Boolean` 而非 `boolean`，这样可以区分“缺少字段”和“明确传 false”。
+
+## 现在自己改一次
+
+1. 把标题长度上限改为 40，同时调整数据库字段约束和测试。
+2. 发送空字符串、纯空格、缺少标题三种请求，观察响应状态。
+3. 在创建成功后保存返回的 id，不要假定每次都是 1。
+
+自查：为什么删除成功没有 JSON？为什么更新不存在的记录应返回 404？Controller 中为什么不直接拼 SQL？
+
+下一章：[数据库、事务与接口测试](./database-testing.mdx)。官方扩展：[构建 REST 服务](https://spring.io/guides/gs/rest-service)。

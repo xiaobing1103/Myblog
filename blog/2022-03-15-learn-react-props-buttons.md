@@ -1,14 +1,10 @@
 ---
 slug: learn-react-props-buttons
 title: 一组美丽的按钮 - React Props 教程
-author: 二姨
-author_title: 前端工程师 / B站UP主
-author_url: https://github.com/zxuqian
-author_image_url: https://s3.ax1x.com/2020/12/19/rtW9iR.png
 description: Rect Props 是编写可复用组件的核心，可以利用 Prop 让组件接收不同的参数，然后根据这些参数作出不同的表现，如形状、颜色等。
 tags: [前端, React]
+authors: [eryi]
 ---
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <!-- [B 站视频 - 点击传送](https://www.bilibili.com/video/av93748753/) -->
@@ -19,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 上一张效果图：
 
-<img alt="" src={useBaseUrl('img/2020-03-15-learn-react-props-buttons/2020-03-15-19-02-33.png')} />
+<img alt="" src={useBaseUrl('img/2020-03-15-learn-react-props-buttons/2020-03-15-19-02-33.webp')} />
 
 ## 创建 React 工程
 
@@ -159,7 +155,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 它接收多个参数，第一个直接传递了 styles.button 这个 class，说明它无论其它属性怎么变化，它都是要有的，最后传递了一个对象，对象的 key 是 styles 中的 class 的名字，value 是 boolean 类型的，需要一个条件，返回 true 就把这个 class 加到组合中，false 就不加。那这里，如果 color 的值是 red，那么 button 中就会有 `.red` 定义的样式。
 
-再在 App.js 中添加两个按钮 ，一个 color 设置为 red，一个 color 设置为 black:
+再在 App.js 中添加两个按钮 ，一个 color 设置为 red，一个 color 设置为 black:
 
 ```jsx
 <main>

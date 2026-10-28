@@ -1,0 +1,87 @@
+---
+title: 第 05 课：方法与参数传递
+sidebar_label: 05 方法与参数传递
+description: 拆分输入、返回值与副作用，用可复现的示例理解 Java 始终按值传递。
+---
+
+## 本课目标
+
+前置：第 4 课控制流。能写出返回运费的方法，区分返回值和打印，解释为什么方法内修改对象与重新赋值变量表现不同。
+
+## 第一步：先确定方法的契约
+
+Java 方法通常声明返回类型、方法名、参数列表和方法体。`static int shipping(int subtotal)` 表示接收 int，返回 int。它的使用者不需要知道方法内部用 if 还是条件表达式。
+
+先写清契约：输入金额不能为负；未满 10000 分返回 1000，否则返回 0。业务规则明确后，代码才有判断对错的依据。
+
+## 第二步：运行并解释每一行输出
+
+```java title="Main.java"
+public class Main {
+    static int shipping(int subtotal) {
+        if (subtotal < 0) {
+            throw new IllegalArgumentException("subtotal must not be negative");
+        }
+        return subtotal >= 10000 ? 0 : 1000;
+    }
+
+    static void changeNumber(int number) {
+        number = 99;
+    }
+
+    static void changeArray(int[] values) {
+        values[0] = 99;
+        values = new int[] {7};
+    }
+
+    public static void main(String[] args) {
+        int number = 1;
+        int[] values = {1};
+        changeNumber(number);
+        changeArray(values);
+        System.out.println(shipping(9999));
+        System.out.println(shipping(10000));
+        System.out.println(number);
+        System.out.println(values[0]);
+    }
+}
+```
+
+```text title="运行输出"
+1000
+0
+1
+99
+```
+
+`return` 把结果交给调用者并结束当前方法；`System.out.println` 只是把文本写到标准输出。一个只打印数字、返回 void 的方法，调用者不能拿它的“打印内容”继续计算。
+
+## 第三步：Java 始终按值传递
+
+调用 `changeNumber` 时，参数得到数字 1 的副本，给参数赋 99 不会改变 main 里的 number。
+
+调用 `changeArray` 时，参数得到的是**引用值的副本**。两个引用最初找到同一个数组，修改 `values[0]` 改的是共同的对象，所以外部能看到 99。后来给参数重新赋一个新数组，只改变了方法内的参数变量，外部仍指向原数组。
+
+这不是“基本类型按值，对象按引用”。准确说法是始终按值传递，只是有些值本身是引用。这个区分会影响你对副作用、集合修改和并发代码的判断。
+
+## 第四步：重载与作用域
+
+同名方法可以有不同参数列表，例如 `format(int value)` 与 `format(long value)`；不能仅靠返回类型不同重载。调用时编译器根据参数选择版本，和 JS 根据 arguments 自行分支不是一回事。
+
+参数、局部变量只在对应作用域里可用。把所有变量提到类字段不是解决作用域问题的好办法，会引入共享状态。优先通过参数传入、返回值传出。
+
+## 动手任务
+
+1. 为 shipping 编写三个调用，分别检查负数、0、10000；负数调用需要用 try/catch 防止后续检查被中断。
+2. 写 `int doubled(int value)`，返回两倍结果。再写一个只打印结果的 void 版本，比较哪个更容易组合。
+
+<details>
+<summary>参考解法与检查点</summary>
+
+负数应抛 IllegalArgumentException，0 返回 1000，10000 返回 0。第二题 `return value * 2` 可以继续参与 `doubled(3) + 1`；void 版本不能放进这个表达式。大整数翻倍可能溢出，需要另行规定范围或用精确运算检查。
+
+</details>
+
+过关标准：不运行程序也能解释示例的最后两个输出；能说出方法的前置条件、返回值和副作用。
+
+下一课：[数组、字符串与输入](./06-arrays-strings.mdx)。

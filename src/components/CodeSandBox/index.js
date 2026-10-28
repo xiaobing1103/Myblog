@@ -1,31 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import useThemeContext from "@theme/hooks/useThemeContext";
+import React, {useState} from 'react';
+import {useColorMode} from '@docusaurus/theme-common';
 
-function index({ slug, title, height = "600px" }) {
-  const { isDarkTheme } = useThemeContext();
-  let themedSrc = `https://codesandbox.io/embed/${slug}?fontsize=14&hidenavigation=1&view=preview&theme=${
-    isDarkTheme ? "dark" : "light"
-  }`;
-  return (
-    <div>
-      <iframe
-        src={themedSrc}
-        style={{
-          width: "100%",
-          height,
-          border: 0,
-          "border-radius": "4px",
-          overflow: "hidden",
-        }}
-        title={title}
-        allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-        sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-      ></iframe>
-    </div>
-  );
+export default function CodeSandBox({slug, title = '在线代码示例', height = '600px'}) {
+  const [active, setActive] = useState(false);
+  const {colorMode} = useColorMode();
+  const src = `https://codesandbox.io/embed/${slug}?fontsize=14&hidenavigation=1&view=preview&theme=${colorMode}`;
+  return active ? <iframe className="embed-frame" src={src} title={title} style={{height}} loading="lazy" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts" /> :
+    <div className="embed-placeholder" style={{minHeight: height}}><p>{title}</p><button className="button button--primary" onClick={() => setActive(true)}>运行交互示例</button><a href={`https://codesandbox.io/s/${slug}`} target="_blank" rel="noopener noreferrer">在 CodeSandbox 打开 ↗</a></div>;
 }
-
-index.propTypes = {};
-
-export default index;

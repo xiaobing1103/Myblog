@@ -1,0 +1,16 @@
+{
+  "scripts": [
+    {
+      "url": "/Myblog/assets/js/runtime~main.2458fafd.js",
+      "bytes": 9505,
+      "gzip": 4789
+    },
+    {
+      "url": "/Myblog/assets/js/main.84196453.js",
+      "bytes": 390062,
+      "gzip": 122092
+    }
+  ],
+  "totalGzip": 126881,
+  "htmlBytes": 47684
+}

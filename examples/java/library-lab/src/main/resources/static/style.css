@@ -1,0 +1,26 @@
+:root {color-scheme: light; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color: #233147; background: #f4f6fb; line-height: 1.6; font-synthesis: none;}
+* {box-sizing: border-box;} body {margin: 0;} main {width: min(1120px, calc(100% - 40px)); margin: 40px auto;}
+.hero {display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 22px;}
+h1 {font-size: clamp(1.7rem, 4vw, 2.4rem); letter-spacing: -.04em; margin: .2rem 0;} h2 {font-size: 1.2rem; margin: .15rem 0;}
+p {margin: .4rem 0;} .eyebrow {font-size: .72rem; letter-spacing: .1em; font-weight: 700; color: #586ad4;} .local {white-space: nowrap; color: #405783; font-size: .78rem; border: 1px solid #c9d4ea; padding: 5px 12px; border-radius: 20px;}
+.hero p:not(.eyebrow), .section-head > p, .hint, footer {color: #596779; font-size: .85rem;}
+.panel {background: white; padding: 25px; border: 1px solid #e0e6f0; border-radius: 16px; margin: 22px 0; box-shadow: 0 3px 14px #1d305a04;}
+.section-head {display: flex; align-items: end; justify-content: space-between; gap: 18px; margin-bottom: 18px;}
+.book-form {display: grid; grid-template-columns: 2fr 1.5fr 100px auto; gap: 14px; align-items: end;}
+label {display: grid; gap: 6px; font-size: .8rem; font-weight: 600; min-width: 0;} input, select, button {font: inherit;}
+input, select {width: 100%; min-width: 0; padding: 10px 12px; color: #233147; background: white; border: 1px solid #ccd5e3; border-radius: 8px; font-size: .85rem;}
+button {border: 1px solid transparent; border-radius: 8px; background: #3c52c6; color: white; padding: 10px 15px; font-size: .82rem; cursor: pointer; white-space: nowrap;}
+button:hover:not(:disabled) {background: #2d41af;} button:disabled {opacity: .45; cursor: not-allowed;}
+button.secondary {background: #f2f5fc; border-color: #dce3f0; color: #3b4c72;} button.danger {background: white; color: #a12f3f; border-color: #ebcbd1;}
+button.secondary:hover:not(:disabled), button.danger:hover:not(:disabled) {background: #e9eef8;}
+input:focus-visible, select:focus-visible, button:focus-visible {outline: 3px solid #a6b3ff; outline-offset: 2px;}
+.toolbar {display: grid; grid-template-columns: 2fr 1fr; gap: 24px; align-items: end; margin-bottom: 16px;} .search-form {display: flex; gap: 10px; align-items: end;} .search-form label {flex: 1;}
+.table-wrap {overflow-x: auto;} table {width: 100%; border-collapse: collapse; text-align: left; font-size: .85rem;} th {color: #64718a; background: #f7f9fc; font-size: .74rem; font-weight: 600;}
+th, td {padding: 13px 12px; border-bottom: 1px solid #e9edf4; vertical-align: middle;} td strong, td small {display: block;} td small {color: #657187; font-size: .77rem; margin-top: 3px;} td {overflow-wrap: anywhere;}
+.actions {display: flex; gap: 8px; flex-wrap: wrap;} .actions button {padding: 6px 10px;} .empty {text-align: center; color: #657187; padding: 28px;}
+.pager {display: flex; gap: 18px; justify-content: center; align-items: center; margin-top: 18px; font-size: .8rem;}
+.notice {padding: 12px 16px; min-height: 50px; background: #eaf1ff; border: 1px solid #d0dcf6; border-radius: 10px; color: #304f88; font-size: .85rem; overflow-wrap: anywhere;}
+.notice[data-kind="error"] {background: #fff0f1; border-color: #edc6cd; color: #9b293b;} .notice[data-kind="success"] {background: #edf8f1; border-color: #c9e8d3; color: #276e43;}
+.hint {margin-bottom: 14px;} footer {text-align: center; margin: 28px 0; line-height: 1.9;}
+@media (max-width: 760px) {main {width: calc(100% - 24px); margin: 24px auto;} .hero {align-items: start;} .local {display: none;} .panel {padding: 17px;} .book-form {grid-template-columns: 1fr 1fr;} .book-form label:first-child {grid-column: 1 / -1;} .toolbar {grid-template-columns: 1fr; gap: 14px;} .section-head {align-items: start;} .section-head > p {max-width: 45%;} th, td {padding: 11px 8px;} .actions {min-width: 75px;} .pager {gap: 10px;} .section-head label {max-width: 140px;}}
+@media (prefers-color-scheme: dark) {:root {color-scheme: dark; color: #dae1f1; background: #111827;} .panel, input, select {background: #1c2637; color: #dae1f1; border-color: #36445a;} th {background: #253147;} th, td {border-color: #36445a;} .hero p:not(.eyebrow), .section-head > p, .hint, footer, td small {color: #acb9cf;} .eyebrow {color: #a4b2ff;} .local {color: #b4c5e7;} .notice {background: #243451; color: #c2d5ff; border-color: #42587c;} .notice[data-kind="error"] {background: #472732; color: #ffd1da;} .notice[data-kind="success"] {background: #203d31; color: #c0ecd1;} button.secondary, button.danger {background: #27364c; color: #d5dff2; border-color: #42536d;}}

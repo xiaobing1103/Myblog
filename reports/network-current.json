@@ -1,0 +1,560 @@
+{
+  "conditions": "Chrome, cold browser context, local production preview, networkidle + 1s; includes prefetch; iframe subtargets may be excluded by CDP",
+  "pages": [
+    {
+      "name": "home-desktop",
+      "requests": 10,
+      "transferBytes": 133026,
+      "types": {
+        "Document": 5134,
+        "Stylesheet": 15112,
+        "Image": 12367,
+        "Script": 98191,
+        "Other": 2222
+      },
+      "resources": [
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/main.a7dd3523.js",
+          "status": 200,
+          "transferBytes": 89644
+        },
+        {
+          "type": "Stylesheet",
+          "url": "http://127.0.0.1:3000/Myblog/assets/css/styles.496e6e1e.css",
+          "status": 200,
+          "transferBytes": 15112
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/img/hero_main.min.svg",
+          "status": 200,
+          "transferBytes": 8212
+        },
+        {
+          "type": "Document",
+          "url": "http://127.0.0.1:3000/Myblog/",
+          "status": 200,
+          "transferBytes": 5134
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/img/logo.webp",
+          "status": 200,
+          "transferBytes": 4155
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/runtime~main.a4adfae9.js",
+          "status": 200,
+          "transferBytes": 4068
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/49759cdc.50b9d127.js",
+          "status": 200,
+          "transferBytes": 2311
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/img/favicon.png",
+          "status": 200,
+          "transferBytes": 2222
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/a6aa9e1f.fa4e5742.js",
+          "status": 200,
+          "transferBytes": 1739
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/36994c47.e919e4cd.js",
+          "status": 200,
+          "transferBytes": 429
+        }
+      ],
+      "budget": {
+        "requests": 14,
+        "transferBytes": 163840
+      }
+    },
+    {
+      "name": "home-mobile",
+      "requests": 10,
+      "transferBytes": 133026,
+      "types": {
+        "Document": 5134,
+        "Stylesheet": 15112,
+        "Image": 12367,
+        "Script": 98191,
+        "Other": 2222
+      },
+      "resources": [
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/main.a7dd3523.js",
+          "status": 200,
+          "transferBytes": 89644
+        },
+        {
+          "type": "Stylesheet",
+          "url": "http://127.0.0.1:3000/Myblog/assets/css/styles.496e6e1e.css",
+          "status": 200,
+          "transferBytes": 15112
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/img/hero_main.min.svg",
+          "status": 200,
+          "transferBytes": 8212
+        },
+        {
+          "type": "Document",
+          "url": "http://127.0.0.1:3000/Myblog/",
+          "status": 200,
+          "transferBytes": 5134
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/img/logo.webp",
+          "status": 200,
+          "transferBytes": 4155
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/runtime~main.a4adfae9.js",
+          "status": 200,
+          "transferBytes": 4068
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/49759cdc.50b9d127.js",
+          "status": 200,
+          "transferBytes": 2311
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/img/favicon.png",
+          "status": 200,
+          "transferBytes": 2222
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/a6aa9e1f.fa4e5742.js",
+          "status": 200,
+          "transferBytes": 1739
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/36994c47.e919e4cd.js",
+          "status": 200,
+          "transferBytes": 429
+        }
+      ],
+      "budget": {
+        "requests": 14,
+        "transferBytes": 163840
+      }
+    },
+    {
+      "name": "article",
+      "requests": 20,
+      "transferBytes": 198655,
+      "types": {
+        "Document": 10022,
+        "Stylesheet": 15112,
+        "Image": 7740,
+        "Script": 163559,
+        "Other": 2222
+      },
+      "resources": [
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/main.a7dd3523.js",
+          "status": 200,
+          "transferBytes": 89644
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/998.8198e8d8.js",
+          "status": 200,
+          "transferBytes": 23245
+        },
+        {
+          "type": "Stylesheet",
+          "url": "http://127.0.0.1:3000/Myblog/assets/css/styles.496e6e1e.css",
+          "status": 200,
+          "transferBytes": 15112
+        },
+        {
+          "type": "Document",
+          "url": "http://127.0.0.1:3000/Myblog/css-flex-box-layout/",
+          "status": 200,
+          "transferBytes": 10022
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/4255.ee3f8829.js",
+          "status": 200,
+          "transferBytes": 9810
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/dea6cef7.5a6657bf.js",
+          "status": 200,
+          "transferBytes": 7730
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/2855.8f7169e3.js",
+          "status": 200,
+          "transferBytes": 7031
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/6416.0981d97b.js",
+          "status": 200,
+          "transferBytes": 6343
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/9253.f9c72d21.js",
+          "status": 200,
+          "transferBytes": 6210
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/img/logo.webp",
+          "status": 200,
+          "transferBytes": 4155
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/runtime~main.a4adfae9.js",
+          "status": 200,
+          "transferBytes": 4068
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/img/responsive/960.c78dfc383e71c379.webp",
+          "status": 200,
+          "transferBytes": 3585
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/1357.efe0c805.js",
+          "status": 200,
+          "transferBytes": 3244
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/7616.d167b70b.js",
+          "status": 200,
+          "transferBytes": 2566
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/img/favicon.png",
+          "status": 200,
+          "transferBytes": 2222
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/ccc49370.68c690d1.js",
+          "status": 200,
+          "transferBytes": 1408
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/814f3328.c28bd754.js",
+          "status": 200,
+          "transferBytes": 828
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/9688.974f9ec9.js",
+          "status": 200,
+          "transferBytes": 574
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/acecf23e.4b6976ed.js",
+          "status": 200,
+          "transferBytes": 429
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/36994c47.e919e4cd.js",
+          "status": 200,
+          "transferBytes": 429
+        }
+      ],
+      "budget": {
+        "requests": 30,
+        "transferBytes": 266240
+      }
+    },
+    {
+      "name": "pdf",
+      "requests": 41,
+      "transferBytes": 465036,
+      "types": {
+        "Document": 11289,
+        "Stylesheet": 43024,
+        "Image": 16880,
+        "Script": 376447,
+        "Fetch": 15174,
+        "Other": 2222
+      },
+      "resources": [
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/build/pdf.mjs",
+          "status": 200,
+          "transferBytes": 140732
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/viewer.mjs",
+          "status": 200,
+          "transferBytes": 113397
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/main.a7dd3523.js",
+          "status": 200,
+          "transferBytes": 89644
+        },
+        {
+          "type": "Stylesheet",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/viewer.css",
+          "status": 200,
+          "transferBytes": 27202
+        },
+        {
+          "type": "Stylesheet",
+          "url": "http://127.0.0.1:3000/Myblog/assets/css/styles.496e6e1e.css",
+          "status": 200,
+          "transferBytes": 15112
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/b1a5eca0.3b701e13.js",
+          "status": 200,
+          "transferBytes": 8703
+        },
+        {
+          "type": "Fetch",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/locale/zh-CN/viewer.ftl",
+          "status": 200,
+          "transferBytes": 7185
+        },
+        {
+          "type": "Fetch",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/locale/en-US/viewer.ftl",
+          "status": 200,
+          "transferBytes": 6994
+        },
+        {
+          "type": "Document",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/viewer.html?file=%2FMyblog%2Fpdf%2F2022-2-16-zhufengfo%2Fvue3zhufeng.pdf",
+          "status": 200,
+          "transferBytes": 6961
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/9253.f9c72d21.js",
+          "status": 200,
+          "transferBytes": 6210
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/a94703ab.a7133706.js",
+          "status": 200,
+          "transferBytes": 4520
+        },
+        {
+          "type": "Document",
+          "url": "http://127.0.0.1:3000/Myblog/docs/resources/frontend-pdf/01frontend-pdf/",
+          "status": 200,
+          "transferBytes": 4328
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/img/logo.webp",
+          "status": 200,
+          "transferBytes": 4155
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/runtime~main.a4adfae9.js",
+          "status": 200,
+          "transferBytes": 4068
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/4929.b837f864.js",
+          "status": 200,
+          "transferBytes": 3515
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/loading-icon.gif",
+          "status": 200,
+          "transferBytes": 2785
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/img/favicon.png",
+          "status": 200,
+          "transferBytes": 2222
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/04b99362.f0ec9d5b.js",
+          "status": 200,
+          "transferBytes": 1750
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/17896441.ee1cc3c2.js",
+          "status": 200,
+          "transferBytes": 1408
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-search.svg",
+          "status": 200,
+          "transferBytes": 834
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/a7bd4aaa.bd443c52.js",
+          "status": 200,
+          "transferBytes": 812
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-viewsManagerToggle.svg",
+          "status": 200,
+          "transferBytes": 809
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-editorInk.svg",
+          "status": 200,
+          "transferBytes": 791
+        },
+        {
+          "type": "Fetch",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/locale/locale.json",
+          "status": 200,
+          "transferBytes": 758
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/pdf-reader/config.mjs",
+          "status": 200,
+          "transferBytes": 751
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/loading.svg",
+          "status": 200,
+          "transferBytes": 722
+        },
+        {
+          "type": "Stylesheet",
+          "url": "http://127.0.0.1:3000/Myblog/pdf-reader/theme.css",
+          "status": 200,
+          "transferBytes": 710
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-download.svg",
+          "status": 200,
+          "transferBytes": 700
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-zoomIn.svg",
+          "status": 200,
+          "transferBytes": 686
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-editorHighlight.svg",
+          "status": 200,
+          "transferBytes": 680
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-print.svg",
+          "status": 200,
+          "transferBytes": 658
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-secondaryToolbarToggle.svg",
+          "status": 200,
+          "transferBytes": 634
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-pageDown.svg",
+          "status": 200,
+          "transferBytes": 616
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-editorStamp.svg",
+          "status": 200,
+          "transferBytes": 611
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-pageUp.svg",
+          "status": 200,
+          "transferBytes": 602
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-menuArrow.svg",
+          "status": 200,
+          "transferBytes": 602
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/5e95c892.84b29cfe.js",
+          "status": 200,
+          "transferBytes": 511
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-zoomOut.svg",
+          "status": 200,
+          "transferBytes": 501
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-editorFreeText.svg",
+          "status": 200,
+          "transferBytes": 494
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/aba21aa0.d0194702.js",
+          "status": 200,
+          "transferBytes": 426
+        },
+        {
+          "type": "Fetch",
+          "url": "http://127.0.0.1:3000/Myblog/pdf/2022-2-16-zhufengfo/vue3zhufeng.pdf",
+          "status": 206,
+          "transferBytes": 237
+        }
+      ]
+    }
+  ]
+}

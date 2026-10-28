@@ -76,7 +76,7 @@ const arr = []
 
 这样的写法就可以得到一个长度为7的数组：
 
-<img src="https://s3.ax1x.com/2020/12/18/rGjEgH.png" alt="rGjEgH.png" border="0" />
+![rGjEgH.png](/img/remote/383314c90359b6e6.webp)
 
 在一些场景中，这个需求会稍微变得有点复杂—— “创建一个长度确定、同时每一个元素的值也都确定的数组”。这时我们可以调用 fill 方法，假设需求是每个坑里都填上一个1，只需给它 fill 一个1：
 
@@ -86,7 +86,7 @@ const arr = (new Array(7)).fill(1)
 
 如此便可以得到一个长度为7，且每个元素都初始化为1的数组：
 
-<img src="https://s3.ax1x.com/2020/12/18/rGjVvd.png" alt="rGjVvd.png" border="0" />
+![rGjVvd.png](/img/remote/c89cb06216d0cac1.webp)
 
 
 
@@ -155,7 +155,7 @@ const arr = [1,2,3,4,5]
 
 这个数组在逻辑上的分布就是这样式儿的：
 
-<img src="https://s3.ax1x.com/2020/12/18/rGjMUf.png" alt="rGjMUf.png" border="0" />
+![rGjMUf.png](/img/remote/b1b0bdf276175249.webp)
 
 像图上这样，数组的元素是数字而非数组。整个数组的结构看上去宛如一条“线”，这就是一维数组。
 而“每个元素都是数组的数组”，代码里看是这样：
@@ -172,7 +172,7 @@ const arr = [
 
 直接把它的逻辑结构画出来看，是这样：
 
-<img src="https://s3.ax1x.com/2020/12/18/rGjQ58.png" alt="rGjQ58.png" border="0" />
+![rGjQ58.png](/img/remote/932208e9f8fa95e6.webp)
 
 图中的每一行，就代表着一个数组元素。比如第 0 行，就代表着数组中 `arr[0]` 这个数组元素，其内容是 `[1,2,3,4,5]`。
 每一行中的每一列，则代表一个确切的“坑”。比如第 0 行第 1 列，就代表着数组中 `arr[0][1] `这个元素，其值为2，是一个确切的 number。
@@ -199,7 +199,7 @@ const arr =(new Array(7)).fill([])
 
 乍一看没啥毛病，7个坑都被乖乖地填上了数组元素：
 
-<img src="https://s3.ax1x.com/2020/12/18/rGj1PS.png" alt="rGj1PS.png" border="0" />
+![rGj1PS.png](/img/remote/e79dcd973e8c5a88.webp)
 
 但是当你想修改某一个坑里的数组的值的时候：
 
@@ -209,12 +209,12 @@ arr[0][0] = 1
 
 你会发现一整列的元素都被设为了 1
 
-<img src="https://s3.ax1x.com/2020/12/18/rGj38g.png" alt="rGj38g.png" border="0" />
+![rGj38g.png](/img/remote/8fe1ee1f15b1aa40.webp)
 
 这是什么骚操作？？？
 这就要从 fill 的工作机制讲起了。各位要清楚，当你给 fill 传递一个入参时，**如果这个入参的类型是引用类型，那么 fill 在填充坑位时填充的其实就是入参的引用**。也就是说下图中虽然看似我们给7个坑位各初始化了一个数组：
 
-<img src="https://s3.ax1x.com/2020/12/18/rJAxY9.png" alt="rJAxY9.png" border="0" />
+![rJAxY9.png](/img/remote/2e426afe5802e212.webp)
 
 其实这7个数组对应了同一个引用、指向的是同一块内存空间，**它们本质上是同一个数组**。因此当你修改第0行第0个元素的值时，第1-6行的第0个元素的值也都会跟着发生改变。
 

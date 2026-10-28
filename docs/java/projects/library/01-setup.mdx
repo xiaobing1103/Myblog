@@ -1,0 +1,104 @@
+---
+title: 实战 01：环境、启动与代码地图
+sidebar_label: 01 环境与启动
+description: 从干净解压目录启动图书借阅管理台，分清页面、API、数据库和 Maven 构建阶段。
+---
+
+## 这一步要完成什么
+
+前置：[项目路线与下载](./index.mdx)。完成后，本机能打开图书页面，能在终端请求 API，并且知道每个目录负责什么。
+
+## 第一步：核对工具与当前目录
+
+在新终端执行：
+
+```sh
+java --version
+javac --version
+mvn --version
+```
+
+Java 与 javac 应为 21，Maven 的输出也应显示使用 JDK 21。Windows 可用 `where.exe java` 和 `where.exe javac` 检查 PATH 中实际找到的工具。安装完成后旧终端可能未更新环境变量，需要重新打开。
+
+解压项目并进入 `library-lab`，确认当前目录能看到 pom.xml。在项目根目录执行 Maven，或用 `mvn -f 路径/pom.xml test` 明确指定配置文件。
+
+## 第二步：先验证后启动
+
+```sh
+mvn test
+mvn spring-boot:run
+```
+
+第一条编译并运行测试，出现 BUILD SUCCESS 后再运行第二条。第一次下载依赖可能较慢；网络下载失败与 Java 编译失败要分开排查，不要仅因为终端暂时没有新内容就认为代码卡死。
+
+运行服务的终端会持续占用，这是正常的。先等日志显示启动成功，再打开 `http://127.0.0.1:8080/`。按 Ctrl+C 停止服务后，页面再发请求就会失败，不能关闭终端后仍期望 API 存在。
+
+## 第三步：不通过页面直接请求
+
+在第二个 PowerShell 终端中执行：
+
+```powershell
+$base = 'http://127.0.0.1:8080'
+Invoke-RestMethod "$base/api/books"
+```
+
+新数据库的响应包含空 items、total 为 0、page 为 1、size 为 10。若已操作过项目，应用会保留文件数据库中的记录，items 中可能包含旧数据。
+
+再创建一本英文标题的示例书，避免终端编码干扰第一次验证：
+
+```powershell
+$book = Invoke-RestMethod "$base/api/books" -Method Post -ContentType 'application/json' -Body '{"title":"Java Basics","author":"Learning Team","totalCopies":2}'
+$book
+Invoke-RestMethod "$base/api/books/$($book.id)"
+```
+
+观察 `totalCopies` 和 `availableCopies` 都是 2。保存返回的 id，后面用它借阅；不要假定新记录永远从 1 开始。
+
+## 第四步：对照目录阅读
+
+```text
+library-lab/
+  pom.xml
+  LICENSE
+  src/main/java/blog/library/
+  src/main/resources/
+    application.properties
+    schema.sql
+    static/
+      index.html
+      app.js
+      style.css
+  src/test/java/blog/library/
+  target/
+  data/
+```
+
+Java 包中包含入口、HTTP 控制器、业务服务、数据访问与错误处理。resources 中的配置和建表语句随应用加载；static 里的页面由同一个 Java 服务提供，浏览器通过相对 `/api/...` 地址请求后端。
+
+`target/` 保存可重新生成的编译和测试产物；`data/` 保存 H2 应用数据。删除 target 不应丢失图书，删除 data 则会影响你的学习记录。
+
+## 第五步：按现象定位问题
+
+| 现象 | 优先检查 |
+| --- | --- |
+| MissingProjectException | 当前目录是否包含 pom.xml |
+| 编译版本不支持 | Maven 是否使用 JDK 21 |
+| 端口占用 | 旧待办项目或另一份服务是否还在运行 |
+| 页面能开但 API 失败 | 浏览器地址与 Java 服务地址，查看网络面板 |
+| H2 文件被占用 | 是否两个进程访问同一个 data 目录 |
+| 重启后看不到原数据 | 是否换了工作目录或数据库路径 |
+
+把端口改成 8081 时，浏览器也要访问 8081。数据库相对路径从进程启动时的工作目录解析。
+
+## 动手任务
+
+分别停止并重启服务，确认刚创建的书仍能查询；再说明为什么 Maven 测试不会把测试书籍写进学习用的文件数据库。
+
+<details>
+<summary>参考答案与验收</summary>
+
+从同一目录重启后查询返回的 id，仍应得到书籍。应用使用文件型 H2，测试通过配置替换成内存 H2，因而测试不依赖也不污染 data。检查测试类的 SpringBootTest 配置能找到这一差异。遇到空数据先检查路径，不要立即重新录入来掩盖原因。
+
+</details>
+
+下一步：[建表与数据库约束](./02-schema.mdx)。

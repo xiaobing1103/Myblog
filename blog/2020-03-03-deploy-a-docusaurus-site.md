@@ -1,13 +1,9 @@
 ---
 slug: deploy-a-docusaurus-site
 title: 超简单！使用 Docusaurus 搭建个人博客（一）
-author: 二姨
-author_title: 前端工程师 / B站UP主
-author_url: https://github.com/
-author_image_url: https://s3.ax1x.com/2020/12/19/rtW9iR.png
 tags: [前端, 职业]
+authors: [eryi]
 ---
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
@@ -27,7 +23,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 它是一个静态网站生成器，之前我在我的前端路线图的视频里面提到过这个概念，他是用 React 写的源代码，然后编译成的是静态的 HTML css。他这个写文章支持 Markdown 语法，并且呢，它这个 marketdown 是用的 mdx 也就是支持 jsx 语法的 markdown，无缝结合 React, 里边可以引入自定义的组件，然后呢他也支持插件，还有主题，咱们也可以写自定义的组件，把它默认的主题的某一个组件给覆盖掉，特别方便。
 
-<img alt="" src={useBaseUrl('img/2020-03-02-deploy-a-docusaurus-site/2020-03-04-22-04-02.png')} />
+<img alt="" src={useBaseUrl('img/2020-03-02-deploy-a-docusaurus-site/2020-03-04-22-04-02.webp')} />
 
 ## 安装运行环境
 
@@ -73,7 +69,7 @@ npm start
 
 运行成功了之后呢，它会自动打开一个浏览器，然后访问的是`http://localhost:3000`，可以看到他这个界面，跟咱们之前看到的官网的文档是一样的。上面有文档、博客、还有 github 链接，切换暗黑和白天模式。
 
-<img alt="" src={useBaseUrl('img/2020-03-02-deploy-a-docusaurus-site/2020-03-04-22-16-57.png')} />
+<img alt="" src={useBaseUrl('img/2020-03-02-deploy-a-docusaurus-site/2020-03-04-22-16-57.webp')} />
 
 ### 项目结构
 

@@ -1,14 +1,10 @@
 ---
 slug: harmonyos-js-todo
 title: 鸿蒙 OS：使用 JavaScript 开发 Todo App UI 界面
-author: 二姨
-author_title: 前端工程师 / B站UP主
-author_url: https://github.com/xiaobing1103
-author_image_url: https://s3.ax1x.com/2020/12/19/rtW9iR.png
 description: 使用鸿蒙 JS 框架开发 Todo 应用的 TV 版 UI 界面。
 tags: [前端, 鸿蒙, JavaScript]
+authors: [eryi]
 ---
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 距离鸿蒙 OS 2.0 发布已经过去一些日子了，看到鸿蒙系统强大的设备共享能力，我觉得未来它一定能够成为主流的操作系统。在利用了分布式系统的优势之后，多个设备间可以共享应用程序界面和数据，并且对于开发者，也可以使用一套代码编写应用，就可以在多种设备终端上运行。
@@ -21,7 +17,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 在了解了鸿蒙可以使用 JavaScript 开发之后，那么这里我就给大家展示一下前端惯例项目，Todo App 的开发过程。这篇文章将只先介绍 UI 的开发过程，因为这部分所遇到的坑就能产生足够多的篇幅了。这个作品是一个 TV 版的应用，因为鸿蒙暂时不支持移动 App 的开发，它的最终效果如下图所示（模拟器分辨率较低，图的质量不太好）：
 
-![最终效果](./img/2020-09-20-11-55-58.png)
+![最终效果](./img/2020-09-20-11-55-58.webp)
 
 
 这个项目简单的展示了一个 Todo 列表，整体容器背景为淡紫色，todo 列表中有应用的标题，添加 todo 的输入框和按钮，过滤选项，以及 todo 列表。因为鸿蒙貌似不支持改变 checkbox 的背景颜色，未选中状态是白色，跟 todo 列表容器的背景是一样的，所以看不到，选中之后则可以看到是默认的蓝色。因为这个设计稿原本是给手机界面设计的，而鸿蒙 TV 只支持横向滚动条，所以这个界面看起来会有点奇怪，不过不影响我们学习项目开发方法。
@@ -42,11 +38,11 @@ Node.js：[https://nodejs.org/en/](https://nodejs.org/en/)
 
 打开 DevEco，在欢迎界面中选择 Create HarmonyOS Project，然后在 Choose your ability template 界面中，Device 下选择 TV，Template 选择 Empty Feature Ability(JS) 创建一个空的 JS 项目。
 
-![创建项目](./img/2020-09-20-11-56-49.png)
+![创建项目](./img/2020-09-20-11-56-49.webp)
 
 点击 Next，在 Configure your project 界面输入项目信息。在 Project Name 中输入 TodoApp，Package name 我这里使用了 com.zxuqian.todoapp，在 save location 中选择项目的保存路径，Compatible SDK 保持默认就好，填写完成之后点击 Finish 完成项目的创建。
 
-![配置项目信息](./img/2020-09-20-11-57-01.png)
+![配置项目信息](./img/2020-09-20-11-57-01.webp)
 
 我们先来大体看一下项目的目录结构，这里列出来了关键的目录说明：
 
@@ -80,7 +76,7 @@ TodoApp
 
 然后会打开浏览器，显示华为开发者登录页面，用华为账号登录进去之后，选择个人或公司认证，填写银行卡后认证成功。认证完成之后要**关闭浏览器，**因为浏览器在打开状态下，无法在 DevEco 中登录，这应该是个 Bug。再次选择 Tools -> HVD Manager，在弹出的浏览器页面中登录并授权后，就可以看到模拟器了：
 
-![选择模拟器](./img/2020-09-20-11-57-57.png)
+![选择模拟器](./img/2020-09-20-11-57-57.webp)
 
 选择 TV，然后点击 Actions 下的三角形就可以启动成功了。默认浏览器是内嵌在 DevEco Studio 中的，可以点击右上角的齿轮图标，在弹出菜单中选择 View Mode -> Window 来让它以窗口形式显示。
 
@@ -88,7 +84,7 @@ TodoApp
 
 另外，因为是远程的模拟器，所以画质不好，并且每次只能使用 1 小时，超时后需要重新启动：
 
-![成功运行模拟器](./img/2020-09-20-11-58-26.png)
+![成功运行模拟器](./img/2020-09-20-11-58-26.webp)
 
 模拟器启动成功后，就可以启动项目了。点击工具栏中的三角形按钮，确保下拉选择框选择了 entry：
 
@@ -277,8 +273,8 @@ data: {
 接着打开 index.hml 文件，把 filters 中的 text 删掉 2 个，剩下的一个改成：
 
 - 使用 for 指令遍历 data 中的 filters 数据，并且给每个元素命名为 filter
-- 设置 tid， 相当于 Vue 中的 key，用于列表数据渲染性能优化，这里直接使用\$idx，数组的索引，{{}}用来获取变量的值
-- 然后内容则是 filter 变量中的值，使用 {{filter}} 获取。
+- 设置 tid， 相当于 Vue 中的 key，用于列表数据渲染性能优化，这里直接使用\$idx，数组的索引，`{{}}`用来获取变量的值
+- 然后内容则是 filter 变量中的值，使用 `{{filter}}` 获取。
 
 ```html
 <text class="filter" for="{{filter in filters}}" tid="{{$idx}}">

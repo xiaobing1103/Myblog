@@ -1,0 +1,93 @@
+---
+title: 第 04 课：分支、循环与边界
+sidebar_label: 04 分支与循环
+description: 把运费和订单统计规则翻译为 if、switch 与循环，用临界值检查控制流。
+---
+
+import JavaPractice from '@site/src/components/JavaPractice';
+
+## 本课目标
+
+前置：比较、布尔运算。能够按业务条件选择分支，写出不会越界的循环，并验证 0、临界值、空集合等输入。
+
+## 第一步：先把规则写成人话
+
+假定订单未满 100 元收取 10 元运费，满 100 元免运费；这里金额单位仍是分。条件是 `subtotal >= 10000`，不是 `> 10000`。只差一个等号，就会让恰好 100 元的订单算错。
+
+Java 的 if 条件必须是 boolean。不能像 JS 一样写 `if (quantity)` 表示非零，应该写出 `quantity > 0` 等具体含义。
+
+## 第二步：运行一个统计过程
+
+```java title="Main.java"
+public class Main {
+    public static void main(String[] args) {
+        int[] prices = {3000, 4500, 2500};
+        int subtotal = 0;
+        for (int price : prices) {
+            if (price < 0) {
+                throw new IllegalArgumentException("price must not be negative");
+            }
+            subtotal += price;
+        }
+        int shipping;
+        if (subtotal >= 10000) {
+            shipping = 0;
+        } else {
+            shipping = 1000;
+        }
+        String status = "PAID";
+        String label = switch (status) {
+            case "PAID" -> "Ready to ship";
+            case "NEW" -> "Awaiting payment";
+            default -> "Unknown status";
+        };
+        System.out.println(subtotal);
+        System.out.println(shipping);
+        System.out.println(label);
+    }
+}
+```
+
+```text title="运行输出"
+10000
+0
+Ready to ship
+```
+
+增强 for 每次取一个数组元素，适合只读遍历。`subtotal += price` 表示把本次金额累加到已有总和，不是每次重置成当前金额。
+
+switch 表达式用 `->` 返回对应结果，避免传统 case 忘写 break 的贯穿问题。这里 default 处理未知状态；真实后端可能应拒绝未知状态，而不是显示友好文本，要根据业务选择。
+
+## 第三步：什么时候使用其他循环
+
+普通 for 适合需要索引的场景：`for (int i = 0; i < prices.length; i++)`。数组合法索引从 0 到 length - 1，因此条件不是 `<=`。
+
+while 适合次数未知、依赖条件的过程，例如反复读取输入直到输入 quit。必须保证循环里有能改变退出条件的操作，否则会无限循环。
+
+`continue` 跳过当前轮剩余语句，`break` 退出最近的一层循环。多层循环中，退出哪一层往往不容易阅读，优先拆成方法表达目的。
+
+## 第四步：用边界检验规则
+
+| 输入 | 预期运费 | 选择原因 |
+| --- | --- | --- |
+| 9999 | 1000 | 刚低于门槛 |
+| 10000 | 0 | 恰好达到门槛 |
+| 10001 | 0 | 刚高于门槛 |
+
+空订单如何处理是额外业务问题：数学求和等于 0，并不意味着可以创建一个空订单。先把求和函数与“是否允许下单”的校验分清。
+
+<JavaPractice id="shipping" />
+
+## 动手任务
+
+1. 为数组添加 0 分商品和负数商品，分别预测会发生什么。
+2. 写一个普通 for，只统计偶数下标的商品金额；不要修改原数组。
+
+<details>
+<summary>参考解法与原因</summary>
+
+0 不改变总和，负数触发异常，之后的打印不会继续执行。第二题可以用 `for (int i = 0; i < prices.length; i += 2)`，累加 `prices[i]`。原数组结果是 5500；空数组不进入循环，得到 0。
+
+</details>
+
+下一课：[方法与参数传递](./05-methods.mdx)。先把运费逻辑记住，下一课会提取成可独立调用的方法。

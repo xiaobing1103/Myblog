@@ -1,0 +1,32 @@
+/* 本站外观适配；PDF.js 的原始样式和许可证保留在 pdfjs/。 */
+:root {
+  --toolbar-bg-color: #f5f8ff;
+  --toolbar-border-color: #dfe5ef;
+  --body-bg-color: #e7edf6;
+  --sidebar-bg-color: #f5f8ff;
+  --field-bg-color: #fff;
+  --field-color: #1b2d4e;
+  --main-color: #1b2d4e;
+  --button-hover-color: #dce6fc;
+  --button-active-color: #cadbfc;
+  --toggled-btn-bg-color: #cadbfc;
+  font-family: system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+html[data-blog-theme='dark'] {
+  --toolbar-bg-color: #18202d;
+  --toolbar-border-color: #303c50;
+  --body-bg-color: #101722;
+  --sidebar-bg-color: #18202d;
+  --field-bg-color: #101722;
+  --field-color: #e5edff;
+  --main-color: #e5edff;
+  --button-hover-color: #303c50;
+  --button-active-color: #3b4b65;
+  --toggled-btn-bg-color: #3b4b65;
+  color-scheme: dark;
+}
+#toolbarContainer {box-shadow: none; border-bottom: 1px solid var(--toolbar-border-color);}
+#viewerContainer {scrollbar-gutter: stable;}
+.toolbarButton {border-radius: 5px;}
+#print, #download {border-radius: 5px;}
+@media (prefers-reduced-motion: reduce) {* {scroll-behavior: auto !important;}}

@@ -1,0 +1,74 @@
+---
+title: 08 · 数据库与自动化测试
+sidebar_label: 08 · 数据库与测试
+description: 在待办 API 中学习 SQL 参数绑定、H2 持久化、事务与真实 HTTP 集成测试。
+---
+
+## 从数组变成数据库
+
+前端变量在刷新后会消失，Java 进程中的 `ArrayList` 也会在重启时丢失。上一章项目把任务保存到 H2 文件数据库，默认位置是启动目录下的 `data/`。
+
+```properties
+spring.datasource.url=jdbc:h2:file:./data/tasks
+spring.sql.init.mode=always
+```
+
+启动时执行 `schema.sql`，使用 `CREATE TABLE IF NOT EXISTS` 保留已有表。创建一条任务后停止并重启应用，再 GET 列表，确认记录仍在。不要把 `data/` 提交到仓库。
+
+## 看懂查询与参数绑定
+
+```java
+return jdbc.query("SELECT id, title, done FROM tasks WHERE id = ?",
+    (rs, row) -> new Task(rs.getLong("id"), rs.getString("title"),
+                        rs.getBoolean("done")), id).stream().findFirst();
+```
+
+`?` 是参数占位符，`id` 作为数据传入。不要用字符串拼接把用户输入放进 SQL。结果映射函数把每一行变成 Java record，再通过 Optional 表达“可能没有记录”。
+
+| SQL | 含义 | 对应方法 |
+| --- | --- | --- |
+| SELECT | 查询行 | find / findAll |
+| INSERT | 新增行，数据库生成 id | create |
+| UPDATE | 改变匹配行 | updateDone |
+| DELETE | 删除匹配行 | delete |
+
+更新、删除返回受影响的行数；如果为 0，服务层返回 404。这里先直接学习 JDBC，理解 SQL 后再学习 JPA 的实体映射与生命周期。
+
+## 事务解决什么问题
+
+项目 Service 使用 `@Transactional`，由 Spring 通过代理管理事务。一次业务调用里的多条写操作应作为一个整体提交；默认情况下，未捕获的运行时异常会触发回滚。
+
+练习：为“完成任务并写入操作日志”新增日志表。先更新任务，再写日志；制造运行时异常，检查两项写入是否一同回滚。不要在方法内部吞掉异常后仍期望自动回滚。代理机制下，同一个对象内部直接调用另一个事务方法也需要特别理解。
+
+## 测试不依赖手动点页面
+
+运行项目内的：
+
+```sh
+mvn test
+```
+
+`TaskApiTest` 启动随机端口服务，使用 Java HttpClient 发送真实 HTTP 请求。测试数据库通过配置替换为独立的 H2 内存库，不会写入学习时的文件数据库。
+
+当前检查覆盖：
+
+- 创建返回 201 和 Location，随后可查询列表及详情。
+- 更新完成状态后返回真实结果，删除后查询返回 404。
+- 空白、缺失和超长标题返回 400；缺失 done、非法 JSON 返回 400。
+- 含引号及 SQL 关键字的标题作为普通文本保存，表仍可查询。
+
+SQL 特殊字符用例只是参数绑定的一个回归检查，不能替代安全审计。测试也不覆盖并发、迁移、认证和生产数据库差异。
+
+## 加一个功能，形成学习闭环
+
+目标：支持 `GET /api/tasks?done=true`。
+
+1. Controller 接收可选 Boolean；无参数时保留原列表行为。
+2. Repository 增加带 `WHERE done = ?` 的查询，保持参数绑定。
+3. 写入一条已完成和一条未完成任务。
+4. 用测试分别验证 `true`、`false` 和不传参数。
+5. 传入 `done=abc`，观察框架如何处理参数转换失败。
+
+完成后再连接 React 页面。开发时可使用前端服务器代理 `/api` 到 `127.0.0.1:8080`，不要为了绕过跨域问题直接开放所有来源。
+
+进一步阅读：[Spring JDBC](https://docs.spring.io/spring-framework/reference/data-access/jdbc.html)、[事务管理](https://docs.spring.io/spring-framework/reference/data-access/transaction.html)、[测试 Web 层](https://spring.io/guides/gs/testing-web/)。

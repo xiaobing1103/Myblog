@@ -1,0 +1,90 @@
+---
+title: 实战：图书借阅管理台
+sidebar_label: 项目路线与下载
+description: 用 Java 21、Spring Boot、JDBC 和 H2 完成可运行的图书借阅项目，逐步学习数据库、库存事务、前端联调与测试。
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+这次把 Java 语法组合成一个有真实业务约束的小应用：**登记图书、搜索分页、借出、归还，再验证库存始终正确**。前端采用原生 HTML/CSS/JavaScript，Java 服务同时提供页面和 API，先把整条链路弄清楚。
+
+<p><a className="button button--primary" href={useBaseUrl('/downloads/java-library-lab.zip')} download>下载完整实战项目</a></p>
+
+项目源码位于仓库 `examples/java/library-lab/`，新项目代码使用 MIT 许可证，下载包保留 LICENSE。本站中文教程为独立编写的实战讲解；开源教材原文与出处见[开源教材专区](../../open-source/index.mdx)。
+
+## 学习前准备
+
+建议先完成[分步教材](../../textbook/index.mdx)中的方法、对象、集合、Maven、HTTP 和 Spring 章节。不会某一项不必放弃：按文档逐步运行，再回到对应基础课补知识。
+
+本机使用 JDK 21、Maven 3.6.3 以上。此项目需要 Java 服务进程，静态博客只提供讲解与下载，不会替你在 GitHub Pages 启动数据库或服务器。
+
+## 最终要做出什么
+
+| 功能 | 用户操作 | 后端需要保证 |
+| --- | --- | --- |
+| 登记图书 | 输入书名、作者、总册数 | 字段合法，可借数量初始等于总册数 |
+| 搜索分页 | 输入关键词，切换页码 | 参数受限，稳定排序，返回总数 |
+| 借出 | 为图书填写借阅人 | 库存大于零才可借，库存与借阅记录同时提交 |
+| 归还 | 点击一条未归还记录 | 只能归还一次，库存不超过总册数 |
+| 删除图书 | 删除无借阅历史的图书 | 已有历史时拒绝，保留数据关系 |
+
+这里的“借阅人”作为教学文本字段保存。项目使用本机教学配置，后续多用户系统需要另外实现登录、权限与部署方案。
+
+## 按这个顺序完成
+
+| 步骤 | 阅读文档 | 这一阶段交付物 |
+| --- | --- | --- |
+| 1 | [环境、启动与代码地图](./01-setup.mdx) | 本机网页与空列表接口均可访问 |
+| 2 | [建表与数据库约束](./02-schema.mdx) | 解释两张表，验证重启后数据仍在 |
+| 3 | [图书 API、搜索与分页](./03-books.mdx) | 独立调用创建、查询、删除接口 |
+| 4 | [借出、归还与事务](./04-borrow-return.mdx) | 观察库存与历史同步变化 |
+| 5 | [前端交互与同源请求](./05-frontend.mdx) | 页面能处理加载、空态和失败 |
+| 6 | [接口测试与并发验证](./06-testing.mdx) | 自动验证正常流程与业务边界 |
+| 7 | [完整验收与扩展任务](./07-delivery.mdx) | 从干净目录重新跑通项目 |
+
+每一步先执行命令观察，再读代码原因。文档中的 Java 片段需要放在指定工程文件中，依赖完整 Maven 工程运行。
+
+## 先运行一次
+
+解压下载包，进入包含 `pom.xml` 的 `library-lab` 目录：
+
+```sh
+java --version
+mvn --version
+mvn test
+mvn spring-boot:run
+```
+
+打开 `http://127.0.0.1:8080/`。首次启动为空书架，可录入一本书再借出。另一个终端访问 `http://127.0.0.1:8080/api/books`，观察页面背后的 JSON。
+
+首次执行 Maven 会下载依赖，需要网络。若 8080 已被其他练习项目占用，可先停止旧服务，或使用 `mvn spring-boot:run "-Dspring-boot.run.arguments=--server.port=8081"`，并相应改为访问 8081。
+
+## 接口速查
+
+| 方法与路径 | 输入 | 成功响应 |
+| --- | --- | --- |
+| GET /api/books | 可选 q，page 默认 1，size 默认 10 | `{items,total,page,size}` |
+| GET /api/books/id | 路径 id | 单本图书 |
+| POST /api/books | title、author、totalCopies | 201，Book 与 Location |
+| DELETE /api/books/id | 路径 id | 204，无响应体 |
+| GET /api/loans | 可选 active=true/false | 最近最多 100 条借阅数组 |
+| GET /api/loans/id | 路径 id | 单条借阅记录 |
+| POST /api/loans | bookId、borrower | 201，Loan 与 Location |
+| POST /api/loans/id/return | 路径 id | 200，归还后的 Loan |
+
+Book 字段：id、title、author、totalCopies、availableCopies。Loan 字段：id、bookId、bookTitle、borrower、createdAt、returnedAt；未归还时 returnedAt 为 null，时间以 UTC 字符串返回。
+
+输入不合法返回 400，不存在返回 404，无库存、重复归还或有历史不能删除返回 409。这些输入与业务失败的响应包含 `message`，前端用它显示原因。
+
+## 开始前的任务
+
+先用自己的话写出“借出一本书”必须同时改变的两份数据，再指出只改其中一份会发生什么。
+
+<details>
+<summary>参考答案</summary>
+
+可借库存减一，并新增未归还的借阅记录。只减库存会丢失谁借走了书，无法正常归还；只写记录会让库存不减少，继续借出时可能超借。两项操作必须在同一事务中成功或一起回滚。
+
+</details>
+
+下一步：[环境、启动与代码地图](./01-setup.mdx)。

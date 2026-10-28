@@ -1,0 +1,91 @@
+---
+title: 第 02 课：类型、变量与空值
+sidebar_label: 02 类型、变量与空值
+description: 从 JavaScript 的动态类型转向 Java 的静态类型，理解基本类型、引用、包装类和 null。
+---
+
+## 本课目标
+
+前置：[第 1 课](./01-first-program.mdx)。能为商品名称、数量、金额选择合理类型，解释 `var`、`final`、`null` 的含义。
+
+## 第一步：变量先有确定的类型
+
+JavaScript 的 `let value = 10` 之后可以改成字符串。Java 的局部变量类型在编译时确定：`int count = 10` 之后只能接收能转换成 int 的值。类型让编译器提前发现错误，也让你读方法签名时知道输入输出。
+
+| 场景 | 常用类型 | 要留意的事 |
+| --- | --- | --- |
+| 普通数量、索引 | int | 有上限，不是无限整数 |
+| 较大计数、整数金额 | long | 字面量可写 `12900L` |
+| 近似测量、比率 | double | 不适合直接保证金额十进制精度 |
+| 是否完成 | boolean | 只能 true / false，没有 JS 真值转换 |
+| 文本 | String | 是引用类型，内容不可变 |
+
+基本类型共有 byte、short、int、long、float、double、char、boolean。先掌握常见几种；`char` 是 UTF-16 代码单元，不能简单等同任意一个可见字符。
+
+## 第二步：运行并观察
+
+```java title="Main.java"
+public class Main {
+    public static void main(String[] args) {
+        String title = "Java course";
+        int quantity = 2;
+        long priceInCents = 12900L;
+        boolean paid = false;
+        var label = title + " x " + quantity;
+        final int maxQuantity = 5;
+        String note = null;
+        System.out.println(label);
+        System.out.println(priceInCents * quantity);
+        System.out.println(paid);
+        System.out.println(quantity <= maxQuantity);
+        System.out.println(note == null ? "No note" : note);
+    }
+}
+```
+
+```text title="运行输出"
+Java course x 2
+25800
+false
+true
+No note
+```
+
+`var label` 被推断为 String，之后也不能赋整数。`var` 用于有初始化表达式的局部变量，不能写 `var note = null`，编译器无法据此确定具体类型。
+
+`final` 禁止给变量再次赋值。它不等于深度冻结对象：`final List` 的引用不能换，列表内部是否能修改取决于列表本身。
+
+## 第三步：把引用想成“能找到对象的值”
+
+`String title` 保存引用；引用可以指向某个对象，也可能是 `null`。两个变量可以指向同一个对象，变量本身不是对象的完整副本。
+
+`int` 不是引用，不能赋 null。对应包装类型 `Integer` 可以表示 null，集合中的整数通常使用它，因为泛型类型参数不能直接写基本类型。
+
+```java
+Integer missing = null;
+// int count = missing; // 自动拆箱会抛 NullPointerException
+```
+
+上面是解释片段，故意没有当作完整程序。自动拆箱看起来像普通赋值，实际需要从 Integer 对象取出 int；空引用没有可取出的值。
+
+## 第四步：区分默认值和必须初始化
+
+对象字段和数组元素有默认值，例如 int 默认 0，boolean 默认 false，引用默认 null。**方法里的局部变量必须在读取前明确赋值**。不能把字段的默认值规则套用到局部变量。
+
+常见错误：把来自接口的“可能不存在”字段直接塞入基本类型；把 false 和未传字段混在一起。第 15 课会用 Boolean 区分“没有传 done”和“明确传 false”。
+
+## 动手任务
+
+1. 把 quantity 改为 6，预测最后两个布尔相关输出，再执行确认。试着给 quantity 赋字符串，观察编译错误。
+2. 为 note 编写显示规则：null 或纯空白都显示 `No note`，其余显示去掉两端空白的文本。
+
+<details>
+<summary>参考解法与原因</summary>
+
+第一题 `paid` 仍是 false，数量比较变成 false。第二题使用 `note == null || note.isBlank()` 判断，再用 `note.strip()` 取文本。必须先判断 null，`||` 会短路；如果直接调用 `note.isBlank()`，null 输入会报错。
+
+</details>
+
+过关标准：能区别 int 与 Integer，能解释 var 为什么不是“任意类型”，能指出一个潜在的空指针位置。
+
+下一课：[运算与金额](./03-operators.mdx)。查阅：[语言基础](https://dev.java/learn/language-basics/)。

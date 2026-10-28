@@ -72,7 +72,7 @@ arr.splice(1,0,3) // [1,3,2]
 
 因为删掉的元素是0个，所以说 arr[1] 中原有的元素值“2”仍然会被保留下来；同时因为我们后面又指定了 arr[1] 处需要新增一个元素3，那么这个3就会把原来arr[1]这个地方的元素给“挤到后面去”。这样我们就做到了在数组中任意位置进行元素的新增。这个过程如下图：
 
-<img src="https://s3.ax1x.com/2020/12/18/rJV9hj.png" alt="rJV9hj.png" border="0" />
+![rJV9hj.png](/img/remote/6b73e3daff531047.webp)
 
 #### 数组中删除元素的三种方法
 
@@ -100,9 +100,9 @@ splice 方法我们上文已经详细讲过，此处不再赘述。
 我们可以把它想象成小时候学校门口小卖部里，摞满了冰淇淋的方形大冰柜。
 小卖部老板往里面摆置冰淇淋的时候，最先摆进去的会落在冰柜的底部，最后摆置进去的留在冰柜的顶部。如果这时候咱们去买冰淇淋，老板就会把冰柜顶部的那个取出来给我们。在冰淇淋不断被取出的这个过程里，越是后来放进去的，越是先被取出来；越是先放进去的，越是最后被取出来。这个过程，就是所谓的“后进先出”：
 
-<img src="https://s3.ax1x.com/2020/12/18/rJVQ3R.png" alt="rJVQ3R.png" border="0" />
+![rJVQ3R.png](/img/remote/6b225270c014b83a.webp)
 
-<img src="https://s3.ax1x.com/2020/12/18/rJV8u6.png" alt="rJV8u6.png" border="0" />
+![rJV8u6.png](/img/remote/99134f6e267a2fc5.webp)
 
 我们看到这个过程有两个特征：
 
@@ -140,16 +140,16 @@ stack // []
 
 丢到控制台运行，冰淇淋就会按照后进先出的顺序被取出：
 
-<img src="https://s3.ax1x.com/2020/12/18/rJVdCd.png" alt="rJVdCd.png" border="0" />
+![rJVdCd.png](/img/remote/b2ef50281ddaecf2.webp)
 
 ### 队列（Queue）——只用 push 和 shift 完成增删的“数组”
 
 队列是一种先进先出（FIFO，First In First Out）的数据结构。
 它比较像咱们去肯德基排队点餐。先点餐的人先出餐，后点餐的人后出餐：
 
-<img src="https://s3.ax1x.com/2020/12/18/rJVsDf.png" alt="rJVsDf.png" border="0" />
+![rJVsDf.png](/img/remote/7fa0a6238b2c9f4e.webp)
 
-<img src="https://s3.ax1x.com/2020/12/18/rJVWCj.png" alt="rJVWCj.png" border="0" />
+![rJVWCj.png](/img/remote/7a52cdbe02b4ad11.webp)
 
 这个过程的规律也很明显：
 
@@ -181,7 +181,7 @@ queue // []
 
 把上面代码丢进控制台运行，我们可以看到小册姐一个接一个地乖乖去取餐了：
 
-<img src="https://s3.ax1x.com/2020/12/18/rJVXG9.png" alt="rJVXG9.png" border="0" />
+![rJVXG9.png](/img/remote/16d29a228c55ac90.webp)
 
 ## 链表
 
@@ -189,13 +189,13 @@ queue // []
 
 这个“离散”是相对于数组的“连续”来说的。上一节咱们给大家画过数组的元素分布示意图：
 
-<img src="https://s3.ax1x.com/2020/12/18/rJsdvd.png" alt="rJsdvd.png" border="0" />
+![rJsdvd.png](/img/remote/667231e941bde419.webp)
 
 数组在内存中最为关键的一个特征，就是它一般是对应一段位于自己上界和下界之间的、一段**连续**的内存空间。元素与元素之间，紧紧相连（当然啦，还有二般情况，我们在下文的辨析环节会提到）。
 
 而链表中的结点，则允许散落在内存空间的各个角落里。一个内容为1->2->3->4->5的链表，在内存中的形态可以是散乱如下的：
 
-<img src="https://s3.ax1x.com/2020/12/18/rJsyUf.png" alt="rJsyUf.png" border="0" />
+![rJsyUf.png](/img/remote/bd58b4c7bfbec1a5.webp)
 
 正是由于数组中的元素是连续的，每个元素的内存地址可以根据其索引距离数组头部的距离来计算出来。因此对数组来说，每一个元素都可以通过数组的索引下标直接定位。
 
@@ -219,15 +219,15 @@ queue // []
 
 数据域存储的是当前结点所存储的数据值，而指针域则代表下一个结点（后继结点）的引用。 有了 next 指针来记录后继结点的引用，每一个结点至少都能知道自己后面的同学是哪位了，原本相互独立的结点之间就有了如下的联系：
 
-<img src="https://s3.ax1x.com/2020/12/18/rJshKs.png" alt="rJshKs.png" border="0" />
+![rJshKs.png](/img/remote/9f8d9d2648bd6e55.webp)
 
 我们把这个关系给简化一下：
 
-<img src="https://s3.ax1x.com/2020/12/18/rJs75T.png" alt="rJs75T.png" border="0" />
+![rJs75T.png](/img/remote/7312d425260d4c60.webp)
 
 要想访问链表中的任何一个元素，我们都得从起点结点开始，逐个访问 next，一直访问到目标结点为止。为了确保起点结点是可抵达的，我们有时还会设定一个 head 指针来专门指向链表的开始位置：
 
-<img src="https://s3.ax1x.com/2020/12/18/rJypa6.png" alt="rJypa6.png" border="0" />
+![rJypa6.png](/img/remote/5ef0a39e73955f81.webp)
 
 以上，就是链表的基本形态啦。
 
@@ -251,7 +251,7 @@ node.next = new ListNode(2)
 
 以上，就创建出了一个数据域值为1，next 结点数据域值为2的链表结点：
 
-<img src="https://s3.ax1x.com/2020/12/18/rYk0Qx.png" alt="rYk0Qx.png" border="0" />
+![rYk0Qx.png](/img/remote/b3f0cf408f5caa94.webp)
 
 ### 链表元素的添加
 
@@ -259,18 +259,18 @@ node.next = new ListNode(2)
 
 先来说说添加，直接在尾部添加结点相对比较简单，我们改变一个 next 指针就行。这里记值为2的 node 结点为 node2（假设 node2 是现在的尾部结点），值为3的 node 结点为 node3。假如我要把 node3 添加到 node2 所在链表的尾部，直接把 node2 的 next 指针指向 node3 即可：
 
-<img src="https://s3.ax1x.com/2020/12/18/rYk2Yd.png" alt="rYk2Yd.png" border="0" />
+![rYk2Yd.png](/img/remote/b6e6448997bfedf8.webp)
 
 需要大家引起重视的是另一种添加操作：如何在两个结点间插入一个结点？注意，由于链表有时会有头结点，这时即便你是往链表头部增加结点，其本质也是“在头结点和第一个结点之间插入一个新结点”。所以说，**任意两结点间插入一个新结点**这种类型的增加操作，将会是链表基础中的一个关键考点。
 
 要想完成这个动作，我们需要变更的是**前驱结点**和**目标结点**的 next 指针指向，过程如下图：
 插入前：
 
-<img src="https://s3.ax1x.com/2020/12/18/rYkT0S.png" alt="rYkT0S.png" border="0" />
+![rYkT0S.png](/img/remote/50c2e436ec141cd0.webp)
 
 插入后：
 
-<img src="https://s3.ax1x.com/2020/12/18/rYkqYj.png" alt="rYkqYj.png" border="0" />
+![rYkqYj.png](/img/remote/2d0ba05ef3501a5f.webp)
 
 注意我圈红的地方，就是咱们要动手脚的地方。下面我用代码来表述一下这个改变。：
 
@@ -288,7 +288,7 @@ node1.next = node3
 链表元素的删除也是非常高频的操作。延续我们前面的思路，仍然把重心放在对 next 指针的调整上。我们思考一下：如何把刚刚添加进来的 node3 从现在的链表里删掉？
 注意，删除的标准是：在链表的遍历过程中，无法再遍历到某个结点的存在。按照这个标准，要想遍历不到 node3，我们直接让它的前驱结点 node1 的 next 指针跳过它、指向 node3 的后继即可：
 
-<img src="https://s3.ax1x.com/2020/12/18/rYAFh9.png" alt="rYAFh9.png" border="0" />
+![rYAFh9.png](/img/remote/7a19a2102b300b05.webp)
 
 如此一来，node3 就成为了一个完全不可抵达的结点了，它会被 JS 的垃圾回收器自动回收掉。这个过程用代码表述如下：
 

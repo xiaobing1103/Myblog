@@ -1,0 +1,93 @@
+---
+title: 第 08 课：接口、多态与组合
+sidebar_label: 08 接口与多态
+description: 从可替换的通知方式理解接口契约、构造器注入和组合，避免盲目建立继承层次。
+---
+
+import JavaPractice from '@site/src/components/JavaPractice';
+
+## 本课目标
+
+前置：类、构造器、实例方法。能用接口描述需要的能力，向服务传入不同实现，解释与 TypeScript 接口的区别。
+
+## 第一步：先找真实的变化点
+
+任务完成后需要通知用户。开发时希望打印到控制台，测试时希望保存到内存，未来可能发送邮件。任务服务只需要“发送一条消息”的能力，不应在内部写死所有发送细节。
+
+Java 接口声明可调用的方法，实现类使用 implements。调用方按接口类型使用对象，运行时执行实际对象的方法，这就是这里的多态。
+
+## 第二步：手动组装依赖
+
+```java title="Main.java"
+public class Main {
+    interface Notifier {
+        void send(String message);
+    }
+
+    static class ConsoleNotifier implements Notifier {
+        public void send(String message) {
+            System.out.println("Notice: " + message);
+        }
+    }
+
+    static class RecordingNotifier implements Notifier {
+        private String lastMessage;
+        public void send(String message) { lastMessage = message; }
+        String lastMessage() { return lastMessage; }
+    }
+
+    static class TaskService {
+        private final Notifier notifier;
+        TaskService(Notifier notifier) { this.notifier = notifier; }
+        void finish(String title) { notifier.send("Completed " + title); }
+    }
+
+    public static void main(String[] args) {
+        TaskService consoleService = new TaskService(new ConsoleNotifier());
+        consoleService.finish("Java");
+        RecordingNotifier recorder = new RecordingNotifier();
+        TaskService testService = new TaskService(recorder);
+        testService.finish("SQL");
+        System.out.println(recorder.lastMessage());
+    }
+}
+```
+
+```text title="运行输出"
+Notice: Completed Java
+Completed SQL
+```
+
+两次 TaskService 的代码相同，只是构造时传入不同通知器。测试可以检查记录器收到的内容，而不真正发送邮件。这样的依赖传入不需要 Spring 才能实现，框架以后只是帮你创建和连接对象。
+
+实现方法写 public，因为接口中这里声明的方法隐含 public；实现类不能缩小访问范围。真实代码还应使用 `@Override`，让编译器核对确实覆盖了接口方法。
+
+## 第三步：和 TypeScript 对照
+
+TypeScript 接口主要用于编译检查，生成 JS 后通常被擦除，常按结构匹配。Java 接口是运行时类型系统的一部分，类需要声明 implements；仅仅方法名字相同，不自动算实现该接口。
+
+接口类型变量只能直接调用契约中可见的方法。`Notifier n = new RecordingNotifier()` 后，n 能调用 send，不能直接调用 recording 实现专有的 lastMessage；这限制了调用方对具体实现的依赖。
+
+## 第四步：组合、继承各解决什么
+
+这里服务**拥有**一个通知器，是组合。继承 extends 表达“是一种”，子类应能在父类预期的位置使用。不要为了复用几行代码就继承一个语义不相关的父类。
+
+Java 类只直接继承一个父类，可以实现多个接口。重载是同名不同参数，覆盖是子类或实现类提供契约方法的实现，两者不是同一机制。
+
+当前只有一种实现、没有需要替换的边界时，普通类就足够。为每个类机械地创建一个空洞接口，会增加导航负担。
+
+<JavaPractice id="interface" />
+
+## 动手任务
+
+1. 为实现方法添加 `@Override`，故意把 send 拼错，观察编译器提示。
+2. 写一个 PrefixNotifier，接收另一个 Notifier，给消息加 `[task] ` 前缀后转发。不要修改 TaskService。
+
+<details>
+<summary>参考解法与检查点</summary>
+
+第一题会提示没有正确覆盖且未实现 send。第二题通过构造器保存 delegate，send 中调用 `delegate.send("[task] " + message)`，然后用 `new PrefixNotifier(new ConsoleNotifier())` 组装。注意检查 delegate 为空时的策略；此处应要求调用者提供非空依赖，而非运行时悄悄丢消息。
+
+</details>
+
+下一课：[异常与调试](./09-exceptions.mdx)。查阅：[Dev.java 接口](https://dev.java/learn/interfaces/)。

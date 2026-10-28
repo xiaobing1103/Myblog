@@ -1,0 +1,43 @@
+---
+id: exceptions
+title: 06 · 异常与业务边界
+description: 用明确异常拒绝非法输入，用 Optional 表达查无结果，为接口错误处理做准备。
+---
+
+import JavaPractice from '@site/src/components/JavaPractice';
+
+## 把失败当作契约的一部分
+
+一个方法不只要说明“成功时返回什么”，还要说明“哪些输入不被接受”。`throw` 在执行时抛出异常，`throws` 写在方法声明中说明可能传播的异常。
+
+Java 区分受检异常和非受检异常。受检异常通常要求调用方捕获或声明传播；`IllegalArgumentException` 是非受检异常，适合本节表达调用参数违反约定的情况。
+
+```java
+if (quantity <= 0) {
+    throw new IllegalArgumentException("quantity must be positive");
+}
+```
+
+不要捕获所有异常后返回 `0` 来伪装成功。调用方会失去失败原因，后续扣款、库存等操作可能继续执行。到 HTTP 层后，可以将已知业务失败映射成合适的状态码；未预期错误仍需要日志和排查。
+
+<JavaPractice id="validation" />
+
+## 没找到，不一定是异常
+
+查找结果本来就允许不存在时，可以返回 `Optional`。它要求调用者显式考虑空结果，而不是把问题推迟成一次空指针错误。
+
+```java
+String label = result.orElse("Not found");
+```
+
+不要把 `Optional.get()` 当成绕过空值处理的捷径。也不要把所有字段、参数和集合元素都包进 Optional；先明确“没有值”是否是正常状态。
+
+<JavaPractice id="optional" />
+
+### 进入后端前的检查
+
+- 参数不合法、资源不存在、服务内部失败，应对应同一种 HTTP 状态吗？
+- 哪一层负责业务规则，哪一层负责把结果转成 HTTP 响应？
+- 获取文件、连接等资源时，如何用 try-with-resources 关闭资源？
+
+官方阅读：[Dev.java 异常](https://dev.java/learn/exceptions/)、[Optional API](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html)。

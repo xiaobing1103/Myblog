@@ -1,0 +1,48 @@
+---
+title: Java 官方资料书架
+sidebar_label: 官方资料书架
+description: 按学习阶段整理 Java、Spring、SQL 和测试官方资料，附阅读后可动手完成的任务。
+---
+
+初学先从本站 [18 课分步教材](./textbook/index.mdx) 按顺序学习。下面的外部资料适合补充和查阅，中文章节与练习由本站编写。
+
+## 站内实战与已收录的开源材料
+
+- [图书借阅管理台](./projects/library/index.mdx)：可下载的 Java + H2 + 原生前端项目，按 7 步学习建表、API、库存事务、测试和交付。
+- [Spring 官方开源教材](./open-source/index.mdx)：固定版本的原始源码、README 原文、双许可证和来源校验清单，均可从本站下载。
+- [官方 REST 源码分步实操](./open-source/rest-service.mdx)：先运行 complete，再在 initial 独立实现并测试接口。
+
+## 系统教材与查阅资料怎样配合
+
+| 材料 | 适合怎么使用 | 版本提醒 |
+| --- | --- | --- |
+| [本站分步教材](./textbook/index.mdx) | 按 5 阶段阅读，运行完整示例并完成课后任务 | 示例使用 Java 21 |
+| [Dev.java 完整学习目录](https://dev.java/learn/) | 在本站课后深入同主题，如对象、泛型和 Stream | 注意单篇教程对应的语言特性 |
+| [Oracle Java Tutorials](https://docs.oracle.com/javase/tutorial/) | 参考分章路径、传统语法和基础类库讲解 | 官方说明以 JDK 8 为背景，旧部署方式不沿用 |
+| [Java 21 API](https://docs.oracle.com/en/java/javase/21/docs/api/index.html) | 查方法参数、返回值、异常和使用约束 | 参考手册，不是从头阅读的教材 |
+| [Spring Guides](https://spring.io/guides/) | 完成一个目标明确的小工程，再读实现 | 以自己项目的 pom.xml 为准 |
+
+先完成一个小任务，再按问题查文档，不必一口气读完所有参考手册。
+
+| 阶段 | 官方资料 | 读完动手做 |
+| --- | --- | --- |
+| Java 入门 | [dev.java 学习路线](https://dev.java/learn/) | 完成类型、字符串、条件与循环练习 |
+| 集合与 Stream | [Java 21 API](https://docs.oracle.com/en/java/javase/21/docs/api/index.html) | 查找 List、Map、Stream 的方法签名与返回类型 |
+| 浏览器实验 | [Java Playground](https://dev.java/playground/) | 修改 Main.java，观察编译错误与运行输出 |
+| HTTP 接口 | [Spring REST 入门](https://spring.io/guides/gs/rest-service) | 为待办接口添加一个新字段 |
+| SQL 访问 | [Spring JDBC 文档](https://docs.spring.io/spring-framework/reference/data-access/jdbc.html) | 添加按完成状态筛选的参数查询 |
+| ORM 扩展 | [Spring Data JPA 入门](https://spring.io/guides/gs/accessing-data-jpa/) | 对照 JDBC 理解实体与 Repository |
+| 自动化测试 | [测试 Web 层](https://spring.io/guides/gs/testing-web/) | 先写失败用例，再修复接口行为 |
+| 环境兼容 | [Spring Boot 系统要求](https://docs.spring.io/spring-boot/system-requirements.html) | 核对 JDK、Maven 和项目版本 |
+
+## 怎么阅读英文文档
+
+先找代码示例、参数、返回值和异常。把术语与课程中的概念配对：`request body` 是请求体，`constraint` 是校验约束，`transaction` 是事务，`repository` 是数据访问模块。
+
+遇到版本不同的文章，先核对项目版本。Spring Boot 4 使用 Jakarta 包名；不要把旧文章的 `javax.validation` 直接复制到当前项目。
+
+## 在线练习使用的技术
+
+本页练习通过 [OneCompiler 官方嵌入示例](https://github.com/onecompiler/editor-embed-demo) 对接 Java 编译器。点击启动后才加载外部 iframe；代码会发送到第三方服务。可下载源代码本地执行，草稿与完成记录保存在当前浏览器。
+
+服务的可访问性和配额由提供方决定。出现超时可重试或使用官方 Playground；不要在练习代码中放入密码或业务密钥。

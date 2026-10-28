@@ -1,0 +1,84 @@
+---
+title: 第 06 课：数组、字符串与输入
+sidebar_label: 06 数组与字符串
+description: 从输入文本提取任务名称，掌握数组边界、字符串内容比较和简单解析。
+---
+
+import JavaPractice from '@site/src/components/JavaPractice';
+
+## 本课目标
+
+前置：循环与方法。能解释数组长度固定、字符串不可变，区分输入文本和已经校验过的业务值。
+
+## 第一步：把文本当作需要解析的数据
+
+浏览器表单和命令行输入最初经常都是文本。Java 不会因为一个字符串看起来像数字，就自动把它变成 int。`Integer.parseInt` 可以转换合法整数，遇到 `abc` 或超出范围的数字会抛 NumberFormatException。
+
+数组声明 `String[] names` 表示每个元素是 String 引用。数组创建后长度不能改变，适合大小已知的数据；后面的 List 适合动态增删。
+
+## 第二步：清理一行简单输入
+
+```java title="Main.java"
+public class Main {
+    public static void main(String[] args) {
+        String input = " Java , SQL , HTTP ";
+        String[] pieces = input.split(",");
+        StringBuilder summary = new StringBuilder();
+        for (int i = 0; i < pieces.length; i++) {
+            String title = pieces[i].strip();
+            if (title.isBlank()) {
+                throw new IllegalArgumentException("empty title");
+            }
+            if (i > 0) summary.append(" | ");
+            summary.append(title);
+        }
+        String left = new String("Java");
+        String right = new String("Java");
+        System.out.println(pieces.length);
+        System.out.println(summary);
+        System.out.println(left == right);
+        System.out.println(left.equals(right));
+        System.out.println(Integer.parseInt("42") + 1);
+    }
+}
+```
+
+```text title="运行输出"
+3
+Java | SQL | HTTP
+false
+true
+43
+```
+
+`strip` 返回清理后的新字符串，不会修改原对象。字符串不可变，调用 `title.strip()` 后如果不保存返回值，原变量仍指向旧内容。
+
+StringBuilder 适合在循环中逐步构造文本；append 修改构造器里的内容，最后可以调用 toString 得到 String。小规模的普通字符串拼接无需一律改写成 StringBuilder。
+
+## 第三步：为什么 == 和 equals 不同
+
+这里故意 `new` 两个内容相同的 String，使它们是不同对象。`==` 比较引用，因此 false；String 的 equals 比较内容，因此 true。
+
+如果直接写两个相同字符串字面量，常量池可能让引用相同，造成 `==` 恰好通过的错觉。业务规则是比较内容，不应依赖这种偶然结果。可能为空时用 `Objects.equals(a, b)`，或已知非空常量在前：`"quit".equals(input)`。
+
+## 第四步：输入的边界要单独设计
+
+`split` 的参数是正则表达式；分隔点号时不能直接把 `.` 当普通点。默认 split 会丢弃末尾的空项，需要保留时可用 `split(",", -1)`。
+
+本示例只是简单的逗号分隔，不支持带引号、转义或字段中包含逗号的 CSV。处理真实 CSV 应使用合适的解析库，不能不断堆叠 split 修补规则。
+
+<JavaPractice id="strings" />
+
+## 动手任务
+
+1. 把 input 改为 `Java,SQL,`，对比默认 split 与 `split(",", -1)`，解释为什么后者能触发空标题校验。
+2. 把 input 改为来自 `args[0]` 的值。没有参数时输出使用提示；有参数时运行解析。
+
+<details>
+<summary>参考解法与检查点</summary>
+
+第一题默认只剩两项，保留空项时有第三个空字符串，从而进入校验。第二题在读取下标前判断 `args.length == 0`，打印提示并 return，再读取 args[0]。例如 `java Main.java "Java, SQL"` 会把带空格的整行作为一个参数传入。
+
+</details>
+
+第一阶段验收：独立组合数组、循环、方法，实现商品求和与运费。下一课：[类与封装](./07-objects.mdx)。

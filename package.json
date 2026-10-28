@@ -4,31 +4,37 @@
   "private": true,
   "homepage": "https://xiaobing1103.github.io/Myblog/",
   "scripts": {
-    "start": "docusaurus start",
+    "prestart": "node scripts/responsive-images.mjs && node scripts/package-java-example.mjs && node scripts/package-java-textbook.mjs && node scripts/package-java-lab.mjs",
+    "prebuild": "node scripts/responsive-images.mjs && node scripts/package-java-example.mjs && node scripts/package-java-textbook.mjs && node scripts/package-java-lab.mjs",
+    "start": "docusaurus start --host 127.0.0.1",
     "clear": "docusaurus clear",
     "build": "docusaurus build",
-    "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy"
+    "serve": "docusaurus serve --host 127.0.0.1",
+    "check": "node scripts/check-build.mjs",
+    "verify:interview": "node scripts/verify-interview.mjs",
+    "report": "node scripts/performance.mjs",
+    "preview": "node scripts/preview.mjs",
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "test": "playwright test",
+    "sync:pdfjs": "node scripts/sync-pdfjs.mjs",
+    "verify:java": "node scripts/verify-java-exercises.mjs && node scripts/verify-java-textbook.mjs",
+    "smoke:java": "node scripts/smoke-java-online.mjs",
+    "smoke:library": "node scripts/smoke-library.mjs",
+    "profile": "node scripts/profile-pages.mjs"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-alpha.69",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.69",
-    "@docusaurus/theme-live-codeblock": "^2.0.0-alpha.69",
-    "@fortawesome/fontawesome-svg-core": "^1.2.30",
-    "@fortawesome/free-brands-svg-icons": "^5.14.0",
-    "@fortawesome/free-regular-svg-icons": "^5.14.0",
-    "@fortawesome/free-solid-svg-icons": "^5.14.0",
-    "@fortawesome/react-fontawesome": "^0.1.11",
-    "@zxuqian/react-examples": "^0.1.4",
-    "classnames": "^2.2.6",
-    "pdf.js": "^0.1.0",
-    "pdfjs-dist": "^2.12.313",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-reveal": "^1.2.2",
-    "react-spring": "^8.0.27",
-    "react-transition-group": "^4.4.1",
-    "styled-components": "^5.0.1"
+    "@docusaurus/core": "3.10.2",
+    "@docusaurus/faster": "3.10.2",
+    "@docusaurus/plugin-content-blog": "3.10.2",
+    "@docusaurus/preset-classic": "3.10.2",
+    "@docusaurus/theme-common": "3.10.2",
+    "@docusaurus/theme-live-codeblock": "3.10.2",
+    "@mdx-js/react": "3.1.1",
+    "clsx": "2.1.1",
+    "prism-react-renderer": "2.4.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "styled-components": "6.1.19"
   },
   "browserslist": {
     "production": [
@@ -41,5 +47,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "fflate": "0.8.3",
+    "lighthouse": "13.6.0",
+    "sharp": "0.34.5"
+  },
+  "engines": {
+    "node": ">=22.19"
+  },
+  "packageManager": "npm@10.9.4"
 }

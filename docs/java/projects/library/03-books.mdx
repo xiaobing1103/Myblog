@@ -1,0 +1,82 @@
+---
+title: 实战 03：图书 API、搜索与分页
+sidebar_label: 03 图书 API 与分页
+description: 沿 Controller、Service、Repository 阅读创建和查询，验证分页边界、搜索转义与 HTTP 错误。
+---
+
+## 这一步要完成什么
+
+前置：[两张表与约束](./02-schema.mdx)。这一课先独立操作 API，避免把前端显示问题与后端数据问题混在一起。
+
+## 第一步：从请求对象看输入规则
+
+打开 `src/main/java/blog/library/LibraryController.java`，找到 CreateBook。这里声明三个字段：
+
+```java
+public record CreateBook(@NotBlank @Size(max = 80) String title,
+                         @NotBlank @Size(max = 60) String author,
+                         @NotNull @Min(1) @Max(100) Integer totalCopies) {}
+```
+
+这是现有类中的局部片段。NotBlank 拒绝 null、空串和纯空白；Size 限制长度；Integer 配合 NotNull 能区分“没传册数”和“传了 0”。后者还会违反 Min。
+
+POST 方法上的 `@Valid @RequestBody` 触发反序列化与校验。合法输入交给 LibraryService.createBook，去除文本两端空白后调用 LibraryRepository.createBook，最终通过数据库生成主键。
+
+当前长度校验发生在清理前，所以含很多首尾空白的长标题可能先被拒绝。若希望改为“清理后限长”，必须同时调整请求处理、业务验证和测试，不能只改页面 maxlength。
+
+## 第二步：用终端创建并查找
+
+保持 Java 服务运行，在 PowerShell 执行：
+
+```powershell
+$base = 'http://127.0.0.1:8080'
+$book = Invoke-RestMethod "$base/api/books" -Method Post -ContentType 'application/json' -Body '{"title":"Java Web Practice","author":"Study Group","totalCopies":2}'
+Invoke-RestMethod "$base/api/books/$($book.id)"
+Invoke-RestMethod "$base/api/books?q=Java&page=1&size=5"
+```
+
+单本查询返回 Book；列表返回包含 items、total、page、size 的对象。**total 表示全部匹配图书数，items.length 表示当前页条数**。当前页为空可能是没有匹配数据，也可能是请求了超过末页的页码。
+
+id 由服务器响应提供。查询不存在的 id 应返回 404；查询一个没有匹配的关键词应返回 200 和空 items，两种情况的业务含义不同。
+
+## 第三步：沿三层读列表查询
+
+1. LibraryController.books 从请求读取 q、page、size，默认分别为空串、1、10。
+2. LibraryService.books 限制 q 最多 80 字、page 至少 1、size 为 1—50。
+3. LibraryRepository.books 计算匹配总数，并用 LIMIT/OFFSET 查询当前页。
+4. 查询按 id 倒序排序，因此新登记图书排在前面；翻页必须保留相同排序规则。
+
+偏移量公式是 `(page - 1) * size`，第 1 页从 0 开始。源码先转成 long 再乘，避免 int 乘法提前溢出；你可以在 Repository 中对照这个细节。
+
+## 第四步：按文本处理搜索词
+
+Repository 中对标题和作者执行不区分大小写的子串搜索。关键词经参数绑定传给 LIKE，SQL 模板保持固定。
+
+LIKE 中 `%` 和 `_` 自带通配含义。项目另外选择 `!` 作为转义符，把用户的 `%`、`_`、`!` 先转义，使它们按普通字符搜索。这是与“防 SQL 注入”相关但不同的问题：参数绑定防止改变 SQL 结构，通配符转义保证搜索含义符合约定。
+
+因此搜索 `100%` 应查包含真实百分号的文本，不应把所有 `100` 开头内容都匹配出来。中文、引号、尖括号也应作为文本保存和显示。
+
+## 第五步：验证失败响应与删除
+
+分别试 `page=0`、`size=51`、`size=abc`，预期均为 400。格式错误由框架转换过程发现，范围错误由 Service 发现，最终都以包含 message 的 JSON 响应给调用者。
+
+删除刚创建、尚未借阅的图书：
+
+```powershell
+Invoke-RestMethod "$base/api/books/$($book.id)" -Method Delete
+```
+
+成功返回 204，不要再解析不存在的 JSON 响应体。再次查询应为 404。图书一旦产生借阅历史，即使全部归还，删除也会返回 409；这保护可追溯性，不能只判断当前库存是否已恢复。
+
+## 动手任务
+
+创建标题分别为 `100% Java` 和 `100X Java` 的两本图书，查询 `q=100%`；再把 size 改成 1，确认 total 与 items.length 的区别。
+
+<details>
+<summary>参考观察与检查点</summary>
+
+构造 URL 时百分号要编码，可用 `[uri]::EscapeDataString('100%')` 得到查询参数值。搜索应只命中包含字面 `100%` 的书。查询 Java 时可能两本都匹配，size=1 仍只返回一条 items，但 total 至少为 2。使用独特标题有助于在已有数据库中判断结果，不要假定 total 恰好等于新建数量。
+
+</details>
+
+下一步：[借出、归还与事务](./04-borrow-return.mdx)。

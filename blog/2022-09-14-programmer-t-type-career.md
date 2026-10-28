@@ -1,14 +1,9 @@
 ---
 slug: programmer-t-type-career
 title: 职业规划：程序员的 T 字形发展攻略
-author: 二姨
-author_title: 前端工程师 / B站UP主
-author_url: https://github.com/
-author_image_url: https://s3.ax1x.com/2020/12/19/rtW9iR.png
-description: 
 tags: [前端, 职业]
+authors: [eryi]
 ---
-
 你是不是在面对市面上众多的技术的时候，不知道选择哪个才能对自己的职业和未来发展有所帮助？有这样的想法是正常的，因为随着科学的发展，现在的编程技术已经到了百花齐放的地步了。
 
 - 从编程语言上，你可以选择 Java、JavaScript、Go、PHP，还有基于它们的框架等等。

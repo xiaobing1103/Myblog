@@ -1,0 +1,78 @@
+---
+title: 实战 05：前端页面、同源请求与错误状态
+sidebar_label: 05 前端页面与联调
+description: 沿原生 JavaScript 页面阅读请求封装、表单提交、搜索分页与借还刷新，处理失败、空态和旧响应。
+---
+
+## 这一步要完成什么
+
+前置：[借还 API 已验证](./04-borrow-return.mdx)。你已有前端经验，这一课重点是把界面操作与真实 HTTP 契约逐项对齐，不让错误被页面掩盖。
+
+打开 `src/main/resources/static/`：index.html 描述表单和表格，style.css 处理响应式样式，app.js 请求和渲染数据。浏览器通过 Java 服务的 `http://127.0.0.1:8080/` 访问它们，不能直接双击 HTML 文件后期待 `/api` 正常工作。
+
+## 第一步：同源结构先减少联调变量
+
+页面与 API 都由同一服务提供，因此代码可以写 `fetch('/api/books')`，不用硬编码 8080 或博客的 `/Myblog/` 前缀。改服务端口后，相对地址会跟随浏览器当前来源。
+
+这也解释了为什么博客中展示的是教程：GitHub Pages 的静态页面不会自动拥有 `/api/books`。若以后拆成 Vite/React 前端开发服务器，应明确配置代理到 Java 服务，或设计受控的 CORS 策略，不能在没有对应服务时只改一个 URL。
+
+## 第二步：阅读统一请求入口
+
+app.js 的 request 方法负责设置 JSON 头、检查状态、提取错误：
+
+```javascript
+if (!response.ok) {
+  const error = await response.json().catch(() => null);
+  throw new Error(error?.message || `请求失败（HTTP ${response.status}）`);
+}
+return response.status === 204 ? null : response.json();
+```
+
+这是现有方法内的片段。fetch 收到 400、404、409 时通常仍会返回 Response，只有网络等失败才直接拒绝 Promise，所以必须检查 ok。删除成功是 204，没有响应体，不能无条件解析 JSON。
+
+后端统一的 message 让页面可以显示“暂无库存”“已有借阅历史”等具体原因。错误提示应使用文本节点，不要把服务消息当 HTML 插入。
+
+## 第三步：从表单到创建请求
+
+找到 `#book-form` 的 submit 监听：
+
+1. preventDefault 避免浏览器整页提交。
+2. FormData 读取 title、author、totalCopies。
+3. 册数用 Number 转成数字，再 JSON.stringify。
+4. 请求成功后重置录入表单，把搜索与页码回到起点。
+5. loadBooks 重新读取数据库结果，页面采用服务器返回的 id 和库存。
+
+HTML 的 required、maxlength、min/max 提供即时提示，后端仍独立校验。浏览器约束不能防止手工 HTTP 请求，也不能保证提交时库存没有被其他人改变。
+
+## 第四步：分页状态与请求顺序
+
+state 保存 page、size、query、total。搜索时重置到第 1 页，防止新关键词只有一页但页面仍停留在第 5 页。删除最后一页的最后一条时，loadBooks 会计算末页并回退，避免显示“有总数却空白”的页面。
+
+请求可能乱序返回。项目用递增 booksRequest 记录请求版本，只有最新请求能覆盖图书列表；loansRequest 同样保护借阅筛选。即使较早搜索响应更慢，也不应覆盖用户后输入的查询结果。
+
+这与 AbortController 不同：版本号忽略旧结果，但不主动取消服务器已接收的请求。请求频繁时可以另加防抖和取消，先要明确每种机制解决什么问题。
+
+## 第五步：安全显示用户文本
+
+element 辅助方法使用 createElement 与 textContent 创建节点。书名即使是 `<img src=x onerror=...>` 也应显示为普通文字。
+
+不要把模板字符串中混入书名后赋给 innerHTML。前端转义与 SQL 参数绑定保护的是不同边界，两者都需要考虑。借阅按钮也应以真实 id 作为操作目标，不能把数组下标误当数据库主键。
+
+## 第六步：借还后刷新两份视图
+
+借出会改变图书库存和借阅列表，归还也是。refresh 用 Promise.all 重新加载两份数据；只更新按钮文字而不重新取数据，可能让页面与数据库状态分离。
+
+runAction 在操作期间禁用按钮，finally 恢复；异常显示到通知区。它减少误点，但事务和条件更新才负责防止重复写入。用户刷新页面或同时开两个浏览器窗口，规则仍必须成立。
+
+## 动手任务
+
+打开浏览器网络面板，完成一次借出和归还，记录方法、路径、状态和后续刷新请求。然后停止 Java 服务，再提交查询，确认页面通知区显示失败原因。
+
+<details>
+<summary>参考观察与验收</summary>
+
+借出是 POST /api/loans，成功 201；归还是 POST /api/loans/id/return，成功 200，之后都应刷新图书和借阅。停止服务会产生网络失败，页面通知区显示错误。旧内容可以保留供用户参考，但不能显示“操作成功”。恢复服务后重新查询应恢复正常，而无需修改源码。
+
+</details>
+
+下一步：[接口测试与并发验证](./06-testing.mdx)。

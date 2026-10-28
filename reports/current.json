@@ -1,0 +1,19 @@
+{
+  "scripts": [
+    {
+      "url": "/Myblog/assets/js/runtime~main.c99753f1.js",
+      "bytes": 11426,
+      "gzip": 5660
+    },
+    {
+      "url": "/Myblog/assets/js/main.5a844033.js",
+      "bytes": 399454,
+      "gzip": 108205
+    }
+  ],
+  "totalGzip": 113865,
+  "htmlBytes": 17546,
+  "gzipReductionPercent": 10.3,
+  "entryGzipBudgetBytes": 114688,
+  "htmlBudgetBytes": 20480
+}

@@ -1,0 +1,87 @@
+---
+title: 开源源码实操：一步步完成第一个 REST 接口
+sidebar_label: 官方 REST 项目分步实操
+description: 使用固定版本的 Spring 官方源码，从运行 complete 到在 initial 重建接口，核对响应并执行测试。
+---
+
+## 开始前准备
+
+本页是本站独立编写的操作指南，不是上游 README 的译文。请先从[开源教材页](./index.mdx)下载源码包，阅读根目录的归属说明。使用 JDK 21 与 Maven，在新终端确认 `java --version` 和 `mvn --version`。
+
+解压后有 `gs-rest-service/initial`、`gs-rest-service/complete` 和 `complete-kotlin`。本轮只做 Java；先运行完成版确认环境，再切回起始版练习，不要在同一端口同时启动两个服务。
+
+## 第 1 步：先跑完成版的测试
+
+进入 `gs-rest-service/complete`，确认当前目录包含 pom.xml：
+
+```sh
+mvn test
+```
+
+上游测试位于 `src/test/java/com/example/restservice/GreetingControllerTests.java`，检查默认名称和指定名称两种响应。测试使用 Spring 上下文与 RestTestClient 验证请求映射，不等于浏览器已经连上某个网络端口；运行服务仍需要下一步。
+
+成功时观察测试数与 BUILD SUCCESS。下载失败先处理 Maven 网络，编译失败核对 Java 版本，断言失败再看具体响应，不要靠跳过测试解决。
+
+## 第 2 步：启动并发送两次请求
+
+```sh
+mvn spring-boot:run
+```
+
+在另一个 PowerShell 终端：
+
+```powershell
+Invoke-RestMethod 'http://127.0.0.1:8080/greeting'
+Invoke-RestMethod 'http://127.0.0.1:8080/greeting?name=Java'
+```
+
+核对三件事：响应为 JSON；默认 content 是 `Hello, World!`；传入名称后 content 是 `Hello, Java!`。id 随进程中的请求增加，不要把任何一次手动请求的 id 永久写成 1。
+
+如果你已在 8080 运行图书项目，先停止它；或把本次命令替换为 `mvn spring-boot:run "-Dspring-boot.run.arguments=--server.port=8081"`，请求地址也同步改为 8081。
+
+## 第 3 步：沿入口读三份代码
+
+| 文件，相对于 complete | 先回答的问题 |
+| --- | --- |
+| src/main/java/com/example/restservice/RestServiceApplication.java | Spring 从哪个包开始扫描组件？ |
+| src/main/java/com/example/restservice/Greeting.java | 响应里的两个字段是什么类型？ |
+| src/main/java/com/example/restservice/GreetingController.java | 路径、参数默认值、响应对象怎样关联？ |
+
+先跟踪请求进来后被哪个方法接住，再看方法怎样构造响应。这个小例子没有数据库、用户登录和持久化；计数器仅属于当前运行进程，重启会重置。不要把进程内递增计数当成生产系统的资源主键策略。
+
+## 第 4 步：在起始版独立写一次
+
+停止 complete 服务，打开 initial。它已有启动类和构建配置，你需要自己新增 Greeting.java、GreetingController.java，并保持包名 `com.example.restservice`。
+
+先合上完成版，用自己的方式实现以下契约：
+
+1. GET /greeting 接受可选 name，默认 World。
+2. 返回含 long id 和 String content 的响应对象，由框架序列化。
+3. 并发请求下的计数操作应是原子的，但不用新增数据库。
+
+无法回忆语法时回看[类与 record](../textbook/07-objects.mdx)和[Spring 请求链](../textbook/15-spring.mdx)，再查完成版对应文件。每次只比较一个类型，确认差异原因后自己重写。
+
+## 第 5 步：让测试成为自己的验收
+
+把上游完整测试当作**参考**，在 initial 新增自己的测试类；核对 initial 的测试依赖与 complete 是否一致，再使用该版本支持的请求测试工具。
+
+验收至少包括无参数、普通名称、带空格名称；查询参数需要进行 URL 编码。不要只检查状态 200，还要检查 content。若暂时不会配置测试，先在 complete 中阅读并运行已有两项，再回到[测试基础课](../textbook/17-testing.mdx)补齐。
+
+## 第 6 步：做一个独立扩展
+
+新增 `/greeting/preview`：接收 name，返回同样内容，但不改变原 `/greeting` 计数。先写清这个新契约，再决定是否复用格式化方法。
+
+<details>
+<summary>参考思路与验收</summary>
+
+把“生成 content”提取为无状态方法，让普通问候负责取递增 id，预览接口使用独立的响应 record 表达只有 content 的结果。连续调用预览后再调用原接口，原计数只应因真实问候增加。不要让读取预览的实现偷偷修改共享状态。
+
+</details>
+
+## 第 7 步：迁移到完整业务
+
+记录此例已解决的事：路径匹配、参数绑定、响应序列化与请求测试。再列出它没有解决的事：重启保留数据、输入约束、多表一致性、前端错误状态。
+
+接下来做[图书借阅项目](../projects/library/index.mdx)。你会把记录型响应和 Controller 沿用下去，同时增加 Repository、事务、库存约束和同源前端。这样每一层都有明确引入原因。
+
+上游原文与代码见[固定提交](https://github.com/spring-guides/gs-rest-service/tree/3f4cef01152596c19bc4d37939409358812b1421)，完整在线阅读版见[Spring 官方教程](https://spring.io/guides/gs/rest-service/)。

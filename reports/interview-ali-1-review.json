@@ -1,0 +1,3429 @@
+{
+  "sourceKey": "2022-2-16-aliqianduan01",
+  "sourcePdf": "static/pdf/2022-2-16-aliqianduan01/阿里前端面试题-第一期.pdf",
+  "sourcePages": 82,
+  "reviewDate": "2026-10-28",
+  "readPages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82
+  ],
+  "visualCheckedPages": [
+    25,
+    69,
+    70,
+    82
+  ],
+  "questionCount": 173,
+  "coverageIds": [
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4",
+    "1.5",
+    "1.6",
+    "1.7",
+    "1.8",
+    "1.9",
+    "1.10",
+    "1.11",
+    "1.12",
+    "1.13",
+    "1.14",
+    "1.15",
+    "1.16",
+    "1.17",
+    "1.18",
+    "1.19",
+    "1.20",
+    "1.21",
+    "1.22",
+    "1.23",
+    "1.24",
+    "1.25",
+    "1.26",
+    "1.27",
+    "1.28",
+    "1.29",
+    "1.30",
+    "1.31",
+    "1.32",
+    "1.33",
+    "1.34",
+    "1.35",
+    "1.36",
+    "1.37",
+    "1.38",
+    "1.39",
+    "1.40",
+    "1.41",
+    "1.42",
+    "1.43",
+    "1.44",
+    "1.45",
+    "1.46",
+    "1.47",
+    "1.48",
+    "1.49",
+    "1.50",
+    "1.51",
+    "1.52",
+    "1.53",
+    "1.54",
+    "1.55",
+    "1.56",
+    "1.57",
+    "1.58",
+    "1.59",
+    "1.60",
+    "1.61",
+    "1.62",
+    "1.63",
+    "1.64",
+    "1.65",
+    "1.66",
+    "1.67",
+    "1.68",
+    "1.69",
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5",
+    "2.6",
+    "2.7",
+    "2.8",
+    "2.9",
+    "2.10",
+    "2.11",
+    "2.12",
+    "2.13",
+    "2.14",
+    "2.15",
+    "2.16",
+    "2.17",
+    "2.18",
+    "2.19",
+    "2.20",
+    "2.21",
+    "2.22",
+    "2.23",
+    "2.24",
+    "2.25",
+    "2.26",
+    "2.27",
+    "2.28",
+    "2.29",
+    "2.30",
+    "2.31",
+    "2.32",
+    "2.33",
+    "2.34",
+    "2.35",
+    "2.36",
+    "2.37",
+    "2.38",
+    "2.39",
+    "2.40",
+    "2.41",
+    "2.42",
+    "2.43",
+    "2.44",
+    "2.45",
+    "2.46",
+    "2.47",
+    "2.48",
+    "2.49",
+    "2.50",
+    "2.51",
+    "2.52",
+    "2.53",
+    "2.54",
+    "2.55",
+    "2.56",
+    "2.57",
+    "2.58",
+    "2.59",
+    "2.60",
+    "2.61",
+    "2.62",
+    "2.63",
+    "2.64",
+    "2.65",
+    "2.66",
+    "2.67",
+    "2.68",
+    "2.69",
+    "2.70",
+    "2.71",
+    "2.72",
+    "2.73",
+    "2.74",
+    "2.75",
+    "2.76",
+    "2.77",
+    "2.78",
+    "2.79",
+    "2.80",
+    "2.81",
+    "2.82",
+    "2.83",
+    "2.84",
+    "2.85",
+    "2.86",
+    "2.87",
+    "2.88",
+    "2.89",
+    "2.90",
+    "2.91",
+    "2.92",
+    "2.93",
+    "2.94",
+    "2.95",
+    "2.96",
+    "2.97",
+    "2.98",
+    "2.99",
+    "2.100",
+    "2.101",
+    "2.102",
+    "2.103",
+    "2.104"
+  ],
+  "correctedIds": [
+    "1.2",
+    "1.4",
+    "1.5",
+    "1.8",
+    "1.10",
+    "1.11",
+    "1.12",
+    "1.15",
+    "1.24",
+    "1.28",
+    "1.31",
+    "1.32",
+    "1.33",
+    "1.37",
+    "1.39",
+    "1.41",
+    "1.42",
+    "1.45",
+    "1.46",
+    "1.50",
+    "1.52",
+    "1.53",
+    "1.55",
+    "1.56",
+    "1.61",
+    "1.66",
+    "1.68",
+    "1.69",
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.6",
+    "2.11",
+    "2.13",
+    "2.17",
+    "2.18",
+    "2.19",
+    "2.20",
+    "2.21",
+    "2.26",
+    "2.27",
+    "2.28",
+    "2.29",
+    "2.30",
+    "2.31",
+    "2.34",
+    "2.36",
+    "2.39",
+    "2.40",
+    "2.48",
+    "2.52",
+    "2.53",
+    "2.54",
+    "2.56",
+    "2.58",
+    "2.60",
+    "2.61",
+    "2.62",
+    "2.63",
+    "2.64",
+    "2.67",
+    "2.70",
+    "2.71",
+    "2.72",
+    "2.73",
+    "2.74",
+    "2.75",
+    "2.76",
+    "2.77",
+    "2.80",
+    "2.82",
+    "2.84",
+    "2.85",
+    "2.87",
+    "2.91",
+    "2.93",
+    "2.95",
+    "2.96",
+    "2.97",
+    "2.98",
+    "2.101",
+    "2.102",
+    "2.104"
+  ],
+  "supplementedIds": [
+    "1.67",
+    "2.44",
+    "2.46",
+    "2.65",
+    "2.89"
+  ],
+  "historicalIds": [
+    "1.1",
+    "1.2",
+    "1.4",
+    "1.5",
+    "1.15",
+    "1.16",
+    "1.29",
+    "1.33",
+    "1.35",
+    "1.41",
+    "1.52",
+    "1.53",
+    "1.59",
+    "1.61",
+    "1.65",
+    "2.3",
+    "2.7",
+    "2.16",
+    "2.17",
+    "2.21",
+    "2.31",
+    "2.36",
+    "2.42",
+    "2.44",
+    "2.45",
+    "2.48",
+    "2.52",
+    "2.56",
+    "2.58",
+    "2.65",
+    "2.84",
+    "2.96",
+    "2.101"
+  ],
+  "numberingNotes": [
+    "Page 42: original 23. normalized to 2.23",
+    "Question 2.101 exists on pages 76-80 but is absent from the original table of contents"
+  ],
+  "pendingIds": [],
+  "coverage": [
+    {
+      "id": "1.1",
+      "title": "DOCTYPE 的作用",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        5
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": [
+        "https://html.spec.whatwg.org/multipage/syntax.html#the-doctype"
+      ]
+    },
+    {
+      "id": "1.2",
+      "title": "标准模式与兼容模式",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        5
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Quirks_mode_and_standards_mode"
+      ]
+    },
+    {
+      "id": "1.3",
+      "title": "为什么不再引用 DTD",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        5,
+        6
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "1.4",
+      "title": "SGML、HTML、XML、XHTML",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        6
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": [
+        "https://html.spec.whatwg.org/multipage/xhtml.html"
+      ]
+    },
+    {
+      "id": "1.5",
+      "title": "DTD 是什么",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        6
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": []
+    },
+    {
+      "id": "1.6",
+      "title": "行内元素",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        6
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/display"
+      ]
+    },
+    {
+      "id": "1.7",
+      "title": "块级元素",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        6
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "1.8",
+      "title": "行内与块级的区别",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        6
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://html.spec.whatwg.org/multipage/dom.html#content-models"
+      ]
+    },
+    {
+      "id": "1.9",
+      "title": "HTML 内容分类",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        6,
+        7
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "1.10",
+      "title": "空元素",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        7
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://html.spec.whatwg.org/multipage/syntax.html#void-elements"
+      ]
+    },
+    {
+      "id": "1.11",
+      "title": "link 元素",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        7
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link"
+      ]
+    },
+    {
+      "id": "1.12",
+      "title": "link 与 CSS @import",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        7
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@import"
+      ]
+    },
+    {
+      "id": "1.13",
+      "title": "浏览器做什么",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        7,
+        8
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "1.14",
+      "title": "浏览器内核",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        8
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.chrome.com/blog/inside-browser-part1"
+      ]
+    },
+    {
+      "id": "1.15",
+      "title": "不同引擎怎么比较",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        8
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": []
+    },
+    {
+      "id": "1.16",
+      "title": "常见浏览器引擎",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        8,
+        9
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": [
+        "https://www.chromium.org/blink/",
+        "https://webkit.org/"
+      ]
+    },
+    {
+      "id": "1.17",
+      "title": "浏览器如何渲染",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        9
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://web.dev/articles/rendering-performance"
+      ]
+    },
+    {
+      "id": "1.18",
+      "title": "解析时遇到 JS",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        9
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script"
+      ]
+    },
+    {
+      "id": "1.19",
+      "title": "async、defer、module",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        9,
+        10
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "1.20",
+      "title": "预解析与预加载扫描",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        10
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://web.dev/articles/preload-scanner"
+      ]
+    },
+    {
+      "id": "1.21",
+      "title": "CSS 如何阻塞",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        10
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event"
+      ]
+    },
+    {
+      "id": "1.22",
+      "title": "白屏、闪烁和布局偏移",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        10
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "1.23",
+      "title": "优化关键渲染路径",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        10,
+        11
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://web.dev/articles/critical-rendering-path"
+      ]
+    },
+    {
+      "id": "1.24",
+      "title": "重绘与回流",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        11
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing"
+      ]
+    },
+    {
+      "id": "1.25",
+      "title": "如何减少回流",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        11
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "1.26",
+      "title": "DOM 为什么可能慢",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        12
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "1.27",
+      "title": "DOMContentLoaded 与 load",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        12
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "1.28",
+      "title": "HTML5 特性与废弃元素",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        12
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://html.spec.whatwg.org/multipage/obsolete.html#non-conforming-features"
+      ]
+    },
+    {
+      "id": "1.29",
+      "title": "兼容新元素",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        12
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": []
+    },
+    {
+      "id": "1.30",
+      "title": "HTML 语义化",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        12,
+        13
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/HTML"
+      ]
+    },
+    {
+      "id": "1.31",
+      "title": "b/strong 与 i/em",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        13
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/b"
+      ]
+    },
+    {
+      "id": "1.32",
+      "title": "前端 SEO",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        13
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics"
+      ]
+    },
+    {
+      "id": "1.33",
+      "title": "离线存储怎么做",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        14,
+        15
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers"
+      ]
+    },
+    {
+      "id": "1.34",
+      "title": "离线资源如何更新",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        15
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "1.35",
+      "title": "浏览器存储有哪些",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        15
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria"
+      ]
+    },
+    {
+      "id": "1.36",
+      "title": "Cookie、sessionStorage、localStorage",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        15,
+        16
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies"
+      ]
+    },
+    {
+      "id": "1.37",
+      "title": "iframe 的代价",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        16
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe"
+      ]
+    },
+    {
+      "id": "1.38",
+      "title": "label 的作用",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        16
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "1.39",
+      "title": "autocomplete",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        17
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/autocomplete"
+      ]
+    },
+    {
+      "id": "1.40",
+      "title": "标签页通信",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        17,
+        18
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API"
+      ]
+    },
+    {
+      "id": "1.41",
+      "title": "WebSocket 的旧环境回退",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        18
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": [
+        "https://socket.io/docs/v4/how-it-works/"
+      ]
+    },
+    {
+      "id": "1.42",
+      "title": "Page Visibility 用途",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        18
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API"
+      ]
+    },
+    {
+      "id": "1.43",
+      "title": "圆形可点击区域",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        18
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "1.44",
+      "title": "不用 border 的 1px 线",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        18
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "1.45",
+      "title": "title 与 h1",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        18,
+        19
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "1.46",
+      "title": "img 的 title 与 alt",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        19
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://www.w3.org/WAI/tutorials/images/"
+      ]
+    },
+    {
+      "id": "1.47",
+      "title": "Canvas 与 SVG",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        19
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "1.48",
+      "title": "验证码解决什么",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        19
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html"
+      ]
+    },
+    {
+      "id": "1.49",
+      "title": "渐进增强与优雅降级",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        19
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "1.50",
+      "title": "attribute 与 property",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        19
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://html.spec.whatwg.org/multipage/common-dom-interfaces.html#reflecting-content-attributes-in-idl-attributes"
+      ]
+    },
+    {
+      "id": "1.51",
+      "title": "标准、可用性、可访问性",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        19,
+        20
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://www.w3.org/WAI/fundamentals/accessibility-intro/"
+      ]
+    },
+    {
+      "id": "1.52",
+      "title": "浏览器资源并发数",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        20
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Connection_management_in_HTTP_1.x"
+      ]
+    },
+    {
+      "id": "1.53",
+      "title": "Flash 与 Ajax",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        20
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": [
+        "https://blog.chromium.org/2017/07/so-long-and-thanks-for-all-flash.html"
+      ]
+    },
+    {
+      "id": "1.54",
+      "title": "怎样重构页面",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        20
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "1.55",
+      "title": "浏览器架构",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        20,
+        21
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "1.56",
+      "title": "常见 meta",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        21,
+        22
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta"
+      ]
+    },
+    {
+      "id": "1.57",
+      "title": "reset 与 normalize",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        22,
+        23
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://github.com/necolas/normalize.css"
+      ]
+    },
+    {
+      "id": "1.58",
+      "title": "预格式化文本",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        23
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "1.59",
+      "title": "DHTML",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        23
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": []
+    },
+    {
+      "id": "1.60",
+      "title": "head 中哪些必需",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        23,
+        24
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://html.spec.whatwg.org/multipage/semantics.html#the-head-element"
+      ]
+    },
+    {
+      "id": "1.61",
+      "title": "表单新增元素",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        24
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": [
+        "https://html.spec.whatwg.org/multipage/obsolete.html#non-conforming-features"
+      ]
+    },
+    {
+      "id": "1.62",
+      "title": "获取当前位置",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        24
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition"
+      ]
+    },
+    {
+      "id": "1.63",
+      "title": "注释方式",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        24
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "1.64",
+      "title": "disabled 与 readonly",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        24
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/readonly"
+      ]
+    },
+    {
+      "id": "1.65",
+      "title": "CSS 厂商前缀",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        24
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": []
+    },
+    {
+      "id": "1.66",
+      "title": "前端性能优化",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        25
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://web.dev/articles/vitals"
+      ]
+    },
+    {
+      "id": "1.67",
+      "title": "如何读 Waterfall",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        25,
+        26
+      ],
+      "corrected": false,
+      "supplemented": true,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.chrome.com/docs/devtools/network/reference#timing"
+      ]
+    },
+    {
+      "id": "1.68",
+      "title": "扫码登录原理",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        26
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html"
+      ]
+    },
+    {
+      "id": "1.69",
+      "title": "为什么省略资源 URL 协议",
+      "doc": "docs/interview/ali-1/html-browser.md",
+      "sourcePages": [
+        26
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content"
+      ]
+    },
+    {
+      "id": "2.1",
+      "title": "CSS 盒模型",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        26,
+        27
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Introduction"
+      ]
+    },
+    {
+      "id": "2.2",
+      "title": "CSS 选择器",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        27
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors"
+      ]
+    },
+    {
+      "id": "2.3",
+      "title": "before/after 的冒号",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        27,
+        28
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements"
+      ]
+    },
+    {
+      "id": "2.4",
+      "title": "伪类与伪元素",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        28
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.5",
+      "title": "哪些属性继承",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        28,
+        29
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Inheritance"
+      ]
+    },
+    {
+      "id": "2.6",
+      "title": "CSS 优先级",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        30,
+        31
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Specificity"
+      ]
+    },
+    {
+      "id": "2.7",
+      "title": "LVHA",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        31
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.8",
+      "title": "常见伪类",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        31,
+        32
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes"
+      ]
+    },
+    {
+      "id": "2.9",
+      "title": "如何居中",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        32,
+        33,
+        34,
+        35
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Center_an_element"
+      ]
+    },
+    {
+      "id": "2.10",
+      "title": "display",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        35
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/display"
+      ]
+    },
+    {
+      "id": "2.11",
+      "title": "relative、absolute 与 fixed",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        35,
+        36
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Display/Containing_block"
+      ]
+    },
+    {
+      "id": "2.12",
+      "title": "CSS 新能力",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        36
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.13",
+      "title": "Flexbox",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        36,
+        37
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox"
+      ]
+    },
+    {
+      "id": "2.14",
+      "title": "CSS 三角形",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        37,
+        38
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.15",
+      "title": "满屏品字布局",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        38
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.16",
+      "title": "多列等高",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        38
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.17",
+      "title": "浏览器兼容",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        38,
+        39,
+        40
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_conditional_rules/Using_feature_queries"
+      ]
+    },
+    {
+      "id": "2.18",
+      "title": "li 之间空白",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        40
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.19",
+      "title": "为什么初始化样式",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        40,
+        41
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.20",
+      "title": "包含块",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        41
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.21",
+      "title": "visibility:collapse",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        41,
+        42
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/visibility"
+      ]
+    },
+    {
+      "id": "2.22",
+      "title": "width:auto 与 100%",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        42
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.23",
+      "title": "定位与普通流的百分比",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        42
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.24",
+      "title": "Base64 图片",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        42,
+        43
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/URI/Reference/Schemes/data"
+      ]
+    },
+    {
+      "id": "2.25",
+      "title": "display、position、float",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        43
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://drafts.csswg.org/css-display/#transformations"
+      ]
+    },
+    {
+      "id": "2.26",
+      "title": "margin 折叠",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        43,
+        44,
+        45
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Margin_collapsing"
+      ]
+    },
+    {
+      "id": "2.27",
+      "title": "BFC",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        45,
+        46
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Display/Block_formatting_context"
+      ]
+    },
+    {
+      "id": "2.28",
+      "title": "IFC",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        46
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://www.w3.org/TR/CSS2/visuren.html#inline-formatting"
+      ]
+    },
+    {
+      "id": "2.29",
+      "title": "为什么清浮动",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        46
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.30",
+      "title": "clear 原理",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        47
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/clear"
+      ]
+    },
+    {
+      "id": "2.31",
+      "title": "zoom:1",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        47,
+        48
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/zoom"
+      ]
+    },
+    {
+      "id": "2.32",
+      "title": "媒体查询",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        48
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries"
+      ]
+    },
+    {
+      "id": "2.33",
+      "title": "Sass 与 Less",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        48
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://sass-lang.com/documentation/at-rules/use/"
+      ]
+    },
+    {
+      "id": "2.34",
+      "title": "CSS 性能",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        48,
+        49,
+        50
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.chrome.com/docs/devtools/performance/selector-stats"
+      ]
+    },
+    {
+      "id": "2.35",
+      "title": "CSS 选择器如何匹配",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        50
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.36",
+      "title": "奇数字号还是偶数字号",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        50
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.37",
+      "title": "margin 与 padding",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        50,
+        51
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.38",
+      "title": "样式模块拆分",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        51
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.39",
+      "title": "all 属性",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        51
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/all"
+      ]
+    },
+    {
+      "id": "2.40",
+      "title": "通配符重置",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        51,
+        52
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.41",
+      "title": "absolute 包含块边界",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        52
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.42",
+      "title": "hasLayout",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        52
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.43",
+      "title": "竖向百分比参照谁",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        52
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.44",
+      "title": "全屏滚动",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        52
+      ],
+      "corrected": false,
+      "supplemented": true,
+      "historical": true,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll_snap"
+      ]
+    },
+    {
+      "id": "2.45",
+      "title": "响应式设计",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        53
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.46",
+      "title": "视差与滚入动画",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        53
+      ],
+      "corrected": false,
+      "supplemented": true,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API"
+      ]
+    },
+    {
+      "id": "2.47",
+      "title": "自动填充背景",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        53
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/:autofill"
+      ]
+    },
+    {
+      "id": "2.48",
+      "title": "小于 12px 的文字",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        53,
+        54
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.49",
+      "title": "字体变清晰、变细",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        54
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth"
+      ]
+    },
+    {
+      "id": "2.50",
+      "title": "italic 与 oblique",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        54
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/font-style"
+      ]
+    },
+    {
+      "id": "2.51",
+      "title": "像素、DPR、PPI",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        54,
+        55
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio"
+      ]
+    },
+    {
+      "id": "2.52",
+      "title": "三种 viewport",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        55,
+        56
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport"
+      ]
+    },
+    {
+      "id": "2.53",
+      "title": "Android fixed 无效",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        56
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.54",
+      "title": "动画间隔是多少",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        56
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame"
+      ]
+    },
+    {
+      "id": "2.55",
+      "title": "inline-block 间距",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        56
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.56",
+      "title": "滚动不平滑",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        56,
+        57
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior"
+      ]
+    },
+    {
+      "id": "2.57",
+      "title": "固定 100px 后填满剩余高度",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        57
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.58",
+      "title": "图片格式选型",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        57,
+        58,
+        59
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types"
+      ]
+    },
+    {
+      "id": "2.59",
+      "title": "检测 WebP",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        59
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.60",
+      "title": "Cookie 隔离",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        59
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies"
+      ]
+    },
+    {
+      "id": "2.61",
+      "title": "style 放哪里",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        60
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.62",
+      "title": "CSS 预处理与后处理",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        60
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://postcss.org/"
+      ]
+    },
+    {
+      "id": "2.63",
+      "title": "CSS Sprites",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        60,
+        61
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.64",
+      "title": "rem 布局",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        61
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.65",
+      "title": "常见布局",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        61
+      ],
+      "corrected": false,
+      "supplemented": true,
+      "historical": true,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout"
+      ]
+    },
+    {
+      "id": "2.66",
+      "title": "0.5px 线",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        61
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.67",
+      "title": "transition 与 animation",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        61,
+        62
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations"
+      ]
+    },
+    {
+      "id": "2.68",
+      "title": "首选最小宽度",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        62
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/min-content"
+      ]
+    },
+    {
+      "id": "2.69",
+      "title": "height:100% 为什么无效",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        62
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.70",
+      "title": "min/max 与 width/height",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        62
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.71",
+      "title": "行内盒模型",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        62,
+        63
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.72",
+      "title": "幽灵空白节点",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        63
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://www.w3.org/TR/CSS2/visudet.html#line-height"
+      ]
+    },
+    {
+      "id": "2.73",
+      "title": "替换元素",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        63
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Images/Replaced_element_properties"
+      ]
+    },
+    {
+      "id": "2.74",
+      "title": "替换元素尺寸",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        63,
+        64
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.75",
+      "title": "content 与替换",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        64
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/content"
+      ]
+    },
+    {
+      "id": "2.76",
+      "title": "margin:auto",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        64,
+        65
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.77",
+      "title": "margin 为什么看似无效",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        65
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.78",
+      "title": "border 特点",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        65
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/border"
+      ]
+    },
+    {
+      "id": "2.79",
+      "title": "基线与 x-height",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        65,
+        66
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.80",
+      "title": "line-height",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        66,
+        67
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/line-height"
+      ]
+    },
+    {
+      "id": "2.81",
+      "title": "vertical-align",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        67
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/vertical-align"
+      ]
+    },
+    {
+      "id": "2.82",
+      "title": "overflow",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        67,
+        68
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/overflow"
+      ]
+    },
+    {
+      "id": "2.83",
+      "title": "无依赖绝对定位",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        68
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.84",
+      "title": "absolute 与 overflow",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        68
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.85",
+      "title": "clip 与可访问性隐藏",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        68
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/clip"
+      ]
+    },
+    {
+      "id": "2.86",
+      "title": "relative 的偏移",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        68,
+        69
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.87",
+      "title": "层叠上下文",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        69
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Positioned_layout/Stacking_context"
+      ]
+    },
+    {
+      "id": "2.88",
+      "title": "层叠水平",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        69
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.89",
+      "title": "层叠顺序",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        69
+      ],
+      "corrected": false,
+      "supplemented": true,
+      "historical": false,
+      "evidenceUrls": [
+        "https://www.w3.org/TR/CSS2/zindex.html"
+      ]
+    },
+    {
+      "id": "2.90",
+      "title": "层叠准则",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        70
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.91",
+      "title": "font-weight",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        70
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-weight"
+      ]
+    },
+    {
+      "id": "2.92",
+      "title": "text-indent",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        70
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-indent"
+      ]
+    },
+    {
+      "id": "2.93",
+      "title": "letter-spacing",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        70,
+        71
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing"
+      ]
+    },
+    {
+      "id": "2.94",
+      "title": "word-spacing",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        71
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing"
+      ]
+    },
+    {
+      "id": "2.95",
+      "title": "white-space",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        71
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/white-space"
+      ]
+    },
+    {
+      "id": "2.96",
+      "title": "隐藏背景图会下载吗",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        71,
+        72
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.97",
+      "title": "单行/多行省略",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        72
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/line-clamp"
+      ]
+    },
+    {
+      "id": "2.98",
+      "title": "隐藏方式",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        72
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inert"
+      ]
+    },
+    {
+      "id": "2.99",
+      "title": "上下固定，中间自适应",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        73,
+        74
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.100",
+      "title": "两栏布局",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        74,
+        75,
+        76
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.101",
+      "title": "三栏布局",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        76,
+        77,
+        78,
+        79,
+        80
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": true,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.102",
+      "title": "自适应正方形",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        81
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": [
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/aspect-ratio"
+      ]
+    },
+    {
+      "id": "2.103",
+      "title": "三角形实现",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        81
+      ],
+      "corrected": false,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    },
+    {
+      "id": "2.104",
+      "title": "2:1 自适应矩形居中",
+      "doc": "docs/interview/ali-1/css.md",
+      "sourcePages": [
+        81,
+        82
+      ],
+      "corrected": true,
+      "supplemented": false,
+      "historical": false,
+      "evidenceUrls": []
+    }
+  ],
+  "evidenceSources": [
+    "https://blog.chromium.org/2017/07/so-long-and-thanks-for-all-flash.html",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html",
+    "https://developer.chrome.com/blog/inside-browser-part1",
+    "https://developer.chrome.com/docs/devtools/network/reference#timing",
+    "https://developer.chrome.com/docs/devtools/performance/selector-stats",
+    "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/HTML",
+    "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout",
+    "https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API",
+    "https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event",
+    "https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition",
+    "https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API",
+    "https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API",
+    "https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers",
+    "https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria",
+    "https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport",
+    "https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio",
+    "https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/:autofill",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Inheritance",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_conditional_rules/Using_feature_queries",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll_snap",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Introduction",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Margin_collapsing",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Specificity",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Display/Block_formatting_context",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Display/Containing_block",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Images/Replaced_element_properties",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Positioned_layout/Stacking_context",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Center_an_element",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@import",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/all",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/aspect-ratio",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/clear",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/clip",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/display",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-weight",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/line-height",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/overflow",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-indent",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/vertical-align",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/visibility",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/zoom",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/border",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/content",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/font-style",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/line-clamp",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/min-content",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/white-space",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing",
+    "https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inert",
+    "https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Quirks_mode_and_standards_mode",
+    "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/autocomplete",
+    "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/readonly",
+    "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/b",
+    "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe",
+    "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link",
+    "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta",
+    "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script",
+    "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Connection_management_in_HTTP_1.x",
+    "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies",
+    "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types",
+    "https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content",
+    "https://developer.mozilla.org/en-US/docs/Web/URI/Reference/Schemes/data",
+    "https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics",
+    "https://drafts.csswg.org/css-display/#transformations",
+    "https://github.com/necolas/normalize.css",
+    "https://html.spec.whatwg.org/multipage/common-dom-interfaces.html#reflecting-content-attributes-in-idl-attributes",
+    "https://html.spec.whatwg.org/multipage/dom.html#content-models",
+    "https://html.spec.whatwg.org/multipage/obsolete.html#non-conforming-features",
+    "https://html.spec.whatwg.org/multipage/semantics.html#the-head-element",
+    "https://html.spec.whatwg.org/multipage/syntax.html#the-doctype",
+    "https://html.spec.whatwg.org/multipage/syntax.html#void-elements",
+    "https://html.spec.whatwg.org/multipage/xhtml.html",
+    "https://postcss.org/",
+    "https://sass-lang.com/documentation/at-rules/use/",
+    "https://socket.io/docs/v4/how-it-works/",
+    "https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing",
+    "https://web.dev/articles/critical-rendering-path",
+    "https://web.dev/articles/preload-scanner",
+    "https://web.dev/articles/rendering-performance",
+    "https://web.dev/articles/vitals",
+    "https://webkit.org/",
+    "https://www.chromium.org/blink/",
+    "https://www.w3.org/TR/CSS2/visudet.html#line-height",
+    "https://www.w3.org/TR/CSS2/visuren.html#inline-formatting",
+    "https://www.w3.org/TR/CSS2/zindex.html",
+    "https://www.w3.org/WAI/fundamentals/accessibility-intro/",
+    "https://www.w3.org/WAI/tutorials/images/"
+  ],
+  "evidenceLinkChecks": [
+    {
+      "url": "https://blog.chromium.org/2017/07/so-long-and-thanks-for-all-flash.html",
+      "status": 200,
+      "finalUrl": "https://blog.chromium.org/2017/07/so-long-and-thanks-for-all-flash.html"
+    },
+    {
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html",
+      "status": 200,
+      "finalUrl": "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html"
+    },
+    {
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html",
+      "status": 200,
+      "finalUrl": "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html"
+    },
+    {
+      "url": "https://developer.chrome.com/blog/inside-browser-part1",
+      "status": 200,
+      "finalUrl": "https://developer.chrome.com/blog/inside-browser-part1"
+    },
+    {
+      "url": "https://developer.chrome.com/docs/devtools/network/reference#timing",
+      "status": 200,
+      "finalUrl": "https://developer.chrome.com/docs/devtools/network/reference#timing"
+    },
+    {
+      "url": "https://developer.chrome.com/docs/devtools/performance/selector-stats",
+      "status": 200,
+      "finalUrl": "https://developer.chrome.com/docs/devtools/performance/selector-stats"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/HTML",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/HTML"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/:autofill",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:autofill"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@supports",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Using"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Inheritance",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Inheritance"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_conditional_rules/Using_feature_queries",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Conditional_rules/Using_feature_queries"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Media_queries/Using"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll_snap",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll_snap"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Selectors"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Introduction",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Introduction"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Margin_collapsing",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Margin_collapsing"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Specificity",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Display/Block_formatting_context",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Display/Block_formatting_context"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Display/Containing_block",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Images/Replaced_element_properties",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Positioned_layout/Stacking_context",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Center_an_element",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@import",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/all",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/all"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/aspect-ratio",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/aspect-ratio"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/clear",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/clear"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/clip",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/clip"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/display",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-weight",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/line-height",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/line-height"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/overflow",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/overflow"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-indent",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-indent"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/vertical-align",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/vertical-align"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/visibility",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/zoom",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/zoom"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/border",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/content",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/font-style",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/line-clamp",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/min-content",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/white-space",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inert",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Quirks_mode_and_standards_mode",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/autocomplete",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/readonly",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/b",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Connection_management_in_HTTP_1.x",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Connection_management_in_HTTP_1.x"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/URI/Reference/Schemes/data",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/URI/Reference/Schemes/data"
+    },
+    {
+      "url": "https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics",
+      "status": 200,
+      "finalUrl": "https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics"
+    },
+    {
+      "url": "https://developers.google.com/search/docs/essentials",
+      "status": 200,
+      "finalUrl": "https://developers.google.com/search/docs/essentials"
+    },
+    {
+      "url": "https://drafts.csswg.org/css-display/#transformations",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://github.com/necolas/normalize.css",
+      "status": 200,
+      "finalUrl": "https://github.com/necolas/normalize.css"
+    },
+    {
+      "url": "https://html.spec.whatwg.org/multipage/common-dom-interfaces.html#reflecting-content-attributes-in-idl-attributes",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://html.spec.whatwg.org/multipage/dom.html#content-models",
+      "status": 200,
+      "finalUrl": "https://html.spec.whatwg.org/multipage/dom.html#content-models"
+    },
+    {
+      "url": "https://html.spec.whatwg.org/multipage/obsolete.html#non-conforming-features",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://html.spec.whatwg.org/multipage/semantics.html#the-head-element",
+      "status": 200,
+      "finalUrl": "https://html.spec.whatwg.org/multipage/semantics.html#the-head-element"
+    },
+    {
+      "url": "https://html.spec.whatwg.org/multipage/syntax.html#the-doctype",
+      "status": 200,
+      "finalUrl": "https://html.spec.whatwg.org/multipage/syntax.html#the-doctype"
+    },
+    {
+      "url": "https://html.spec.whatwg.org/multipage/syntax.html#void-elements",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://html.spec.whatwg.org/multipage/text-level-semantics.html",
+      "status": 200,
+      "finalUrl": "https://html.spec.whatwg.org/multipage/text-level-semantics.html"
+    },
+    {
+      "url": "https://html.spec.whatwg.org/multipage/xhtml.html",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://lesscss.org/",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://microformats.org/wiki/microformats2",
+      "status": 200,
+      "finalUrl": "https://microformats.org/wiki/microformats2"
+    },
+    {
+      "url": "https://postcss.org/",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://sass-lang.com/documentation/",
+      "status": 200,
+      "finalUrl": "https://sass-lang.com/documentation/"
+    },
+    {
+      "url": "https://sass-lang.com/documentation/at-rules/use/",
+      "status": 200,
+      "finalUrl": "https://sass-lang.com/documentation/at-rules/use/"
+    },
+    {
+      "url": "https://socket.io/docs/v4/how-it-works/",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://web.dev/articles/browser-level-image-lazy-loading",
+      "status": 200,
+      "finalUrl": "https://web.dev/articles/browser-level-image-lazy-loading"
+    },
+    {
+      "url": "https://web.dev/articles/critical-rendering-path",
+      "status": 200,
+      "finalUrl": "https://web.dev/articles/critical-rendering-path"
+    },
+    {
+      "url": "https://web.dev/articles/preload-scanner",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://web.dev/articles/rendering-performance",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://web.dev/articles/vitals",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://webkit.org/",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://whatwg.org/",
+      "status": 200,
+      "finalUrl": "https://whatwg.org/"
+    },
+    {
+      "url": "https://www.chromium.org/blink/",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://www.w3.org/TR/CSS2/visudet.html#line-height",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://www.w3.org/TR/CSS2/visuren.html#inline-formatting",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://www.w3.org/TR/CSS2/zindex.html",
+      "status": 200,
+      "finalUrl": "https://www.w3.org/TR/CSS2/zindex.html"
+    },
+    {
+      "url": "https://www.w3.org/WAI/fundamentals/accessibility-intro/",
+      "status": 200,
+      "finalUrl": "https://www.w3.org/WAI/fundamentals/accessibility-intro/"
+    },
+    {
+      "url": "https://www.w3.org/WAI/tutorials/carousels/",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://www.w3.org/WAI/tutorials/images/",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "url": "https://www.w3.org/WAI/tutorials/tables/",
+      "status": 200,
+      "finalUrl": "https://www.w3.org/WAI/tutorials/tables/"
+    },
+    {
+      "url": "https://www.w3.org/standards/",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    }
+  ],
+  "legacyReview": {
+    "doc": "docs/fontendInterview/Interview/03-Interview/index.md",
+    "questionCount": 44,
+    "coveredIds": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44
+    ],
+    "preservedId": "03-Interview",
+    "date": "2026-10-28"
+  },
+  "browserVerification": {
+    "browser": "Chrome",
+    "squareAtParentWidths": {
+      "320": [
+        96,
+        96
+      ],
+      "700": [
+        210,
+        210
+      ]
+    },
+    "ratioAtParentWidths": {
+      "320": [
+        256,
+        128
+      ],
+      "700": [
+        560,
+        280
+      ]
+    },
+    "siblingMarginWithFlowRoot": 30,
+    "clearLeftY": 30,
+    "clearBothY": 100
+  }
+}

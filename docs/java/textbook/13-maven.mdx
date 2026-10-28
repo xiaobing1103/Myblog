@@ -1,0 +1,92 @@
+---
+title: 第 13 课：Maven、包与工程结构
+sidebar_label: 13 Maven 与工程结构
+description: 从单文件进入真实 Java 工程，读懂包、依赖、pom.xml、构建生命周期和配置来源。
+---
+
+## 本课目标
+
+前置：已经能写单文件程序。学完能在正确目录运行 Maven，区分源码、构建产物和运行数据，并知道失败发生在哪个阶段。
+
+## 第一步：单文件示例解决不了全部工程问题
+
+项目变大后会有许多 Java 文件、第三方库、测试和配置。Maven 根据 pom.xml 管理依赖和构建步骤，作用类似你熟悉的 package.json 加构建工具，但其目录和生命周期有固定约定。
+
+先运行 `mvn --version`，确认 Maven 使用的 Java 也是 21。能运行 java 不代表 Maven 一定使用同一个 JDK，输出中的 Java home 可以帮助排查。
+
+## 第二步：先观察程序参数与配置
+
+```java title="Main.java"
+public class Main {
+    public static void main(String[] args) {
+        String learner = args.length > 0 ? args[0] : "Java";
+        String mode = System.getProperty("study.mode", "local");
+        System.out.println("Learner: " + learner);
+        System.out.println("Mode: " + mode);
+    }
+}
+```
+
+```text title="运行输出"
+Learner: Java
+Mode: local
+```
+
+先 `java Main.java`，再执行 `java -Dstudy.mode=practice Main.java Alice`，观察系统属性与应用参数的位置。`-D` 放在 Java 启动器选项位置；args 不会自动包含它。
+
+这帮助你理解后续框架配置：环境变量、JVM 系统属性、应用参数不是同一个入口。配置优先级由框架规定，不应仅根据文件名猜测。
+
+## 第三步：打开下载的待办项目
+
+从[教材目录](./index.mdx)下载项目，解压到英文或系统能正确处理的路径。进入包含 pom.xml 的 todo-api 目录：
+
+```text
+todo-api/
+  pom.xml
+  src/main/java/blog/learning/
+    TodoApplication.java
+    TaskController.java
+    TaskService.java
+    TaskRepository.java
+  src/main/resources/
+    application.properties
+    schema.sql
+  src/test/java/blog/learning/
+    TaskApiTest.java
+```
+
+`package blog.learning;` 对应源码目录下的 blog/learning。import 让代码可以使用别的包中可访问的类型，不会像 JS import 一样用来执行一个模块入口。public 类型可以跨包访问；未写访问修饰符的类型或成员通常只有同包可见。
+
+## 第四步：读懂 pom 的三个重点
+
+1. groupId、artifactId、version 标识项目和依赖，类似包名与版本的组合。
+2. dependencies 声明 Web、JDBC、校验、H2 和测试库，Maven 还会解析它们的传递依赖。
+3. build/plugins 中的 Spring Boot 插件负责相关构建和运行任务；Java 版本由 properties 声明。
+
+本项目使用 Spring Boot parent 管理依赖版本，因此并非每个依赖都直接写 version。不要为了“最新”随意给某个底层库单独覆写版本，先核对框架兼容关系。
+
+## 第五步：按阶段排查构建
+
+| 命令 | 用途 | 产物或观察点 |
+| --- | --- | --- |
+| `mvn test` | 编译并执行测试 | target/surefire-reports |
+| `mvn package` | 测试后打包 | target 下的 JAR |
+| `mvn spring-boot:run` | 本地运行服务 | 终端启动日志 |
+| `mvn dependency:tree` | 查看依赖来源 | 传递依赖关系 |
+| `mvn clean` | 清理构建产物 | 删除 target，不删除源码 |
+
+第一次会下载依赖。网络下载失败、源码编译失败、断言失败、端口占用分别属于不同问题，先读 BUILD FAILURE 前最近的具体原因。`target/` 不提交，`data/` 是应用数据，不应当作可随意清理的编译产物。
+
+## 动手任务
+
+1. 在项目根目录和 src 目录分别执行 mvn test，比较结果并解释为什么需要 pom。
+2. 找到测试依赖的 scope，解释为什么它不应成为生产功能的必要依赖。
+
+<details>
+<summary>参考解法与检查点</summary>
+
+默认需要在含 pom.xml 的目录执行，也可通过 `mvn -f 路径/pom.xml test` 指定。test scope 表示依赖用于测试编译运行；应用业务代码不应导入 JUnit。不要通过跳过测试把未解决的断言失败伪装成构建成功。
+
+</details>
+
+下一课：[HTTP 与 JSON](./14-http.mdx)。官方查阅：[Maven 入门](https://maven.apache.org/guides/getting-started/)。

@@ -1,0 +1,52 @@
+---
+title: 开源教材与实战源码
+sidebar_label: 开源教材与原文
+description: 收录 Spring 官方 REST 入门项目的固定源码与教材原文，提供许可证、来源校验与本站中文分步操作指南。
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+这里可以下载真正的上游源码、教材源文档和许可证。先用小项目建立请求处理模型，再完成本站[图书借阅管理台](../projects/library/index.mdx)，逐步加上数据库、业务事务和前端界面。
+
+## 已收录：Spring 官方 REST 入门
+
+| 项目 | 内容 |
+| --- | --- |
+| 作品 | Building a RESTful Web Service |
+| 归属 | Spring Guides 项目及其贡献者 |
+| 上游仓库 | [spring-guides/gs-rest-service](https://github.com/spring-guides/gs-rest-service) |
+| 官方完整阅读版 | [Spring REST Service Guide](https://spring.io/guides/gs/rest-service/) |
+| 本站固定版本 | [3f4cef01152596c19bc4d37939409358812b1421](https://github.com/spring-guides/gs-rest-service/tree/3f4cef01152596c19bc4d37939409358812b1421) |
+| 源码结构 | initial 起始项目、complete 完成项目，另保留 Kotlin 示例 |
+| 已验证的 Java 环境 | 本机 JDK 21；上游 pom 的 Java 基线为 17，Spring Boot 为 4.0.8 |
+
+<p><a className="button button--primary" href={useBaseUrl('/downloads/spring-rest-service-source.zip')} download>下载官方源码与教材原文</a></p>
+
+<p><a href={useBaseUrl('/open-source/spring-rest-service/README.adoc')} download>单独下载 README.adoc 原文</a> · <a href={useBaseUrl('/open-source/spring-rest-service/SOURCES.json')} download>下载来源与校验清单</a></p>
+
+源码包里的 `gs-rest-service/` 保留上游 59 个文件的原始内容；根目录另有本站补充的来源清单与归属说明。每次构建会核对上游文件 SHA-256，避免更新时悄悄混入未记录的版本。
+
+## 先读哪一份
+
+1. 想直接动手：进入[本站中文操作指南](./rest-service.mdx)，先运行 complete，再在 initial 独立完成同样的接口。
+2. 想看作者原文：在线阅读官方教程，或下载原始 README.adoc。原文包含 AsciiDoc include 指令，部分引用在线公共宏，不是已展开所有宏的离线 HTML。
+3. 想核对代码：比较 initial 与 complete 下的同一路径，优先看 Greeting、GreetingController 和测试，而非把所有构建文件一次读完。
+4. 想做完整项目：进入[图书借阅管理台实战路线](../projects/library/index.mdx)，把单一问候接口扩展到带库存约束的借阅业务。
+
+## 代码和文档分别采用什么许可
+
+代码使用 Apache-2.0，文档依据上游说明使用 CC BY-ND 3.0。本站原样收录原文及许可，不把上游文章翻译或改写成可分发附件；本站中文操作指南是另行编写的教学内容，列明对应代码位置与操作步骤。
+
+<p><a href={useBaseUrl('/open-source/spring-rest-service/LICENSE.txt')} download>上游代码许可证</a> · <a href={useBaseUrl('/open-source/spring-rest-service/LICENSE.writing.txt')} download>上游文档许可声明</a> · <a href={useBaseUrl('/open-source/spring-rest-service/ATTRIBUTION.md')} download>归属说明</a></p>
+
+完整许可见 [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) 和 [CC BY-ND 3.0](https://creativecommons.org/licenses/by-nd/3.0/)。收录不表示 Spring 对本站提供背书。本站新写的图书项目独立使用 MIT，详见下载包内 LICENSE，不改变上游作品的许可。
+
+## 学习资料的三个层次
+
+| 材料 | 用途 | 如何验证学会了 |
+| --- | --- | --- |
+| [18 课基础教材](../textbook/index.mdx) | 建立 Java 与后端基础 | 能解释并修改完整示例 |
+| [官方源码操作指南](./rest-service.mdx) | 阅读一个开源项目 | 在 initial 中重建接口并测试 |
+| [图书管理实战](../projects/library/index.mdx) | 实现真实业务闭环 | 借出归还后库存正确、失败路径有测试 |
+
+Java 服务在本机运行，博客负责展示文档和提供源码下载。部署到静态 GitHub Pages 后，文档可读，服务仍需你在本机或自己的服务器启动。

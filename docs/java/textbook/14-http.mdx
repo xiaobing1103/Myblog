@@ -1,0 +1,100 @@
+---
+title: 第 14 课：从一次真实 HTTP 请求理解后端
+sidebar_label: 14 HTTP 与 JSON
+description: 不依赖 Spring，运行一个会自行停止的本地 HTTP 示例，理解方法、路径、状态码与 JSON。
+---
+
+## 本课目标
+
+前置：异常、字符串、工程目录。能分清 HTTP 协议行为、JSON 数据格式与业务规则，为理解 Controller 做准备。
+
+## 第一步：把请求拆成几部分
+
+一次请求包含方法、地址、请求头和可选请求体。服务器返回状态码、响应头和响应体。`GET /api/tasks/1` 中的 1 是路径的一部分；`?done=true` 是查询参数；JSON 请求体则是另一条数据通道。
+
+JSON 是文本数据格式，不会执行 JavaScript。Java 对象需要序列化成 JSON，传入 JSON 需要反序列化并校验。返回一串 JSON 文本也不等于已经实现了数据库保存。
+
+## 第二步：先运行一个短暂存在的服务
+
+本示例只绑定本机回环地址、使用随机空闲端口，发送一次请求后自行停止，不需要安装 Spring。
+
+```java title="Main.java"
+import com.sun.net.httpserver.HttpServer;
+import java.net.InetSocketAddress;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.nio.charset.StandardCharsets;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        HttpServer server = HttpServer.create(new InetSocketAddress("127.0.0.1", 0), 0);
+        server.createContext("/health", exchange -> {
+            byte[] body = "{\"status\":\"UP\"}".getBytes(StandardCharsets.UTF_8);
+            exchange.getResponseHeaders().set("Content-Type", "application/json; charset=utf-8");
+            exchange.sendResponseHeaders(200, body.length);
+            try (var output = exchange.getResponseBody()) {
+                output.write(body);
+            }
+        });
+        server.start();
+        try (HttpClient client = HttpClient.newHttpClient()) {
+            int port = server.getAddress().getPort();
+            HttpRequest request = HttpRequest.newBuilder(
+                URI.create("http://127.0.0.1:" + port + "/health")).GET().build();
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            System.out.println(response.statusCode());
+            System.out.println(response.headers().firstValue("Content-Type").orElse(""));
+            System.out.println(response.body());
+        } finally {
+            server.stop(0);
+        }
+    }
+}
+```
+
+```text title="运行输出"
+200
+application/json; charset=utf-8
+{"status":"UP"}
+```
+
+这里有两个角色：HttpServer 处理请求，HttpClient 发起请求。它们恰好在一个进程里，不代表浏览器和服务器在真实部署中必须一起运行。此示例需要完整 JDK 21 及允许本机回环连接的环境。
+
+## 第三步：逐项读响应
+
+200 表示这次请求成功处理；Content-Type 告诉调用者响应体是 JSON。UTF-8 编码后的字节数用于响应长度，不能简单用字符串 length 代替非 ASCII 文本的字节数。
+
+本处理器只为教学返回固定内容，没有检查请求方法，也没有生产级路由、限流和错误响应。HttpServer 上下文按路径前缀匹配，真实接口需要进一步校验路径与方法；下一课交给 Spring 路由机制处理。
+
+| 常见状态 | 含义 | 待办项目中的例子 |
+| --- | --- | --- |
+| 200 | 成功并返回内容 | 查询、更新任务 |
+| 201 | 已创建资源 | 创建任务及 Location |
+| 204 | 成功，无响应体 | 删除任务 |
+| 400 | 请求不合法 | 标题为空、JSON 格式错误 |
+| 404 | 未找到资源 | 不存在的任务 |
+| 500 | 服务内部失败 | 未预期程序错误 |
+
+## 第四步：前端容易混淆的三个问题
+
+fetch 遇到 400/500 通常仍得到 Response，应该检查 response.ok；网络错误和 HTTP 失败不是同一情况。204 响应不要再无条件调用 response.json。
+
+CORS 是浏览器对跨来源访问的限制，不是服务器密码，也不是访问控制。curl 能调用、浏览器报跨域时先查来源与代理配置，不要把所有异常都归因于 Java 服务没启动。
+
+GET 通常用于读取；POST 创建资源；PATCH 部分修改。接口含义由方法、路径与契约共同确定，不要把所有操作都塞进一个无语义的路径。
+
+## 动手任务
+
+1. 在服务仍运行的 try 中再请求 `/missing`，打印状态，观察默认 404。
+2. 改用 POST 请求 `/health`，观察本处理器仍返回 200，并说明这暴露了什么缺失。
+
+<details>
+<summary>参考解法与检查点</summary>
+
+第一题复制请求过程并换路径，在 finally 停止前发送。第二题使用 `.POST(HttpRequest.BodyPublishers.noBody())`。当前示例没有按方法分支，应增加 GET 检查，其他方法返回 405 并声明 Allow；不能看到“有返回”就认为接口契约完整。
+
+</details>
+
+下一课：[一步步读懂 Spring Boot](./15-spring.mdx)。API：[HttpClient](https://docs.oracle.com/en/java/javase/21/docs/api/java.net.http/java/net/http/HttpClient.html)。

@@ -1,0 +1,77 @@
+[
+  {
+    "key": "2022-2-16-aliqianduan01",
+    "path": "static/pdf/2022-2-16-aliqianduan01/阿里前端面试题-第一期.pdf",
+    "name": "阿里前端面试题-第一期.pdf",
+    "pages": 82,
+    "characters": 95037,
+    "lowTextPages": [],
+    "sha256": "d61729ab74ea7e7fed5d8295bf9e7c0c01b46058fee0b31f5af4a68e2cf9179f"
+  },
+  {
+    "key": "2022-2-16-aliqianduan02",
+    "path": "static/pdf/2022-2-16-aliqianduan02/阿里前端面试题-第二期.pdf",
+    "name": "阿里前端面试题-第二期.pdf",
+    "pages": 144,
+    "characters": 100833,
+    "lowTextPages": [],
+    "sha256": "2ed624e1f457ec598a94d08412a3f674347f437c089ef747b99808f4a7f3e704"
+  },
+  {
+    "key": "2022-2-16-dachangfo",
+    "path": "static/pdf/2022-2-16-dachangfo/2022大厂前端面试手册.pdf",
+    "name": "2022大厂前端面试手册.pdf",
+    "pages": 123,
+    "characters": 81349,
+    "lowTextPages": [],
+    "sha256": "aa4502c173e366fba8e3252eab518b571d8ee4f78473d29b69751df16f1978f5"
+  },
+  {
+    "key": "2022-2-16-mayi",
+    "path": "static/pdf/2022-2-16-mayi/蚂蚁前端面经.pdf",
+    "name": "蚂蚁前端面经.pdf",
+    "pages": 2,
+    "characters": 989,
+    "lowTextPages": [],
+    "sha256": "67d94f840748e01ab2ca12f4aa79bfca49fb5a3898d5da389563fa75ff02fd17"
+  },
+  {
+    "key": "2022-2-16-mesatsu00",
+    "path": "static/pdf/2022-2-16-mesatsu00/前端开发工程师笔试题00.pdf",
+    "name": "前端开发工程师笔试题00.pdf",
+    "pages": 6,
+    "characters": 3734,
+    "lowTextPages": [],
+    "sha256": "be759aa32254824a628a46166999994be0d8bc6a4f198885035bb2b41e03b1d5"
+  },
+  {
+    "key": "2022-2-16-pdd",
+    "path": "static/pdf/2022-2-16-pdd/拼多多、商汤前端面经.pdf",
+    "name": "拼多多、商汤前端面经.pdf",
+    "pages": 2,
+    "characters": 1656,
+    "lowTextPages": [],
+    "sha256": "8f79f97840edbef3e2456511ccf3011cd1152ab4c9a3722d9c4889c6e2a07496"
+  },
+  {
+    "key": "2022-2-16-zhengze",
+    "path": "static/pdf/2022-2-16-zhengze/JavaScript正则表达式迷你书.pdf",
+    "name": "JavaScript正则表达式迷你书.pdf",
+    "pages": 89,
+    "characters": 69433,
+    "lowTextPages": [
+      1,
+      2
+    ],
+    "sha256": "6fe9c6276125e1ccfb7f7d02dad017eb0569d177b09f03074a5b72a849a0e211"
+  },
+  {
+    "key": "2022-2-16-zhufengfo",
+    "path": "static/pdf/2022-2-16-zhufengfo/vue3zhufeng.pdf",
+    "name": "vue3zhufeng.pdf",
+    "pages": 16,
+    "characters": 14367,
+    "lowTextPages": [],
+    "sha256": "fe5b0e141b468c928f5fe699013a8227d1d3b0fa4f4dcba1f2285f9f84a706f6"
+  }
+]

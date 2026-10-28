@@ -93,7 +93,7 @@ DOM 的另一大作用是添加交互，所以提供了添加和处理事件的 
 | click                  | 鼠标/屏幕点击                             |
 | mouseenter/mouseleave  | 鼠标进入/移出元素区域                     |
 | drag/dragstart/dragend | 元素被拖拽/拖拽开始/拖拽结束              |
-| input                  | <input\>、<select\>、<textarea\> 内容改变 |
+| input                  | `<input>`、`<select>`、`<textarea>` 内容改变 |
 | focus/blur             | 获取/失去焦点                             |
 | keydown/keyup          | 键盘按下/松开                             |
 | play/pause             | 媒体（视频、音频）播放/暂停               |

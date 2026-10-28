@@ -1,0 +1,21 @@
+.practice {border: 1px solid var(--line); background: var(--surface); border-radius: 14px; padding: 1.3rem; margin: 1.5rem 0 2rem; min-width: 0;}
+.heading {display: flex; flex-wrap: wrap; align-items: center; gap: .7rem; margin-bottom: 1rem;}
+.heading h3 {margin: 0; font-size: 1.1rem;}
+.badge {font-size: .72rem; color: var(--ifm-color-primary); border: 1px solid var(--line); border-radius: 20px; padding: .15rem .65rem;}
+.editorLabel {display: block; margin-bottom: .5rem; font-size: .85rem; font-weight: 600;}
+.editor {width: 100%; min-height: 330px; padding: 1rem; color: var(--ifm-font-color-base); background: var(--page-bg); border: 1px solid var(--line); border-radius: 8px; resize: vertical; font: 14px/1.65 var(--ifm-font-family-monospace); tab-size: 4; white-space: pre; overflow-wrap: normal;}
+.note {color: var(--muted); font-size: .78rem; margin: .7rem 0;}
+.actions {display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin: .9rem 0;}
+.actions button, .answerButton {padding: .45rem .75rem; border-radius: 7px; border: 1px solid var(--line); background: var(--page-bg); color: var(--ifm-color-primary); font: inherit; font-size: .85rem; cursor: pointer;}
+.actions button:disabled {opacity: .55; cursor: wait;}
+.actions :global(.button--primary) {background: var(--ifm-color-primary); color: var(--ifm-color-primary-contrast-foreground);}
+.frame {display: block; width: 100%; height: 620px; border: 1px solid var(--line); border-radius: 8px;}
+.status {min-height: 1.7rem; font-size: .85rem; margin: .8rem 0;}
+.passed, .failed {border-left: 4px solid; padding: .8rem 1rem; background: var(--page-bg); border-radius: 5px;}
+.passed {border-color: #18753b;}
+.failed {border-color: #b54d18;}
+.practice pre {white-space: pre-wrap; overflow-wrap: anywhere; margin: .6rem 0;}
+.practice details {margin: .8rem 0; padding: .7rem .9rem; border: 1px solid var(--line); border-radius: 7px;}
+.practice summary {cursor: pointer; font-size: .85rem;}
+.answerButton {margin: .3rem 0 .7rem;}
+@media (max-width: 600px) {.practice {padding: .85rem;}.editor {font-size: 13px;}.frame {height: 680px;}.actions {gap: .45rem;}}

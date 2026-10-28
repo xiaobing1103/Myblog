@@ -21,15 +21,15 @@ keywords:
 
 在理解计算机世界的树结构之前，大家不妨回忆一下现实世界中的树有什么特点：一棵树往往只有一个树根，向上生长后，却可以伸展出无数的树枝、树枝上会长出树叶。由树根从泥土中吸收水、无机盐等营养物质，源源不断地输送到树枝与树叶的那一端。一棵树往往呈现这样的基本形态：
 
-<img src="https://s3.ax1x.com/2020/12/21/rdHwX4.png" alt="rdHwX4.png" border="0" />
+![rdHwX4.png](/img/remote/244a86fcf36fdd02.webp)
 
 数据结构中的树，首先是对现实世界中树的一层简化：把树根抽象为“根结点”，树枝抽象为“边”，树枝的两个端点抽象为“结点”，树叶抽象为“叶子结点”。抽象后的树结构如下：
 
-<img src="https://s3.ax1x.com/2020/12/21/rdHyA1.png" alt="rdHyA1.png" border="0" />
+![rdHyA1.png](/img/remote/274a3b1a174f6c9e.webp)
 
 把这棵抽象后的树颠倒一下，就得到了计算机中的树结构：
 
-<img src="https://s3.ax1x.com/2020/12/21/rdHch6.png" alt="rdHch6.png" border="0" />
+![rdHch6.png](/img/remote/2ef412b9f4fd6991.webp)
 
 结合这张图，我们来讲解树的关键特性和重点概念。希望大家可以牢记以下几点：
 
@@ -45,7 +45,7 @@ keywords:
 - 它可以没有根结点，作为一棵空树存在
 - 如果它不是空树，那么**必须由根结点、左子树和右子树组成，且左右子树都是二叉树**。如下图：
 
-<img src="https://s3.ax1x.com/2020/12/21/rdHvuQ.png" alt="rdHvuQ.png" border="0" />
+![rdHvuQ.png](/img/remote/3a20b9affa49958e.webp)
 
 注意，**二叉树不能被简单定义为每个结点的度都是2的树**。普通的树并不会区分左子树和右子树，但在二叉树中，左右子树的位置是严格约定、不能交换的。对应到图上来看，也就意味着 B 和 C、D 和 E、F 和 G 是不能互换的。
 
@@ -75,11 +75,11 @@ const node  = new TreeNode(1)
 
 如此便能得到一个值为 1 的二叉树结点，从结构上来说，它长这样：
 
-<img src="https://s3.ax1x.com/2020/12/21/rdbAvF.png" alt="rdbAvF.png" border="0" />
+![rdbAvF.png](/img/remote/faef855ae8d5f059.webp)
 
 以这个结点为根结点，我们可以通过给 left/right 赋值拓展其子树信息，延展出一棵二叉树。因此从更加细化的角度来看，一棵二叉树的形态实际是这样的：
 
-<img src="https://s3.ax1x.com/2020/12/21/rdbVu4.png" alt="rdbVu4.png" border="0" />
+![rdbVu4.png](/img/remote/4caf6db3a7f8e1fa.webp)
 
 现在各位已经掌握了做二叉树面试题所需要的一系列前置知识。接下来我会带大家一起通过写代码的方式，来搞定二叉树系列里最首当其冲、同时相当热门的考点——二叉树的遍历。
 

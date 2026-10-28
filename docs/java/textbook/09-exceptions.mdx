@@ -1,0 +1,88 @@
+---
+title: 第 09 课：异常、堆栈与调试
+sidebar_label: 09 异常与调试
+description: 区分错误输入、业务失败和程序缺陷，用异常堆栈定位原因，在合适的边界处理失败。
+---
+
+import JavaPractice from '@site/src/components/JavaPractice';
+
+## 本课目标
+
+前置：方法调用和参数解析。能顺着异常堆栈定位自己的代码，不用一个 catch 把所有失败伪装成正常结果。
+
+## 第一步：失败也是方法契约
+
+数字文本不是合法整数，商品数量不能为负，读取文件找不到路径，这些失败的性质并不相同。异常可以携带原因，并沿方法调用链向外传播。
+
+RuntimeException 及其子类属于非受检异常，编译器不强制调用者声明或捕获。IOException 等受检异常通常需要捕获或在方法上 throws。Error 一般表示更严重的运行问题，不应作为日常输入失败来处理。
+
+## 第二步：在输入边界转成可理解的提示
+
+```java title="Main.java"
+public class Main {
+    static int parseQuantity(String text) {
+        int value = Integer.parseInt(text);
+        if (value <= 0) {
+            throw new IllegalArgumentException("quantity must be positive");
+        }
+        return value;
+    }
+
+    static void show(String input) {
+        try {
+            int quantity = parseQuantity(input);
+            System.out.println("Accepted " + quantity);
+        } catch (NumberFormatException e) {
+            System.out.println("Not an integer");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void main(String[] args) {
+        show("2");
+        show("abc");
+        show("0");
+    }
+}
+```
+
+```text title="运行输出"
+Accepted 2
+Not an integer
+quantity must be positive
+```
+
+NumberFormatException 是 IllegalArgumentException 的子类，所以更具体的 catch 放在前面。反过来，父类先把异常接走，子类 catch 就不可达，编译会报错。
+
+parseQuantity 负责解析和规则，show 负责向命令行用户显示失败。后端程序则可能在 HTTP 边界把类似失败映射成 400，业务内部不应到处拼响应 JSON。
+
+## 第三步：学会阅读异常堆栈
+
+临时移除 show 的 try/catch 后运行错误输入。先读异常类型和信息，再找第一处属于自己代码的 `Main.java:行号`，接着向下看是谁调用了它。框架堆栈可能很长，不需要从第一行库代码逐个背到末尾。
+
+调试时在 parseQuantity 入口设断点，观察 input；单步执行 parseInt，确认哪个输入使程序进入异常路径。修复后添加一个能复现该输入的测试，避免同样问题再次出现。
+
+## 第四步：不要吞掉失败
+
+以下写法会把失败混成成功：捕获 Exception 后直接返回 0。调用方无法区分“合法数量 0”和“解析失败”，后续甚至可能保存错误数据。
+
+捕获异常要有处理目的：重试、提示、转成业务错误，或保留原始原因继续抛出。不要无意义地每层 catch、打印、再抛，让同一失败在日志里重复多次。
+
+资源关闭优先用 try-with-resources；finally 常用于需要最终执行的清理。不要在 finally 里 return，会掩盖原来的返回或异常。文件操作在第 12 课继续展开。
+
+<JavaPractice id="validation" />
+
+## 动手任务
+
+1. 输入 `2147483648`，预测是哪一个 catch 接住，为什么它虽然全是数字仍然失败？
+2. 希望接受两端空白，在哪里 strip？分别说明 null 和空白文本如何处理。
+
+<details>
+<summary>参考解法与检查点</summary>
+
+第一题超出 int 最大值，由 NumberFormatException 分支接住。第二题在 parseQuantity 的输入处理处先明确拒绝 null，再 strip，然后 parseInt；纯空白清理后是空串，会解析失败。不要先调用 strip 再判断 null。调用者如果需要区分“未输入”和“格式错误”，应设计明确的错误类型或消息。
+
+</details>
+
+下一课：[集合与泛型](./10-collections.mdx)。官方补充：[异常教程](https://dev.java/learn/exceptions/)。

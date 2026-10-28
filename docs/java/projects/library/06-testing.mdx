@@ -1,0 +1,88 @@
+---
+title: 实战 06：接口测试、数据隔离与并发
+sidebar_label: 06 自动化测试
+description: 使用真实随机端口 HTTP 测试验证图书借阅，覆盖字段边界、库存事务、搜索字符和并发抢库存。
+---
+
+## 这一步要完成什么
+
+前置：[页面与接口均可操作](./05-frontend.mdx)。完成后你应当能运行项目测试，解释每类用例在证明什么，并为一个新规则补出失败用例。
+
+## 第一步：从命令和报告开始
+
+在项目根目录执行：
+
+```sh
+mvn test
+```
+
+查看终端中的 Tests run、Failures、Errors，并在 `target/surefire-reports/` 找到具体报告。BUILD SUCCESS 不能代替阅读失败原因；如果是依赖下载失败或源码编译失败，测试可能还没有开始运行。
+
+测试源码在 `src/test/java/blog/library/`。测试启动随机端口服务，使用 Java HttpClient 发送请求，而不是直接调用 Controller 方法，所以能覆盖路由、JSON 转换、校验、Service 和 JDBC 的协作。
+
+## 第二步：确认测试数据库独立
+
+应用学习时使用文件 H2，测试通过 SpringBootTest 的属性覆盖为内存 H2。检查注解中的 datasource.url，确认测试不指向 `./data/library`。
+
+测试创建自己的书籍与借阅，不应依赖“某本书的 id 恰好是 1”或测试执行顺序。现有 LibraryApiTest 在每个用例前依次清空 loans、books，先清理从表再清理主表，避免外键冲突；生成的 id 仍以响应为准。这个清理策略依赖用例顺序执行，若以后启用并行测试，需要进一步隔离数据库。
+
+实际用例与阅读顺序：
+
+| 测试方法 | 核心检查 |
+| --- | --- |
+| catalogPaginationAndLiteralSearch | 分页、大小写无关搜索、字面百分号与空结果 |
+| loanLifecycleAndHistoryProtection | 借还库存、筛选、历史删除保护与无历史删除 |
+| rejectInvalidInputs | 非法 JSON、字段与查询参数、缺失资源 |
+| sqlAndHtmlCharactersRemainData | SQL 和 HTML 字符作为文本保存 |
+| concurrentBorrowAndReturnAreAtomic | 两次并发借出或归还各只有一次成功 |
+| failedLoanInsertRollsBackStock | 插入借阅失败后库存回滚 |
+| servesFrontendFromSameOrigin | 首页、app.js、style.css 可由 Java 服务访问 |
+
+## 第三步：建立有意义的断言表
+
+| 场景 | 状态断言 | 数据断言 |
+| --- | --- | --- |
+| 创建两册图书 | 201 与 Location | totalCopies=2，availableCopies=2 |
+| 缺标题、作者空白、册数越界 | 400 | 不增加图书 |
+| 搜索与分页 | 200 | total 与当前页条数正确，字符按约定匹配 |
+| 借出一次 | 201 | 库存减一，出现未归还记录 |
+| 无库存再借 | 409 | 库存与借阅数不变化 |
+| 归还一次 | 200 | returnedAt 非空，库存恢复一次 |
+| 重复归还 | 409 | 库存不再增加 |
+| 有历史图书删除 | 409 | 图书与历史都保留 |
+
+预期值来自业务规则，不能先运行错误代码再把输出复制进断言。只检查 200/201 会漏掉“响应成功但没有落库”的错误；只检查响应字段会漏掉状态码契约。
+
+## 第四步：并发用例要证明谁成功
+
+对于只有一册的图书，同时发送两个借出请求。预期其中一个 201，另一个 409，最后库存为 0，只有一条成功借阅。
+
+不能把“两个请求都没有抛 Java 异常”当作业务成功，因为 HTTP 409 也会正常返回 HttpResponse。需要读取每个 response.statusCode，再查询数据库对应的 API 状态。
+
+并发测试能检验库存条件更新；单纯顺序运行“借出后再借出”虽然有价值，却不能覆盖两个请求都先读到库存的竞争窗口。数据库隔离、锁和实际负载更复杂，教学用例也不代表已经完成生产压力测试。
+
+## 第五步：故意制造一个缺陷，检验测试
+
+在临时分支中，把 LibraryRepository.takeCopy 的 `available_copies = available_copies - 1` 临时改成 `available_copies = available_copies`，运行测试。此时借出没有扣减库存，顺序流程与并发用例应因库存或状态断言失败。完成实验后立即恢复原代码，再确认测试通过。
+
+failedLoanInsertRollsBackStock 还会直接调用 Spring 管理的 Service，故意绕过 HTTP 长度校验，使用过长借阅人触发数据库插入失败，再检查库存与借阅数。它验证事务回滚，不应在公共 API 中增加“关闭校验”的功能来配合测试。
+
+不要为“变绿”把预期 409 改成 500。失败应当推动修复业务实现，而不是降低契约。也不要在真实学习数据库上运行破坏性实验。
+
+## 动手任务
+
+为“已有借阅历史、已经归还的图书仍不能删除”写一条完整测试。它与“当前有人未归还时不能删除”有什么区别？
+
+<details>
+<summary>参考步骤与检查点</summary>
+
+1. 创建一册图书，保存响应 id。
+2. 借出并保存借阅 id，归还后确认库存恢复。
+3. DELETE 图书，断言 409。
+4. GET 图书仍返回 200；GET 已归还历史仍包含那条记录。
+
+如果只禁止未归还记录，归还后就可能删除书籍，丢失历史关联。本项目规则是保留任何借阅历史，因此必须覆盖归还后的状态。新用例应复用现有请求辅助方法，采用独特数据，不依赖其他用例预先创建的记录。
+
+</details>
+
+下一步：[完整验收与扩展任务](./07-delivery.mdx)。

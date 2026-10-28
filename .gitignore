@@ -1,5 +1,11 @@
 # Dependencies
 /node_modules
+/.migration-backup
+/test-results
+/playwright-report
+/reports/*.log
+/reports/bundle-stats.json
+/reports/flex-compiled.js
 
 # Production
 /build
@@ -7,6 +13,8 @@
 # Generated files
 .docusaurus
 .cache-loader
+.cache/
+static/img/responsive/
 
 # Misc
 .DS_Store

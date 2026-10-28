@@ -1,0 +1,119 @@
+---
+title: 第 18 课：毕业项目——任务工作台
+sidebar_label: 18 毕业项目与联调
+description: 把前面知识组合成可验证的后端功能，完成按状态筛选，阅读完整参考方法并与前端联调。
+---
+
+## 本课目标
+
+前置：前 17 课，能够运行待办 API 和 Maven 测试。现在独立交付一个功能：**按完成状态筛选任务**，并通过前端调用验证。
+
+这不是只多写一个 SQL 条件。你需要同时说明参数契约、输入失败、分层传递、查询结果与测试策略。
+
+## 第一步：把需求拆成可验收的规则
+
+| 请求 | 预期 |
+| --- | --- |
+| GET /api/tasks | 所有任务，按 id 排序 |
+| GET /api/tasks?done=true | 只有已完成任务 |
+| GET /api/tasks?done=false | 只有未完成任务 |
+| GET /api/tasks?done=abc | 400，不静默当成 false |
+
+空结果返回 `[]` 和 200，而不是 404。404 用于查询不存在的单条资源；空列表是一种正常结果。
+
+提交前写自己的实现，再展开本课答案。现有下载项目保留不带筛选的起点，便于你独立完成；下面方法是需要手动应用的参考修改。
+
+## 第二步：沿三层传递一个可选参数
+
+先想三个问题：不传参数怎样表示？由哪一层决定查全部还是查条件？参数怎样进入 SQL？
+
+<details>
+<summary>参考修改：Controller 与 Service</summary>
+
+替换 TaskController 原来的 list 方法，已有 web.bind.annotation 通配 import 包含这些注解：
+
+```java
+@GetMapping
+public List<Task> list(@RequestParam(required = false) Boolean done) {
+    return service.list(done);
+}
+```
+
+在 TaskService 中替换 list 方法：
+
+```java
+public List<Task> list(Boolean done) {
+    return done == null ? repository.findAll() : repository.findByDone(done);
+}
+```
+
+Boolean 的 null 表示缺少过滤参数，true/false 表示明确选择。只传入 `abc` 会触发类型转换失败；Spring 对部分其他文本也可能有布尔转换规则，如果产品要求严格只允许 true/false，应显式解析并增加契约测试。
+
+</details>
+
+<details>
+<summary>参考修改：Repository</summary>
+
+在 TaskRepository 中新增方法，保留 findAll 和其他 CRUD 方法：
+
+```java
+public List<Task> findByDone(boolean done) {
+    return jdbc.query("SELECT id, title, done FROM tasks WHERE done = ? ORDER BY id",
+        (rs, row) -> new Task(rs.getLong("id"), rs.getString("title"),
+                             rs.getBoolean("done")), done);
+}
+```
+
+参数绑定保留 SQL 结构，ORDER BY 保证输出顺序。没有新增状态缓存，因此更新任务后再次查询能够读取数据库的新状态。
+
+</details>
+
+## 第三步：先验证后端，再接前端
+
+创建两条新任务，把其中一条 PATCH 为完成。分别调用三个列表路径，核对每条任务出现在哪个结果里；最后清理自己创建的数据。
+
+给 TaskApiTest 增加测试时，在已有数据之外使用独特标题或解析 id，避免测试共享库的其他记录影响断言。至少验证 true、false、无参数和非法参数。不要只检查请求返回 200，还要检查结果内容。
+
+运行 `mvn test`。如果编译提示 list 参数数量不匹配，检查是否漏改 Controller 或 Service 的旧调用；如果接口总返回全部，检查是否真的把查询参数传到 Repository。
+
+## 第四步：用前端调用，明确开发代理
+
+React 开发服务器与后端 8080 是不同来源。根据你使用的前端工具配置开发代理，把 `/api` 转发到 `http://127.0.0.1:8080`；不要把代理配置写在博客的 Java 编译器里。
+
+下面函数在**已经配置代理的前端应用**中使用，不是让静态博客自动拥有后端：
+
+```javascript
+async function loadTasks(done, signal) {
+  const query = done === undefined ? '' : `?done=${done}`;
+  const response = await fetch(`/api/tasks${query}`, {signal});
+  if (!response.ok) throw new Error(`加载失败：${response.status}`);
+  return response.json();
+}
+```
+
+组件应区分加载、失败、空列表和有结果四种状态。快速切换筛选时，可用 AbortController 取消旧请求，或按请求序号忽略旧响应，避免慢请求覆盖新筛选结果。创建后用服务器返回的 id，不使用数组下标模拟数据库身份。
+
+## 第五步：按清单验收自己的成果
+
+- [ ] 干净解压的项目能按 README 运行，不依赖 IDE 私有配置。
+- [ ] 输入合法与非法参数都符合契约，测试能发现一次故意写错的过滤条件。
+- [ ] 重启后数据仍在，测试不写入正式 data 文件夹。
+- [ ] 前端在网络失败时能提示，不把失败显示为空列表。
+- [ ] 能解释 Controller、Service、Repository 各自为什么存在。
+- [ ] Git 改动只包含源码和配置，不包含 target、数据库文件和密钥。
+
+## 两项扩展任务
+
+1. 添加按标题关键字搜索。先规定是否区分大小写、空关键词如何处理，再写参数绑定查询与测试；LIKE 中的 `%`、`_` 有通配含义，要明确是否把它们当普通字符。
+2. 添加分页。先规定页大小上限、越界行为和稳定排序，再讨论 SQL；不要直接把客户端传入的任意列名拼成 ORDER BY。
+
+<details>
+<summary>扩展方向与本轮边界</summary>
+
+搜索可以先限定简单的大小写一致匹配，再显式处理通配字符；分页可以从受控 page/size 参数开始，并保留 id 排序。两项都要覆盖空结果、非法输入与边界。当前示例没有登录、授权、乐观锁、生产数据库迁移和部署，完成本轮不代表已经可以直接上线多用户服务。
+
+</details>
+
+完成后继续做[图书借阅管理台完整实战](../projects/library/index.mdx)：把单表任务扩展为两张表、库存约束、借还事务与同源前端，并按 7 步文档验收。也可以先走一遍[Spring 官方开源项目实操](../open-source/rest-service.mdx)，学习阅读起始版与完成版源码。
+
+回到[教材目录](./index.mdx)，逐阶段检查自己是否能独立解释和修改。后续建议沿认证授权、MySQL/PostgreSQL、并发与 JVM 的顺序深入，而不是先堆微服务框架。

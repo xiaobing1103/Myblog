@@ -1,0 +1,42 @@
+---
+id: collections
+title: 04 · 集合与泛型
+description: 理解 List、Set、Map 的选择、顺序与可修改性，练习去重和计数。
+---
+
+import JavaPractice from '@site/src/components/JavaPractice';
+
+## 根据数据约束选集合
+
+| 需求 | 常用选择 | 注意 |
+| --- | --- | --- |
+| 有顺序、可重复 | `List` / `ArrayList` | 索引访问前检查范围 |
+| 唯一元素 | `Set` / `HashSet` | `HashSet` 不保证迭代顺序 |
+| 去重并保留插入顺序 | `LinkedHashSet` | 顺序也是业务需求的一部分 |
+| 按键查值 | `Map` / `HashMap` | 未找到时可能得到 `null` |
+
+`List<String>` 表示元素类型为 `String`。泛型的作用是在编译期把错误限制在边界内。集合泛型参数使用引用类型，因此写 `List<Integer>`，不能写 `List<int>`。
+
+```java
+List<String> fixed = List.of("Java", "SQL");
+List<String> editable = new ArrayList<>(fixed);
+editable.add("HTTP");
+```
+
+`List.of` 创建不可修改的列表，也不接受 `null` 元素。需要增删时显式创建 `ArrayList`，避免把前端数组的可修改性习惯直接套过来。
+
+<JavaPractice id="dedupe" />
+
+## Map 不是 JavaScript 普通对象
+
+Java 的 `Map` 使用 `put`、`get`、`containsKey` 等方法。先明确键和值的类型，再决定是否需要稳定的迭代顺序。练习选用 `LinkedHashMap`，使输出顺序可预测；不要依赖 `HashMap.toString()` 的偶然顺序。
+
+<JavaPractice id="count" />
+
+### 自查
+
+- 唯一性是否自动意味着排序？
+- `getOrDefault` 能否区分“不存在的键”和“值为 null 的键”？
+- 本节集合不是并发容器，多线程共享修改时还需要哪些约束？
+
+官方阅读：[Dev.java 集合与 Stream](https://dev.java/learn/api/collections-framework/)。

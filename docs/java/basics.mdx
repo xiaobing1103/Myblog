@@ -1,0 +1,50 @@
+---
+id: basics
+title: 01 · 从 JavaScript 到 Java
+description: 从类型、变量、金额和字符串比较开始认识 Java，配套两道可运行练习。
+---
+
+import JavaPractice from '@site/src/components/JavaPractice';
+
+## 先建立类型意识
+
+Java 在编译时检查类型。一个变量声明为 `int` 后，不能再给它赋字符串。`var` 也只是让编译器推断局部变量的类型，类型一旦确定就不会变化。
+
+| JavaScript 中的经验 | Java 中对应的思考 |
+| --- | --- |
+| `let value = 1`，之后可能换成字符串 | `int value = 1`，类型固定 |
+| 数值通常是 `number` | 选择 `int`、`long`、`double` 等类型 |
+| `const` 禁止重新赋值 | `final` 禁止变量重新赋值，不保证对象内部不可变 |
+| 字符串用 `===` 比较 | 字符串内容使用 `equals` 比较 |
+
+```java
+int count = 3;
+long totalInCents = 12900L * count;
+var title = "Java"; // 推断为 String
+final int limit = 10;
+System.out.println(totalInCents);
+```
+
+练习统一使用 `public class Main`，文件名为 `Main.java`。`main` 是程序入口；`System.out.println` 会输出一行，便于观察结果。
+
+## 金额先用整数单位练习
+
+本节用“分”表示金额，避免把二进制浮点误差带进练习。注意整数除法会截断小数，大金额还需要考虑溢出；实际项目使用最小货币单位的 `long` 或指定精度与舍入规则的 `BigDecimal`。
+
+<JavaPractice id="price" />
+
+## 引用与对象内容
+
+对于对象，`==` 判断两个引用是否指向同一个对象。两个不同的 `String` 对象可以具有相同内容，因此内容比较使用 `equals`。如果变量可能为 `null`，可以使用 `Objects.equals(a, b)`，避免对 `null` 调用方法。
+
+不要根据字符串常量池的偶然结果推断比较规则。下面故意创建两个对象，让差异清楚地暴露出来。
+
+<JavaPractice id="strings" />
+
+### 自查
+
+- `5 / 2` 与 `5.0 / 2` 的结果为什么不同？
+- `final List` 是否意味着不能往列表里添加元素？
+- `String` 可能为 `null` 时，如何安全比较？
+
+官方阅读：[Dev.java 语言入门](https://dev.java/learn/language-basics/)。

@@ -1,0 +1,1400 @@
+{
+  "conditions": "Chrome, cold browser context, local production preview, networkidle + 1s; includes prefetch; iframe subtargets may be excluded by CDP",
+  "pages": [
+    {
+      "name": "home-desktop",
+      "requests": 50,
+      "transferBytes": 224434,
+      "types": {
+        "Document": 5061,
+        "Stylesheet": 14430,
+        "Image": 15174,
+        "Script": 110380,
+        "Other": 79389
+      },
+      "resources": [
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/main.df2da41f.js",
+          "status": 200,
+          "transferBytes": 88191
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/img/favicon.ico",
+          "status": 200,
+          "transferBytes": 17171
+        },
+        {
+          "type": "Stylesheet",
+          "url": "http://127.0.0.1:3000/Myblog/assets/css/styles.2efb5e0a.css",
+          "status": 200,
+          "transferBytes": 14430
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/img/hero_main.svg",
+          "status": 200,
+          "transferBytes": 11050
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/277b9c28.9489440f.js",
+          "status": 200,
+          "transferBytes": 8217
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/e89c7341.7f65e746.js",
+          "status": 200,
+          "transferBytes": 7865
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/2d072b97.4946804b.js",
+          "status": 200,
+          "transferBytes": 5602
+        },
+        {
+          "type": "Document",
+          "url": "http://127.0.0.1:3000/Myblog/",
+          "status": 200,
+          "transferBytes": 5061
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/b1a5eca0.499331fa.js",
+          "status": 200,
+          "transferBytes": 4921
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/a94703ab.a7133706.js",
+          "status": 200,
+          "transferBytes": 4461
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/img/logo.webp",
+          "status": 200,
+          "transferBytes": 4124
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/3d6e1bf6.d9b3493d.js",
+          "status": 200,
+          "transferBytes": 3943
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/runtime~main.486b32ca.js",
+          "status": 200,
+          "transferBytes": 3777
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/8b488347.437f7ce6.js",
+          "status": 200,
+          "transferBytes": 2176
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/8b488347.437f7ce6.js",
+          "status": 200,
+          "transferBytes": 2176
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/b48d4e8d.9b0b23a0.js",
+          "status": 200,
+          "transferBytes": 2121
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/b48d4e8d.9b0b23a0.js",
+          "status": 200,
+          "transferBytes": 2121
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/f68168ad.61a2aa3c.js",
+          "status": 200,
+          "transferBytes": 1705
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/f68168ad.61a2aa3c.js",
+          "status": 200,
+          "transferBytes": 1705
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/811c313f.92e52e39.js",
+          "status": 200,
+          "transferBytes": 1689
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/811c313f.92e52e39.js",
+          "status": 200,
+          "transferBytes": 1689
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/a6aa9e1f.6f260c31.js",
+          "status": 200,
+          "transferBytes": 1674
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/a6aa9e1f.6f260c31.js",
+          "status": 200,
+          "transferBytes": 1674
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/1f3ebd57.65edf355.js",
+          "status": 200,
+          "transferBytes": 1642
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/1f3ebd57.65edf355.js",
+          "status": 200,
+          "transferBytes": 1642
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/27add107.bf4de198.js",
+          "status": 200,
+          "transferBytes": 1583
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/27add107.bf4de198.js",
+          "status": 200,
+          "transferBytes": 1583
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/80f2410a.9c19c038.js",
+          "status": 200,
+          "transferBytes": 1571
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/80f2410a.9c19c038.js",
+          "status": 200,
+          "transferBytes": 1571
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/9f7ab6ad.265f9c72.js",
+          "status": 200,
+          "transferBytes": 1365
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/9f7ab6ad.265f9c72.js",
+          "status": 200,
+          "transferBytes": 1365
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/6a03988f.10e2a3ea.js",
+          "status": 200,
+          "transferBytes": 1310
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/6a03988f.10e2a3ea.js",
+          "status": 200,
+          "transferBytes": 1310
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/f07faa58.f4956e5c.js",
+          "status": 200,
+          "transferBytes": 1244
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/dbe97b1f.2d623d0e.js",
+          "status": 200,
+          "transferBytes": 1193
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/b1a57682.695ac5f9.js",
+          "status": 200,
+          "transferBytes": 1000
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/01a85c17.18252d85.js",
+          "status": 200,
+          "transferBytes": 991
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/17896441.93d34e5f.js",
+          "status": 200,
+          "transferBytes": 954
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/ccc49370.01dc1e5a.js",
+          "status": 200,
+          "transferBytes": 950
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/814f3328.c28bd754.js",
+          "status": 200,
+          "transferBytes": 770
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/814f3328.c28bd754.js",
+          "status": 200,
+          "transferBytes": 770
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/a7bd4aaa.bd443c52.js",
+          "status": 200,
+          "transferBytes": 754
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/7517dec6.d0446b24.js",
+          "status": 200,
+          "transferBytes": 517
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/5e95c892.84b29cfe.js",
+          "status": 200,
+          "transferBytes": 453
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/49759cdc.ab4161c9.js",
+          "status": 200,
+          "transferBytes": 434
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/49759cdc.ab4161c9.js",
+          "status": 200,
+          "transferBytes": 434
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/36994c47.e919e4cd.js",
+          "status": 200,
+          "transferBytes": 372
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/36994c47.e919e4cd.js",
+          "status": 200,
+          "transferBytes": 372
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/acecf23e.4b6976ed.js",
+          "status": 200,
+          "transferBytes": 372
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/aba21aa0.d0194702.js",
+          "status": 200,
+          "transferBytes": 369
+        }
+      ]
+    },
+    {
+      "name": "home-mobile",
+      "requests": 42,
+      "transferBytes": 195241,
+      "types": {
+        "Document": 5061,
+        "Stylesheet": 14430,
+        "Image": 15174,
+        "Script": 110380,
+        "Other": 50196
+      },
+      "resources": [
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/main.df2da41f.js",
+          "status": 200,
+          "transferBytes": 88191
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/img/favicon.ico",
+          "status": 200,
+          "transferBytes": 17171
+        },
+        {
+          "type": "Stylesheet",
+          "url": "http://127.0.0.1:3000/Myblog/assets/css/styles.2efb5e0a.css",
+          "status": 200,
+          "transferBytes": 14430
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/img/hero_main.svg",
+          "status": 200,
+          "transferBytes": 11050
+        },
+        {
+          "type": "Document",
+          "url": "http://127.0.0.1:3000/Myblog/",
+          "status": 200,
+          "transferBytes": 5061
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/b1a5eca0.499331fa.js",
+          "status": 200,
+          "transferBytes": 4921
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/a94703ab.a7133706.js",
+          "status": 200,
+          "transferBytes": 4461
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/img/logo.webp",
+          "status": 200,
+          "transferBytes": 4124
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/runtime~main.486b32ca.js",
+          "status": 200,
+          "transferBytes": 3777
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/8b488347.437f7ce6.js",
+          "status": 200,
+          "transferBytes": 2176
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/8b488347.437f7ce6.js",
+          "status": 200,
+          "transferBytes": 2176
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/b48d4e8d.9b0b23a0.js",
+          "status": 200,
+          "transferBytes": 2121
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/b48d4e8d.9b0b23a0.js",
+          "status": 200,
+          "transferBytes": 2121
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/f68168ad.61a2aa3c.js",
+          "status": 200,
+          "transferBytes": 1705
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/f68168ad.61a2aa3c.js",
+          "status": 200,
+          "transferBytes": 1705
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/811c313f.92e52e39.js",
+          "status": 200,
+          "transferBytes": 1689
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/811c313f.92e52e39.js",
+          "status": 200,
+          "transferBytes": 1689
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/a6aa9e1f.6f260c31.js",
+          "status": 200,
+          "transferBytes": 1674
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/a6aa9e1f.6f260c31.js",
+          "status": 200,
+          "transferBytes": 1674
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/1f3ebd57.65edf355.js",
+          "status": 200,
+          "transferBytes": 1642
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/1f3ebd57.65edf355.js",
+          "status": 200,
+          "transferBytes": 1642
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/27add107.bf4de198.js",
+          "status": 200,
+          "transferBytes": 1583
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/27add107.bf4de198.js",
+          "status": 200,
+          "transferBytes": 1583
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/80f2410a.9c19c038.js",
+          "status": 200,
+          "transferBytes": 1571
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/80f2410a.9c19c038.js",
+          "status": 200,
+          "transferBytes": 1571
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/9f7ab6ad.265f9c72.js",
+          "status": 200,
+          "transferBytes": 1365
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/9f7ab6ad.265f9c72.js",
+          "status": 200,
+          "transferBytes": 1365
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/6a03988f.10e2a3ea.js",
+          "status": 200,
+          "transferBytes": 1310
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/6a03988f.10e2a3ea.js",
+          "status": 200,
+          "transferBytes": 1310
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/dbe97b1f.2d623d0e.js",
+          "status": 200,
+          "transferBytes": 1193
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/01a85c17.18252d85.js",
+          "status": 200,
+          "transferBytes": 991
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/17896441.93d34e5f.js",
+          "status": 200,
+          "transferBytes": 954
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/814f3328.c28bd754.js",
+          "status": 200,
+          "transferBytes": 770
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/814f3328.c28bd754.js",
+          "status": 200,
+          "transferBytes": 770
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/a7bd4aaa.bd443c52.js",
+          "status": 200,
+          "transferBytes": 754
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/7517dec6.d0446b24.js",
+          "status": 200,
+          "transferBytes": 517
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/5e95c892.84b29cfe.js",
+          "status": 200,
+          "transferBytes": 453
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/49759cdc.ab4161c9.js",
+          "status": 200,
+          "transferBytes": 434
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/49759cdc.ab4161c9.js",
+          "status": 200,
+          "transferBytes": 434
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/36994c47.e919e4cd.js",
+          "status": 200,
+          "transferBytes": 372
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/36994c47.e919e4cd.js",
+          "status": 200,
+          "transferBytes": 372
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/aba21aa0.d0194702.js",
+          "status": 200,
+          "transferBytes": 369
+        }
+      ]
+    },
+    {
+      "name": "article",
+      "requests": 53,
+      "transferBytes": 311638,
+      "types": {
+        "Document": 9883,
+        "Stylesheet": 14430,
+        "Image": 29133,
+        "Script": 167950,
+        "Other": 90242
+      },
+      "resources": [
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/main.df2da41f.js",
+          "status": 200,
+          "transferBytes": 88191
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/img/2020-04-05-css-flex-box-layout/2020-04-05-19-02-36.png",
+          "status": 200,
+          "transferBytes": 25009
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/998.3a063e03.js",
+          "status": 200,
+          "transferBytes": 23200
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/img/favicon.ico",
+          "status": 200,
+          "transferBytes": 17171
+        },
+        {
+          "type": "Stylesheet",
+          "url": "http://127.0.0.1:3000/Myblog/assets/css/styles.2efb5e0a.css",
+          "status": 200,
+          "transferBytes": 14430
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/7461.836977c5.js",
+          "status": 200,
+          "transferBytes": 13200
+        },
+        {
+          "type": "Document",
+          "url": "http://127.0.0.1:3000/Myblog/css-flex-box-layout/",
+          "status": 200,
+          "transferBytes": 9883
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/4255.ee3f8829.js",
+          "status": 200,
+          "transferBytes": 9751
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/277b9c28.9489440f.js",
+          "status": 200,
+          "transferBytes": 8217
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/e89c7341.7f65e746.js",
+          "status": 200,
+          "transferBytes": 7865
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/dea6cef7.4cd60ef0.js",
+          "status": 200,
+          "transferBytes": 7626
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/4.42af552d.js",
+          "status": 200,
+          "transferBytes": 6705
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/dba78017.0e3018a7.js",
+          "status": 200,
+          "transferBytes": 6354
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/2d072b97.4946804b.js",
+          "status": 200,
+          "transferBytes": 5602
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/16.1d5ab18e.js",
+          "status": 200,
+          "transferBytes": 5065
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/b1a5eca0.499331fa.js",
+          "status": 200,
+          "transferBytes": 4921
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/ac48b990.bcb974e0.js",
+          "status": 200,
+          "transferBytes": 4499
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/a94703ab.a7133706.js",
+          "status": 200,
+          "transferBytes": 4461
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/img/logo.webp",
+          "status": 200,
+          "transferBytes": 4124
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/3d6e1bf6.d9b3493d.js",
+          "status": 200,
+          "transferBytes": 3943
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/runtime~main.486b32ca.js",
+          "status": 200,
+          "transferBytes": 3777
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/2580.94e0a09c.js",
+          "status": 200,
+          "transferBytes": 2838
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/7616.d167b70b.js",
+          "status": 200,
+          "transferBytes": 2507
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/8b488347.437f7ce6.js",
+          "status": 200,
+          "transferBytes": 2176
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/b48d4e8d.9b0b23a0.js",
+          "status": 200,
+          "transferBytes": 2121
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/8446.a1e41c9b.js",
+          "status": 200,
+          "transferBytes": 2116
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/f68168ad.61a2aa3c.js",
+          "status": 200,
+          "transferBytes": 1705
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/811c313f.92e52e39.js",
+          "status": 200,
+          "transferBytes": 1689
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/a6aa9e1f.6f260c31.js",
+          "status": 200,
+          "transferBytes": 1674
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/1f3ebd57.65edf355.js",
+          "status": 200,
+          "transferBytes": 1642
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/27add107.bf4de198.js",
+          "status": 200,
+          "transferBytes": 1583
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/80f2410a.9c19c038.js",
+          "status": 200,
+          "transferBytes": 1571
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/9f7ab6ad.265f9c72.js",
+          "status": 200,
+          "transferBytes": 1365
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/6a03988f.10e2a3ea.js",
+          "status": 200,
+          "transferBytes": 1310
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/f07faa58.f4956e5c.js",
+          "status": 200,
+          "transferBytes": 1244
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/dbe97b1f.2d623d0e.js",
+          "status": 200,
+          "transferBytes": 1193
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/b1a57682.695ac5f9.js",
+          "status": 200,
+          "transferBytes": 1000
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/01a85c17.18252d85.js",
+          "status": 200,
+          "transferBytes": 991
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/17896441.93d34e5f.js",
+          "status": 200,
+          "transferBytes": 954
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/ccc49370.01dc1e5a.js",
+          "status": 200,
+          "transferBytes": 950
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/ccc49370.01dc1e5a.js",
+          "status": 200,
+          "transferBytes": 950
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/814f3328.c28bd754.js",
+          "status": 200,
+          "transferBytes": 770
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/814f3328.c28bd754.js",
+          "status": 200,
+          "transferBytes": 770
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/a7bd4aaa.bd443c52.js",
+          "status": 200,
+          "transferBytes": 754
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/7517dec6.d0446b24.js",
+          "status": 200,
+          "transferBytes": 517
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/9952.7f680a02.js",
+          "status": 200,
+          "transferBytes": 510
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/5e95c892.84b29cfe.js",
+          "status": 200,
+          "transferBytes": 453
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/49759cdc.ab4161c9.js",
+          "status": 200,
+          "transferBytes": 434
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/acecf23e.4b6976ed.js",
+          "status": 200,
+          "transferBytes": 372
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/36994c47.e919e4cd.js",
+          "status": 200,
+          "transferBytes": 372
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/acecf23e.4b6976ed.js",
+          "status": 200,
+          "transferBytes": 372
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/36994c47.e919e4cd.js",
+          "status": 200,
+          "transferBytes": 372
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/aba21aa0.d0194702.js",
+          "status": 200,
+          "transferBytes": 369
+        }
+      ]
+    },
+    {
+      "name": "pdf",
+      "requests": 78,
+      "transferBytes": 1772626,
+      "types": {
+        "Document": 11224,
+        "Stylesheet": 42300,
+        "Image": 16353,
+        "Script": 370922,
+        "Fetch": 1256609,
+        "Other": 75218
+      },
+      "resources": [
+        {
+          "type": "Fetch",
+          "url": "http://127.0.0.1:3000/Myblog/pdf/2022-2-16-zhufengfo/vue3zhufeng.pdf",
+          "status": 200,
+          "transferBytes": 1241767
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/build/pdf.mjs",
+          "status": 200,
+          "transferBytes": 140699
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/viewer.mjs",
+          "status": 200,
+          "transferBytes": 113364
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/main.df2da41f.js",
+          "status": 200,
+          "transferBytes": 88191
+        },
+        {
+          "type": "Stylesheet",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/viewer.css",
+          "status": 200,
+          "transferBytes": 27180
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/img/favicon.ico",
+          "status": 200,
+          "transferBytes": 17171
+        },
+        {
+          "type": "Stylesheet",
+          "url": "http://127.0.0.1:3000/Myblog/assets/css/styles.2efb5e0a.css",
+          "status": 200,
+          "transferBytes": 14430
+        },
+        {
+          "type": "Fetch",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/locale/zh-CN/viewer.ftl",
+          "status": 200,
+          "transferBytes": 7153
+        },
+        {
+          "type": "Fetch",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/locale/en-US/viewer.ftl",
+          "status": 200,
+          "transferBytes": 6962
+        },
+        {
+          "type": "Document",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/viewer.html?file=%2FMyblog%2Fpdf%2F2022-2-16-zhufengfo%2Fvue3zhufeng.pdf",
+          "status": 200,
+          "transferBytes": 6928
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/2d072b97.4946804b.js",
+          "status": 200,
+          "transferBytes": 5602
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/16.1d5ab18e.js",
+          "status": 200,
+          "transferBytes": 5065
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/b1a5eca0.499331fa.js",
+          "status": 200,
+          "transferBytes": 4921
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/b1a5eca0.499331fa.js",
+          "status": 200,
+          "transferBytes": 4921
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/a94703ab.a7133706.js",
+          "status": 200,
+          "transferBytes": 4461
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/a94703ab.a7133706.js",
+          "status": 200,
+          "transferBytes": 4461
+        },
+        {
+          "type": "Document",
+          "url": "http://127.0.0.1:3000/Myblog/docs/resources/frontend-pdf/01frontend-pdf/",
+          "status": 200,
+          "transferBytes": 4296
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/img/logo.webp",
+          "status": 200,
+          "transferBytes": 4124
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/runtime~main.486b32ca.js",
+          "status": 200,
+          "transferBytes": 3777
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/4929.517fecbc.js",
+          "status": 200,
+          "transferBytes": 3458
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/loading-icon.gif",
+          "status": 200,
+          "transferBytes": 2754
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/8b488347.437f7ce6.js",
+          "status": 200,
+          "transferBytes": 2176
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/b48d4e8d.9b0b23a0.js",
+          "status": 200,
+          "transferBytes": 2121
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/8446.a1e41c9b.js",
+          "status": 200,
+          "transferBytes": 2116
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/26068f90.be528f9c.js",
+          "status": 200,
+          "transferBytes": 1866
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/f68168ad.61a2aa3c.js",
+          "status": 200,
+          "transferBytes": 1705
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/811c313f.92e52e39.js",
+          "status": 200,
+          "transferBytes": 1689
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/04b99362.20017314.js",
+          "status": 200,
+          "transferBytes": 1684
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/04b99362.20017314.js",
+          "status": 200,
+          "transferBytes": 1684
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/3dd92c2e.769401c1.js",
+          "status": 200,
+          "transferBytes": 1675
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/a6aa9e1f.6f260c31.js",
+          "status": 200,
+          "transferBytes": 1674
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/5163cae7.03e5c30a.js",
+          "status": 200,
+          "transferBytes": 1668
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/7dc69179.990198d8.js",
+          "status": 200,
+          "transferBytes": 1662
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/1f3ebd57.65edf355.js",
+          "status": 200,
+          "transferBytes": 1642
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/f003858f.267a73f9.js",
+          "status": 200,
+          "transferBytes": 1628
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/d766ab79.4b44dd84.js",
+          "status": 200,
+          "transferBytes": 1618
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/d8bd6e42.029ae6f7.js",
+          "status": 200,
+          "transferBytes": 1607
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/535a3303.868d99dc.js",
+          "status": 200,
+          "transferBytes": 1595
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/27add107.bf4de198.js",
+          "status": 200,
+          "transferBytes": 1583
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/80f2410a.9c19c038.js",
+          "status": 200,
+          "transferBytes": 1571
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/9f7ab6ad.265f9c72.js",
+          "status": 200,
+          "transferBytes": 1365
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/6a03988f.10e2a3ea.js",
+          "status": 200,
+          "transferBytes": 1310
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/f07faa58.f4956e5c.js",
+          "status": 200,
+          "transferBytes": 1244
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/dbe97b1f.2d623d0e.js",
+          "status": 200,
+          "transferBytes": 1193
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/a0bb8ea0.b377ffe6.js",
+          "status": 200,
+          "transferBytes": 1098
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/164b5fae.bafa2d29.js",
+          "status": 200,
+          "transferBytes": 1075
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/b1a57682.695ac5f9.js",
+          "status": 200,
+          "transferBytes": 1000
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/01a85c17.18252d85.js",
+          "status": 200,
+          "transferBytes": 991
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/17896441.93d34e5f.js",
+          "status": 200,
+          "transferBytes": 954
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/17896441.93d34e5f.js",
+          "status": 200,
+          "transferBytes": 954
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-search.svg",
+          "status": 200,
+          "transferBytes": 803
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-viewsManagerToggle.svg",
+          "status": 200,
+          "transferBytes": 778
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/814f3328.c28bd754.js",
+          "status": 200,
+          "transferBytes": 770
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-editorInk.svg",
+          "status": 200,
+          "transferBytes": 760
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/a7bd4aaa.bd443c52.js",
+          "status": 200,
+          "transferBytes": 754
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/a7bd4aaa.bd443c52.js",
+          "status": 200,
+          "transferBytes": 754
+        },
+        {
+          "type": "Fetch",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/locale/locale.json",
+          "status": 200,
+          "transferBytes": 727
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/loading.svg",
+          "status": 200,
+          "transferBytes": 691
+        },
+        {
+          "type": "Stylesheet",
+          "url": "http://127.0.0.1:3000/Myblog/pdf-reader/theme.css",
+          "status": 200,
+          "transferBytes": 690
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-download.svg",
+          "status": 200,
+          "transferBytes": 669
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/pdf-reader/config.mjs",
+          "status": 200,
+          "transferBytes": 656
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-zoomIn.svg",
+          "status": 200,
+          "transferBytes": 655
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-editorHighlight.svg",
+          "status": 200,
+          "transferBytes": 649
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-print.svg",
+          "status": 200,
+          "transferBytes": 627
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-secondaryToolbarToggle.svg",
+          "status": 200,
+          "transferBytes": 603
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-pageDown.svg",
+          "status": 200,
+          "transferBytes": 585
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-editorStamp.svg",
+          "status": 200,
+          "transferBytes": 580
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-pageUp.svg",
+          "status": 200,
+          "transferBytes": 571
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-menuArrow.svg",
+          "status": 200,
+          "transferBytes": 571
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/7517dec6.d0446b24.js",
+          "status": 200,
+          "transferBytes": 517
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-zoomOut.svg",
+          "status": 200,
+          "transferBytes": 470
+        },
+        {
+          "type": "Image",
+          "url": "http://127.0.0.1:3000/Myblog/pdfjs/web/images/toolbarButton-editorFreeText.svg",
+          "status": 200,
+          "transferBytes": 463
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/5e95c892.84b29cfe.js",
+          "status": 200,
+          "transferBytes": 453
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/5e95c892.84b29cfe.js",
+          "status": 200,
+          "transferBytes": 453
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/49759cdc.ab4161c9.js",
+          "status": 200,
+          "transferBytes": 434
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/36994c47.e919e4cd.js",
+          "status": 200,
+          "transferBytes": 372
+        },
+        {
+          "type": "Script",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/aba21aa0.d0194702.js",
+          "status": 200,
+          "transferBytes": 369
+        },
+        {
+          "type": "Other",
+          "url": "http://127.0.0.1:3000/Myblog/assets/js/aba21aa0.d0194702.js",
+          "status": 200,
+          "transferBytes": 369
+        }
+      ]
+    }
+  ]
+}

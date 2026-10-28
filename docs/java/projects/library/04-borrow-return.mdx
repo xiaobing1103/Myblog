@@ -1,0 +1,93 @@
+---
+title: 实战 04：借出、归还与事务
+sidebar_label: 04 借还业务与事务
+description: 用条件更新与事务保证借阅库存，实际验证无库存、重复归还、历史删除和并发边界。
+---
+
+## 这一步要完成什么
+
+前置：[能创建并查询图书](./03-books.mdx)。这一课验证借还事务在两名用户同时操作时仍能保持库存规则。
+
+## 第一步：先写出必须守住的不变量
+
+- 可借册数始终在 0 与总册数之间。
+- 成功借出一次，库存减一并产生一条未归还记录。
+- 成功归还一次，对应记录有归还时间，库存加一。
+- 重复归还失败，不能再次增加库存。
+- 任一借阅历史存在时，不允许删除图书。
+
+这些规则由服务和数据库保证。页面禁用按钮只能改善体验，不能防止调用者直接发送重复或并发请求。
+
+## 第二步：执行一轮借还
+
+在 PowerShell 创建只有一册的图书，再借出：
+
+```powershell
+$base = 'http://127.0.0.1:8080'
+$book = Invoke-RestMethod "$base/api/books" -Method Post -ContentType 'application/json' -Body '{"title":"Transaction Practice","author":"Study Group","totalCopies":1}'
+$body = @{ bookId = $book.id; borrower = 'Alice' } | ConvertTo-Json
+$loan = Invoke-RestMethod "$base/api/loans" -Method Post -ContentType 'application/json' -Body $body
+Invoke-RestMethod "$base/api/books/$($book.id)"
+Invoke-RestMethod "$base/api/loans/$($loan.id)"
+Invoke-RestMethod "$base/api/loans?active=true"
+```
+
+预期库存从 1 变成 0，单条借阅查询的 borrower 为 Alice、returnedAt 为 null。POST 返回的 Location 也指向这条可查询记录。再次发送相同借出请求，预期 409，库存和记录数都不再变化。PowerShell 的 Invoke-RestMethod 会将非成功 HTTP 状态显示为异常；这里的 409 是预期的业务拒绝，可查看响应中的 message。
+
+归还后再检查：
+
+```powershell
+Invoke-RestMethod "$base/api/loans/$($loan.id)/return" -Method Post
+Invoke-RestMethod "$base/api/books/$($book.id)"
+```
+
+returnedAt 应变为时间字符串，可借册数回到 1。重复归还仍为 409。此时尝试删除图书也为 409，因为删除规则会检查所有借阅历史。
+
+## 第三步：为什么不能先查库存再减一
+
+危险流程是“查询得到库存 1 → 判断可借 → 更新为 0”。两个请求可能同时查到 1，之后都认为借出成功，产生两条借阅记录。
+
+打开 `LibraryRepository.java`，找到 takeCopy，项目让数据库在同一条语句中检查与修改：
+
+```sql
+UPDATE books
+SET available_copies = available_copies - 1
+WHERE id = ? AND available_copies > 0
+```
+
+影响行数为 1 才表示抢到一册；为 0 时，Service 再判断图书不存在还是没有库存，分别返回 404 或 409。不能只根据一次早先的 SELECT 结果决定写入。
+
+## 第四步：事务把库存与记录连在一起
+
+查看 `LibraryService.java` 的 `@Transactional` 与 borrow 方法：
+
+```java
+if (repository.takeCopy(bookId) == 0) {
+    book(bookId);
+    throw conflict("该图书暂无可借库存");
+}
+return repository.createLoan(bookId, borrower.strip());
+```
+
+这是项目方法体的片段。扣库存后如果插入借阅失败，异常沿调用链向外传播，事务回滚，库存不会永久少一册。若在中间捕获异常却正常返回，就可能改变回滚行为，不能随意用 catch 把失败吞掉。
+
+事务由 Spring 代理管理，Controller 调用注入的 Service 才走到这个边界；不要自己 new 一个 Service 后以为注解仍会自动建立事务。
+
+## 第五步：归还也需要条件更新
+
+LibraryRepository.markReturned 的关键条件为 `returned_at IS NULL`。即使两个归还请求最初都读到未归还记录，数据库也只允许其中一次把它标成已归还。
+
+LibraryService.returnLoan 只有在条件更新成功后才恢复库存，并在同一事务里完成。第二个请求影响 0 行，返回 409，库存保持不变。数据库库存 CHECK 还能拦住超范围写入，服务层负责给出清晰的业务错误。
+
+## 动手任务
+
+按下面顺序记录每一步的 HTTP 状态、可借库存和未归还记录数：创建一册 → 借出 → 再借出 → 归还 → 再归还。最后查询 `active=false` 并尝试删除图书。
+
+<details>
+<summary>参考答案与验收</summary>
+
+创建 201，库存 1；借出 201，库存 0、未归还 1；再借 409，数据不变；归还 200，库存 1、未归还 0；再归还 409，库存仍为 1。active=false 应能看到已归还记录，删除图书返回 409。测试不应只断言状态码，还要查库存与历史，才能发现“返回失败却错误写入”的实现。
+
+</details>
+
+下一步：[前端交互与同源请求](./05-frontend.mdx)。

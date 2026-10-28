@@ -14,7 +14,15 @@ keywords:
 # image: https://i.imgur.com/mErPwqL.png
 ---
 
+## 按目标学习
 
-欢迎访问二姨前端工程师博客！这个页面是我发布的视频合集，包括 B 站视频和文本，方便大家引用视频中的代码和链接等。
+[学习中心](../learning/index.mdx) · [面试题库](../interview/index.mdx) · [Java 分步教材](../java/textbook/index.mdx) · [资料下载](../resources/intro.md)
 
-左侧的导航（移动端为右下角悬浮按钮）按类别将视频进行分类，可以点击相应的类别展开所有视频。目前视频和文本还在持续更新中，所以可能会看到 B 站有的视频这里没有，后续更新的话我会通过 B 站社区动态通知大家。如果大家觉得视频有帮助请一定给个三连加关注～感谢！
+| 阶段 | 视频入口 |
+| --- | --- |
+| 页面基础 | [HTML](./html/01-html-basics/index.md)、[Flex](./css/02-flex-layout/index.md)、[Grid](./css/01-grid-layout/index.md)、[定位](./css/05-position/index.md) |
+| 浏览器与交互 | [DOM](./browser/01-dom/index.md)、[BOM](./browser/02-bom/index.md)、[DOM 操作](./browser/03-js-dom/index.md)、[事件循环](./js/01-event-loop/index.md) |
+| 框架与类型 | [React Props](./react/01-react-props-buttons/index.md)、[状态与事件](./react/02-gradient-bg-react-state-event/index.md)、[TypeScript](./ts/01-intro/index.md) |
+| 网络 | [HTTP](./network/01-http-basics/index.md)、[HTTPS](./network/02-https-basics/index.md) |
+
+视频仅在点击播放后加载。先读文字和代码，再播放对应片段，学完到题库独立作答。
