@@ -30,6 +30,7 @@ jobs:
             examples/java/library-lab/pom.xml
             third_party/spring-guides/gs-rest-service/complete/pom.xml
       - run: npm run verify:java
+      - run: npm run verify:interview
       - run: mvn -B -ntp test
         working-directory: examples/java/todo-api
       - run: mvn -B -ntp test

@@ -1,9 +1,33 @@
 import fs from 'node:fs';
+import {spawn} from 'node:child_process';
 import {chromium} from '@playwright/test';
 
-const browser = await chromium.launch(process.env.CHROME_PATH ? {executablePath: process.env.CHROME_PATH} : {});
+const baseUrl = 'http://127.0.0.1:3000/Myblog/';
+let preview;
+try {
+  const response = await fetch(baseUrl, {signal: AbortSignal.timeout(1000)});
+  if (!response.ok) throw new Error(`预览服务返回 ${response.status}`);
+} catch {
+  preview = spawn(process.execPath, ['scripts/preview.mjs'], {stdio: 'inherit'});
+  let ready = false;
+  for (let attempt = 0; attempt < 50; attempt++) {
+    if (preview.exitCode !== null) break;
+    try {
+      const response = await fetch(baseUrl, {signal: AbortSignal.timeout(1000)});
+      if (response.ok) {ready = true; break;}
+    } catch {}
+    await new Promise(resolve => setTimeout(resolve, 200));
+  }
+  if (!ready) {
+    preview.kill();
+    throw new Error('无法启动生产预览服务');
+  }
+}
+
+let browser;
 const results = [];
 try {
+  browser = await chromium.launch(process.env.CHROME_PATH ? {executablePath: process.env.CHROME_PATH} : {});
   for (const target of [
     {name: 'home-desktop', path: '', viewport: {width: 1440, height: 900}},
     {name: 'home-mobile', path: '', viewport: {width: 390, height: 844}},
@@ -39,6 +63,9 @@ try {
     console.log(`${entry.name}: ${entry.requests} requests, ${entry.transferBytes} transferred bytes`);
     await context.close();
   }
-} finally {await browser.close();}
+} finally {
+  await browser?.close();
+  preview?.kill();
+}
 const output = process.argv[2] || 'reports/network-current.json';
 fs.writeFileSync(output, JSON.stringify({conditions: 'Chrome, cold browser context, local production preview, networkidle + 1s; includes prefetch; iframe subtargets may be excluded by CDP', pages: results}, null, 2) + '\n');
